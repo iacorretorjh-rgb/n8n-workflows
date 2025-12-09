@@ -1,0 +1,515 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Set message props",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Lead": {
+      "main": [
+        [
+          {
+            "node": "Get Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - AI": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set message props": {
+      "main": [
+        [
+          {
+            "node": "Get Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Contact": {
+      "main": [
+        [
+          {
+            "node": "IF - AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI -SDR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-23T03:40:53.936Z",
+  "id": "b9ivNiFaoME3anZO",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[Webhook] - Kommo - Mensagens",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "4eddb39c-6aac-4899-95ad-5806a521818f",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        256,
+        96
+      ],
+      "id": "213349cb-fda3-4c97-8f2f-c51fe3b8f786",
+      "name": "Webhook",
+      "webhookId": "4eddb39c-6aac-4899-95ad-5806a521818f"
+    },
+    {
+      "parameters": {
+        "url": "=https://{{ $json.prefix }}.kommo.com/api/v4/leads/{{ $json.crm_entity.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "with",
+              "value": "contacts,companies"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        864,
+        96
+      ],
+      "id": "7308355c-6d8a-4865-b03f-6feac2efab03",
+      "name": "Get Lead",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c5613651-1e22-4012-9200-dab7e4837fea",
+              "leftValue": "={{ $('Get Lead').item.json.responsible_user_id }}",
+              "rightValue": 14085107,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "b2abcda0-d482-4f3c-9a1d-6610bbb7fe1d",
+              "leftValue": "={{ $('Get Lead').item.json.responsible_user_id }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "28e6f32b-9806-49d1-a0dc-1cc59233a9b0",
+              "leftValue": "={{ $('Get Lead').item.json.id }}",
+              "rightValue": "16956464",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "d9867c68-57da-4c90-b0e2-984602681067",
+              "leftValue": "={{ $('Get Lead').item.json.id }}",
+              "rightValue": "17054764",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1392,
+        96
+      ],
+      "id": "e6327409-c815-4c39-b742-a938cf58ef15",
+      "name": "IF - AI"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3a9216c6-21ea-424c-98c4-744f2c5b4926",
+              "name": "prefix",
+              "value": "joiceadv",
+              "type": "string"
+            },
+            {
+              "id": "77ef0e9d-764b-48e5-9b46-9af9ad8b6fce",
+              "name": "crm_entity.id",
+              "value": "={{ $('Webhook').item.json.body['message[add][0][entity_id]'] }}",
+              "type": "number"
+            },
+            {
+              "id": "ae976995-0420-4fb0-9fb0-97b876a02a9a",
+              "name": "recipient_id",
+              "value": "={{ $('Webhook').item.json.body['message[add][0][author][id]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "f2aac850-3cf6-4193-8802-9762c5bc8f0c",
+              "name": "crm_dialog_id",
+              "value": "={{ $('Webhook').item.json.body['message[add][0][talk_id]'] }}",
+              "type": "number"
+            },
+            {
+              "id": "d3367635-8e16-4f43-93af-79d398be6531",
+              "name": "crm_contact_id",
+              "value": "={{ $('Webhook').item.json.body['message[add][0][contact_id]'] }}",
+              "type": "number"
+            },
+            {
+              "id": "478b6a11-b01f-4342-9b00-fd88ac05a08e",
+              "name": "crm_account_id",
+              "value": "={{ $('Webhook').item.json.body['account[id]'] }}",
+              "type": "number"
+            },
+            {
+              "id": "fa1c73bf-2b10-4c3e-b194-b78c2943f9c9",
+              "name": "text",
+              "value": "={{ $('Webhook').item.json.body['message[add][0][text]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "6aae851f-2f36-43d9-934e-74e0f0a2c171",
+              "name": "chat_id",
+              "value": "={{ $('Webhook').item.json.body['message[add][0][chat_id]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "34fb489d-93ab-4dbe-ba8b-7905e326092c",
+              "name": "lead_name",
+              "value": "={{ $('Webhook').item.json.body[\"message[add][0][author][name]\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "33483713-4c08-4bed-b8d4-54aef5f62d60",
+              "name": "contact_id",
+              "value": "={{ $('Webhook').item.json.body[\"message[add][0][contact_id]\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        96
+      ],
+      "id": "a7db2d7e-809e-4a69-bc0f-045c41ede498",
+      "name": "Set message props"
+    },
+    {
+      "parameters": {
+        "content": "### Configurar Prefixo do CRM\n\n prefix = joiceadv\n",
+        "height": 360,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        496,
+        -112
+      ],
+      "id": "77418544-9e7f-4707-a7d9-03c50ef8b763",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "### Configurar Credencial OAuth2\n\nCaso o Client ID e Client Secret estejam corretos, basta clicar em \"Connect My Account\" e realizar login no Kommo",
+        "height": 360,
+        "width": 440
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        816,
+        -112
+      ],
+      "id": "7204cbfb-f852-4bee-84ae-465a53f1db45",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "### Configurar Webhook no Kommo\n\n1. Clicar no botao Webhooks no canto superior direito da pagina de configurações. \n2. Colar o link de \"Production URL\" e selecionar \"Mensagem Recebida\"",
+        "height": 360,
+        "width": 280
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        176,
+        -112
+      ],
+      "id": "50506da8-f313-477c-8646-d95d2ceecbfd",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "### Configurar atendimento AI\n- AI Responde se o ID do usuário Responsável for o dela\n\n- Configurar ID do usuário de IA",
+        "height": 360,
+        "width": 260,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1312,
+        -112
+      ],
+      "id": "089715af-995d-465e-93fb-78c17ad5f57f",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "url": "=https://{{$('Set message props').item.json.prefix}}.kommo.com/api/v4/contacts/{{ $json._embedded.contacts.first().id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1088,
+        96
+      ],
+      "id": "d56e0762-80c3-4bf3-b5c3-1eb5eb839620",
+      "name": "Get Contact",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e1d35681-e4b4-4d36-be82-035e949eee3b",
+              "name": "body",
+              "value": "={{ $('Webhook').item.json.body }}",
+              "type": "object"
+            },
+            {
+              "id": "7ffae885-9124-4520-866e-4b73a42f293c",
+              "name": "getLead",
+              "value": "={{ $('Get Lead').item }}",
+              "type": "object"
+            },
+            {
+              "id": "45c85166-9102-4e59-bd68-0a5b3b7160b6",
+              "name": "getContact",
+              "value": "={{ $('Get Contact').item }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1632,
+        96
+      ],
+      "id": "f4f7f728-0cdb-4b97-ae13-c31a71e14c86",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KwU5NkKFL7T8MF2U",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/KwU5NkKFL7T8MF2U",
+          "cachedResultName": "[IA] - Kommo"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1872,
+        96
+      ],
+      "id": "1c95b510-313c-45ab-a9ab-6e1d5c4c68c9",
+      "name": "AI -SDR"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "joiceadv.up.railway.app",
+            "user-agent": "amoCRM-Webhooks/3.0",
+            "content-length": "933",
+            "accept-encoding": "gzip",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-amocrm-requestid": "28fa4374-156b-4de8-bc8d-7c312c2b8536",
+            "x-forwarded-for": "204.74.253.164",
+            "x-forwarded-host": "joiceadv.up.railway.app",
+            "x-forwarded-proto": "https",
+            "x-railway-edge": "railway/us-east4-eqdc4a",
+            "x-railway-request-id": "c8V-ysaHTbmq2bJLg4a9AQ",
+            "x-real-ip": "204.74.253.164",
+            "x-request-start": "1761453211436"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "account[subdomain]": "joiceadv",
+            "account[id]": "34332899",
+            "account[_links][self]": "https://joiceadv.amocrm.com",
+            "message[add][0][id]": "469215b9-a2d1-4be2-902c-92cccbb9f6de",
+            "message[add][0][chat_id]": "1f93b147-adc7-4d83-8b7d-8e3bdb218e91",
+            "message[add][0][talk_id]": "3685",
+            "message[add][0][contact_id]": "20965646",
+            "message[add][0][text]": "olá",
+            "message[add][0][created_at]": "1761453209",
+            "message[add][0][element_type]": "2",
+            "message[add][0][entity_type]": "lead",
+            "message[add][0][element_id]": "16956464",
+            "message[add][0][entity_id]": "16956464",
+            "message[add][0][type]": "incoming",
+            "message[add][0][author][id]": "1772d23f-e9d2-4652-9f2b-e4be12aa00e6",
+            "message[add][0][author][type]": "external",
+            "message[add][0][author][name]": "Emerson - AI Sim",
+            "message[add][0][origin]": "com.amocrm.amocrmwa"
+          },
+          "webhookUrl": "https://joiceadv.up.railway.app/webhook/4eddb39c-6aac-4899-95ad-5806a521818f",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-23T03:40:53.936Z",
+      "updatedAt": "2025-10-23T03:40:53.936Z",
+      "role": "workflow:owner",
+      "workflowId": "b9ivNiFaoME3anZO",
+      "projectId": "CdOjQfB3kNlqg1ah"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-07T04:24:29.743Z",
+  "versionId": "9fe0ebd6-a756-4aa8-b240-d493a402713f"
+}
