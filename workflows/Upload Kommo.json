@@ -1,0 +1,1174 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        []
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request5": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request6": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dividir em Chunks": {
+      "main": [
+        []
+      ]
+    },
+    "Split In Batches": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Chunk": {
+      "main": [
+        []
+      ]
+    },
+    "Próxima URL": {
+      "main": [
+        [
+          {
+            "node": "Loop Próxima Parte",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Próxima Parte": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request7": {
+      "main": [
+        [
+          {
+            "node": "Próxima URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request8": {
+      "main": [
+        []
+      ]
+    },
+    "Get File": {
+      "main": [
+        [
+          {
+            "node": "Get File Size",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Session": {
+      "main": [
+        [
+          {
+            "node": "Split binary Chunks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get File Size": {
+      "main": [
+        [
+          {
+            "node": "Create Session",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split binary Chunks": {
+      "main": [
+        [
+          {
+            "node": "Upload File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Chat Memory Manager",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-26T17:26:28.024Z",
+  "id": "GCg3eCYLNQbZyNbk",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Upload Kommo",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -624,
+        544
+      ],
+      "id": "d80bc7d2-0f56-4411-b4f7-2026a581803f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://amojo.kommo.com/v2/1f93b147-adc7-4d83-8b7d-8e3bdb218e91/sendMessage",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "stand",
+              "value": "v16"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "https://joiceadv.kommo.com"
+            },
+            {
+              "name": "Referer",
+              "value": "https://joiceadv.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "a7af4d7e-97e5-4832-b09c-2bc2e61b573a"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"recipient_id\": \"1772d23f-e9d2-4652-9f2b-e4be12aa00e6\",\n  \"group_id\": null,\n  \"text\": \"teste 1234 ....\",\n  \"crm_dialog_id\": 3685,\n  \"crm_contact_id\": 20965646,\n  \"crm_account_id\": 34332899,\n  \"crm_entity\": {\n    \"id\": 16956464,\n    \"type\": 2\n  },\n  \"attachments\": [\n    {\n      \"external_file_id\": \"5287429f-61a1-4a69-8c2e-9247e57cfdad\",\n      \"external_file_vers_id\": \"44576a97-530a-45b5-b076-1f974277c554\",\n      \"type\": \"picture\"\n    }\n  ],\n  \"persona_name\": \"IA\",\n  \"persona_avatar\": \"https://images.kommo.com/frontend/images/interface/avatars/-1.jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2192,
+        80
+      ],
+      "id": "0e9ad64c-87c8-4064-9a80-5a08e59d8dae",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://drive-c.kommo.com/v1.0/sessions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "https://joiceadv.kommo.com"
+            },
+            {
+              "name": "Referer",
+              "value": "https://joiceadv.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NjE1MTI0MDAsImFjY291bnRfaWQiOjM0MzMyODk5LCJ1c2VyX2lkIjoxNDA4NTEwN30.BWULAvguAyoCr-kzH8eoPW1wEhi9XIWv9sPs7-FfdTM"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "name": "Cookie",
+              "value": "_ga=GA1.1.235288730.1761190328; FPID=FPID2.2.mPHhCMRwSl3%2FkWxC8BTuLLZgd%2B4E6PDbspePrwtthrU%3D.1761190328; _tt_enable_cookie=1; _ttp=01K87HZDV2DNFY2AK9VG4ZG3KH_.tt.1; _fbp=fb.1.1761190328929.971847411587964508; amo_is_partner=false; session_id=tp0l7hbp3bptg7qd05er4pbcpn; _gcl_au=1.1.1326855853.1761190328.10182403.1761279295.1761279295; amo_user_email=iacorretorjh@gmail.com; amo_user_full_name=IA; amo_user_id=14085107; FPLC=nF7ebGq6uArzTwn1RAq0jKM4t7rSvjRgoZJ4vuiOYurj0GFAqOKxMl75MtBad%2FoN83NdMgQ22YymUf1d2348EXz19S%2BhUGAeYYWYfdwplkscKthkhlRJbs0NSgv9qw%3D%3D; _clck=88rj0g%5E2%5Eg0h%5E0%5E2122; refresh_token=def5020077c04bbff180bf14f3bee914cc10aee7dbea1a2cb5bdbc9c88ea95d25e132649db5d51f9b499a709dd70cc5e0e80674870e4bd66077da8918fb398842c5d14db0aed8f3b010014d3796772a3d33e787f1e8576e0c4507d5ad992374deae4e8f9f758dbdd203746da859bf6882e7afa3afb824209dcfde20c6c586738fa8134f511d427a1602df7dbe59d69fe98f3c5d283b0a7696b6e2fa5d30b5e36e0f8560e3e0a9962caf8961dfc22f06b7c701c1e4c52fd94d7324a552bac22cc76b8ef7ea49ad90f2192d48a354406d533a16544c98a347c8811413a93e4bda85e09ec68d3154d9c95c3361ce4b0380ad16ba4132acb4411190e6207996ff5d2596429737eb05f85fd714f91436d0bd302a51a763df8bf3f5350e40d8320d77e26801a9d55756644e52685c5dbe884b93739866a0ff49674f897ec78414ded4bb235e812aab81fc7c2e4ad1e4c057caf628de42fb7d58ac75bd4b0d4ebaa6cd26efcaa00d748b25f516c1b1935aa1a810ac2244fc3f41ed11edba648a5fbefc17d1d2a82f3a468444aac33db6087137952c6c00557f450def560c806489daa8ba271d7ec4d2d6a3870eb7f1b9175d31cc85b8df20d85c6caa4b88b8b5e18de2c2a6b5efe421c2f5b2e70c95c3c4fef1b95aa57050a; access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE2ZDY4YzZhNWUxODU1M2U1NWU4OTBlOTJkMzc1NzY3MDRlYTEwYmM3YzExYjliOWM4ZjVlNDRiZmE1ZTI4OTU5MTViYzZmMzlmYTZhOTFkIn0.eyJhdWQiOiI3YjQ5MGYxOC0yYmU1LTRhNTUtYTc0ZS0xOTYzYzk2NDFiOTgiLCJqdGkiOiIxNmQ2OGM2YTVlMTg1NTNlNTVlODkwZTkyZDM3NTc2NzA0ZWExMGJjN2MxMWI5YjljOGY1ZTQ0YmZhNWUyODk1OTE1YmM2ZjM5ZmE2YTkxZCIsImlhdCI6MTc2MTQ5NzMxMCwibmJmIjoxNzYxNDk3MzEwLCJleHAiOjE3NjE0OTk3MTAsInN1YiI6IjE0MDg1MTA3IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjAsImJhc2VfZG9tYWluIjpudWxsLCJ2ZXJzaW9uIjoxLCJzY29wZXMiOlsiY2hhdHMiLCJjcm0iLCJtYWlsIiwibm90aWZpY2F0aW9ucyIsInVuc29ydGVkIl0sImhhc2hfdXVpZCI6ImY4YTY4YmVlLTFjZTktNDYyMC1hNGU0LTkwOWE0YTRiNDllZiIsInVzZXJfZmxhZ3MiOjB9.aoA37pvgYWRRNFsQUh6Uh-jWIIapqWOUTs7AOhWS_gangLbZsJklmR0bgfUvZaAN8XWrQ3FYnpob8EKiXCc1QfJBoIhKOOyRt40CuXQQudYQz6gHPeys-g-87S1HqpdwO8VQSgO2cJAz90wcukeKNULh8ScOn1EsZOEz64EN118uHTaN9r7bl5BKfuIitrHqQC3z4epNGVJrcvzVrgMWBA_bbMMqivGk9puxv1AmGvr8At1omxM2grbDzE7j86S_MoDbOMLRsJp49VBBCQMvgwFsi2e5YR7UyR4fovpz7OSlimkOsXUYggEO9Vj-uIuedMJptgRAizCM3p-I2h0B0Q; AMP_f7cf4e417b=JTdCJTIyZGV2aWNlSWQlMjIlM0ElMjI2Mzg4NTAwZS0xMDA2LTRiNmYtYjhmMC1iMjM4YmIyZmFiYjclMjIlMkMlMjJ1c2VySWQlMjIlM0EzNDMzMjg5OSUyQyUyMnNlc3Npb25JZCUyMiUzQTE3NjE0OTc4OTQwNTklMkMlMjJvcHRPdXQlMjIlM0FmYWxzZSUyQyUyMmxhc3RFdmVudFRpbWUlMjIlM0ExNzYxNDk3ODk0MjI5JTJDJTIybGFzdEV2ZW50SWQlMjIlM0E0NiUyQyUyMnBhZ2VDb3VudGVyJTIyJTNBMCU3RA==; server_time=1761497894; amp_f7cf4e=6yfeVdpPQ129Qr0EEuSYk5.MzQzMzI4OTk=..1j8gn9kk9.1j8gn9kk9.0.1.1; _uetsid=d8303d30b21e11f09c11a7ecb11e179e; _uetvid=da79ac80afc011f09055fb403abbfedd; _ga_VD1K6RXY5P=GS2.1.s1761497304$o4$g1$t1761497910$j43$l0$h1252102180; _clsk=rr0pyb%5E1761498344010%5E8%5E0%5Ei.clarity.ms%2Fcollect; ttcsid_CNEUHBJC77U2VU4MQ0OG=1761497295308::zREMP2DVfx10MMKl5dTz.4.1761498375042.0; ttcsid_C9BVJTBC77U6S6FSASIG=1761497295308::w_scepWTCFPtL2jx0S_t.4.1761498665344.0; ttcsid=1761497295307::Q3z_WOxq0LN5b_FMrFS_.4.1761498665345.0"
+            },
+            {
+              "name": "cookie",
+              "value": "_ga=GA1.1.235288730.1761190328;FPID=FPID2.2.mPHhCMRwSl3%2FkWxC8BTuLLZgd%2B4E6PDbspePrwtthrU%3D.1761190328;_tt_enable_cookie=1;_ttp=01K87HZDV2DNFY2AK9VG4ZG3KH_.tt.1;_fbp=fb.1.1761190328929.971847411587964508;amo_is_partner=false;session_id=tp0l7hbp3bptg7qd05er4pbcpn;_gcl_au=1.1.1326855853.1761190328.10182403.1761279295.1761279295;amo_user_email=iacorretorjh@gmail.com;amo_user_full_name=IA;amo_user_id=14085107;FPLC=nF7ebGq6uArzTwn1RAq0jKM4t7rSvjRgoZJ4vuiOYurj0GFAqOKxMl75MtBad%2FoN83NdMgQ22YymUf1d2348EXz19S%2BhUGAeYYWYfdwplkscKthkhlRJbs0NSgv9qw%3D%3D;_clck=88rj0g%5E2%5Eg0h%5E0%5E2122;refresh_token=def5020077c04bbff180bf14f3bee914cc10aee7dbea1a2cb5bdbc9c88ea95d25e132649db5d51f9b499a709dd70cc5e0e80674870e4bd66077da8918fb398842c5d14db0aed8f3b010014d3796772a3d33e787f1e8576e0c4507d5ad992374deae4e8f9f758dbdd203746da859bf6882e7afa3afb824209dcfde20c6c586738fa8134f511d427a1602df7dbe59d69fe98f3c5d283b0a7696b6e2fa5d30b5e36e0f8560e3e0a9962caf8961dfc22f06b7c701c1e4c52fd94d7324a552bac22cc76b8ef7ea49ad90f2192d48a354406d533a16544c98a347c8811413a93e4bda85e09ec68d3154d9c95c3361ce4b0380ad16ba4132acb4411190e6207996ff5d2596429737eb05f85fd714f91436d0bd302a51a763df8bf3f5350e40d8320d77e26801a9d55756644e52685c5dbe884b93739866a0ff49674f897ec78414ded4bb235e812aab81fc7c2e4ad1e4c057caf628de42fb7d58ac75bd4b0d4ebaa6cd26efcaa00d748b25f516c1b1935aa1a810ac2244fc3f41ed11edba648a5fbefc17d1d2a82f3a468444aac33db6087137952c6c00557f450def560c806489daa8ba271d7ec4d2d6a3870eb7f1b9175d31cc85b8df20d85c6caa4b88b8b5e18de2c2a6b5efe421c2f5b2e70c95c3c4fef1b95aa57050a;access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE2ZDY4YzZhNWUxODU1M2U1NWU4OTBlOTJkMzc1NzY3MDRlYTEwYmM3YzExYjliOWM4ZjVlNDRiZmE1ZTI4OTU5MTViYzZmMzlmYTZhOTFkIn0.eyJhdWQiOiI3YjQ5MGYxOC0yYmU1LTRhNTUtYTc0ZS0xOTYzYzk2NDFiOTgiLCJqdGkiOiIxNmQ2OGM2YTVlMTg1NTNlNTVlODkwZTkyZDM3NTc2NzA0ZWExMGJjN2MxMWI5YjljOGY1ZTQ0YmZhNWUyODk1OTE1YmM2ZjM5ZmE2YTkxZCIsImlhdCI6MTc2MTQ5NzMxMCwibmJmIjoxNzYxNDk3MzEwLCJleHAiOjE3NjE0OTk3MTAsInN1YiI6IjE0MDg1MTA3IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjAsImJhc2VfZG9tYWluIjpudWxsLCJ2ZXJzaW9uIjoxLCJzY29wZXMiOlsiY2hhdHMiLCJjcm0iLCJtYWlsIiwibm90aWZpY2F0aW9ucyIsInVuc29ydGVkIl0sImhhc2hfdXVpZCI6ImY4YTY4YmVlLTFjZTktNDYyMC1hNGU0LTkwOWE0YTRiNDllZiIsInVzZXJfZmxhZ3MiOjB9.aoA37pvgYWRRNFsQUh6Uh-jWIIapqWOUTs7AOhWS_gangLbZsJklmR0bgfUvZaAN8XWrQ3FYnpob8EKiXCc1QfJBoIhKOOyRt40CuXQQudYQz6gHPeys-g-87S1HqpdwO8VQSgO2cJAz90wcukeKNULh8ScOn1EsZOEz64EN118uHTaN9r7bl5BKfuIitrHqQC3z4epNGVJrcvzVrgMWBA_bbMMqivGk9puxv1AmGvr8At1omxM2grbDzE7j86S_MoDbOMLRsJp49VBBCQMvgwFsi2e5YR7UyR4fovpz7OSlimkOsXUYggEO9Vj-uIuedMJptgRAizCM3p-I2h0B0Q;AMP_f7cf4e417b=JTdCJTIyZGV2aWNlSWQlMjIlM0ElMjI2Mzg4NTAwZS0xMDA2LTRiNmYtYjhmMC1iMjM4YmIyZmFiYjclMjIlMkMlMjJ1c2VySWQlMjIlM0EzNDMzMjg5OSUyQyUyMnNlc3Npb25JZCUyMiUzQTE3NjE0OTc4OTQwNTklMkMlMjJvcHRPdXQlMjIlM0FmYWxzZSUyQyUyMmxhc3RFdmVudFRpbWUlMjIlM0ExNzYxNDk3ODk0MjI5JTJDJTIybGFzdEV2ZW50SWQlMjIlM0E0NiUyQyUyMnBhZ2VDb3VudGVyJTIyJTNBMCU3RA==;server_time=1761497894;amp_f7cf4e=6yfeVdpPQ129Qr0EEuSYk5.MzQzMzI4OTk=..1j8gn9kk9.1j8gn9kk9.0.1.1;_uetsid=d8303d30b21e11f09c11a7ecb11e179e;_uetvid=da79ac80afc011f09055fb403abbfedd;_ga_VD1K6RXY5P=GS2.1.s1761497304$o4$g1$t1761497910$j43$l0$h1252102180;_clsk=rr0pyb%5E1761498344010%5E8%5E0%5Ei.clarity.ms%2Fcollect;ttcsid_CNEUHBJC77U2VU4MQ0OG=1761497295308::zREMP2DVfx10MMKl5dTz.4.1761498375042.0;ttcsid_C9BVJTBC77U6S6FSASIG=1761497295308::w_scepWTCFPtL2jx0S_t.4.1761498665344.0;ttcsid=1761497295307::Q3z_WOxq0LN5b_FMrFS_.4.1761498665345.0;"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/x-www-form-urlencoded; charset=UTF-8",
+        "body": "0",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1568,
+        80
+      ],
+      "id": "7b583936-9385-410f-8e65-12ed6328ab21",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://drive-c.kommo.com/upload/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjE1ODUwNjcsIm5iZiI6MTc2MTQ5ODY2NywiaWF0IjoxNzYxNDk4NjY3LCJhY2NvdW50X2lkIjozNDMzMjg5OSwic2Vzc2lvbl9pZCI6ODMyMzI4ODQsImNvbnRlbnRfaWQiOiI5MDcwMDVkMS03OWM2LTQxOTgtYTY1Yi0yZTQ4N2M3NTA1YTUiLCJjb250ZW50X3NpemUiOjM4OTc1LCJub2RlX2lkIjoiMzRjMTZjYTMtZDAzZS00OTVlLTk2MzktZWZjNzFjZjFlZWRmIiwidXNlcl9pZCI6MTQwODUxMDcsInVzZXJfdHlwZSI6ImludGVybmFsIiwicGFydF9udW0iOjF9.Y_fSQiWtFjArQIHiTJCZbXZVkvl3IrMKgjysDfk8X94",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "https://joiceadv.kommo.com"
+            },
+            {
+              "name": "Referer",
+              "value": "https://joiceadv.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/x-www-form-urlencoded; charset=UTF-8",
+        "body": "0",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1776,
+        80
+      ],
+      "id": "6af69846-dddf-49ca-8df3-252fe9664555",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://drive-c.kommo.com/v1.0/sessions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "https://joiceadv.kommo.com"
+            },
+            {
+              "name": "Referer",
+              "value": "https://joiceadv.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NjE1MTI0MDAsImFjY291bnRfaWQiOjM0MzMyODk5LCJ1c2VyX2lkIjoxNDA4NTEwN30.BWULAvguAyoCr-kzH8eoPW1wEhi9XIWv9sPs7-FfdTM"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "name": "Cookie",
+              "value": "_ga=GA1.1.235288730.1761190328; FPID=FPID2.2.mPHhCMRwSl3%2FkWxC8BTuLLZgd%2B4E6PDbspePrwtthrU%3D.1761190328; _tt_enable_cookie=1; _ttp=01K87HZDV2DNFY2AK9VG4ZG3KH_.tt.1; _fbp=fb.1.1761190328929.971847411587964508; amo_is_partner=false; session_id=tp0l7hbp3bptg7qd05er4pbcpn; _gcl_au=1.1.1326855853.1761190328.10182403.1761279295.1761279295; amo_user_email=iacorretorjh@gmail.com; amo_user_full_name=IA; amo_user_id=14085107; FPLC=nF7ebGq6uArzTwn1RAq0jKM4t7rSvjRgoZJ4vuiOYurj0GFAqOKxMl75MtBad%2FoN83NdMgQ22YymUf1d2348EXz19S%2BhUGAeYYWYfdwplkscKthkhlRJbs0NSgv9qw%3D%3D; _clck=88rj0g%5E2%5Eg0h%5E0%5E2122; refresh_token=def5020077c04bbff180bf14f3bee914cc10aee7dbea1a2cb5bdbc9c88ea95d25e132649db5d51f9b499a709dd70cc5e0e80674870e4bd66077da8918fb398842c5d14db0aed8f3b010014d3796772a3d33e787f1e8576e0c4507d5ad992374deae4e8f9f758dbdd203746da859bf6882e7afa3afb824209dcfde20c6c586738fa8134f511d427a1602df7dbe59d69fe98f3c5d283b0a7696b6e2fa5d30b5e36e0f8560e3e0a9962caf8961dfc22f06b7c701c1e4c52fd94d7324a552bac22cc76b8ef7ea49ad90f2192d48a354406d533a16544c98a347c8811413a93e4bda85e09ec68d3154d9c95c3361ce4b0380ad16ba4132acb4411190e6207996ff5d2596429737eb05f85fd714f91436d0bd302a51a763df8bf3f5350e40d8320d77e26801a9d55756644e52685c5dbe884b93739866a0ff49674f897ec78414ded4bb235e812aab81fc7c2e4ad1e4c057caf628de42fb7d58ac75bd4b0d4ebaa6cd26efcaa00d748b25f516c1b1935aa1a810ac2244fc3f41ed11edba648a5fbefc17d1d2a82f3a468444aac33db6087137952c6c00557f450def560c806489daa8ba271d7ec4d2d6a3870eb7f1b9175d31cc85b8df20d85c6caa4b88b8b5e18de2c2a6b5efe421c2f5b2e70c95c3c4fef1b95aa57050a; access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE2ZDY4YzZhNWUxODU1M2U1NWU4OTBlOTJkMzc1NzY3MDRlYTEwYmM3YzExYjliOWM4ZjVlNDRiZmE1ZTI4OTU5MTViYzZmMzlmYTZhOTFkIn0.eyJhdWQiOiI3YjQ5MGYxOC0yYmU1LTRhNTUtYTc0ZS0xOTYzYzk2NDFiOTgiLCJqdGkiOiIxNmQ2OGM2YTVlMTg1NTNlNTVlODkwZTkyZDM3NTc2NzA0ZWExMGJjN2MxMWI5YjljOGY1ZTQ0YmZhNWUyODk1OTE1YmM2ZjM5ZmE2YTkxZCIsImlhdCI6MTc2MTQ5NzMxMCwibmJmIjoxNzYxNDk3MzEwLCJleHAiOjE3NjE0OTk3MTAsInN1YiI6IjE0MDg1MTA3IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjAsImJhc2VfZG9tYWluIjpudWxsLCJ2ZXJzaW9uIjoxLCJzY29wZXMiOlsiY2hhdHMiLCJjcm0iLCJtYWlsIiwibm90aWZpY2F0aW9ucyIsInVuc29ydGVkIl0sImhhc2hfdXVpZCI6ImY4YTY4YmVlLTFjZTktNDYyMC1hNGU0LTkwOWE0YTRiNDllZiIsInVzZXJfZmxhZ3MiOjB9.aoA37pvgYWRRNFsQUh6Uh-jWIIapqWOUTs7AOhWS_gangLbZsJklmR0bgfUvZaAN8XWrQ3FYnpob8EKiXCc1QfJBoIhKOOyRt40CuXQQudYQz6gHPeys-g-87S1HqpdwO8VQSgO2cJAz90wcukeKNULh8ScOn1EsZOEz64EN118uHTaN9r7bl5BKfuIitrHqQC3z4epNGVJrcvzVrgMWBA_bbMMqivGk9puxv1AmGvr8At1omxM2grbDzE7j86S_MoDbOMLRsJp49VBBCQMvgwFsi2e5YR7UyR4fovpz7OSlimkOsXUYggEO9Vj-uIuedMJptgRAizCM3p-I2h0B0Q; server_time=1761497894; amp_f7cf4e=6yfeVdpPQ129Qr0EEuSYk5.MzQzMzI4OTk=..1j8gn9kk9.1j8gn9kk9.0.1.1; _uetsid=d8303d30b21e11f09c11a7ecb11e179e; _uetvid=da79ac80afc011f09055fb403abbfedd; _ga_VD1K6RXY5P=GS2.1.s1761497304$o4$g1$t1761497910$j43$l0$h1252102180; _clsk=rr0pyb%5E1761498344010%5E8%5E0%5Ei.clarity.ms%2Fcollect; AMP_f7cf4e417b=JTdCJTIyZGV2aWNlSWQlMjIlM0ElMjI2Mzg4NTAwZS0xMDA2LTRiNmYtYjhmMC1iMjM4YmIyZmFiYjclMjIlMkMlMjJ1c2VySWQlMjIlM0EzNDMzMjg5OSUyQyUyMnNlc3Npb25JZCUyMiUzQTE3NjE0OTc4OTQwNTklMkMlMjJvcHRPdXQlMjIlM0FmYWxzZSUyQyUyMmxhc3RFdmVudFRpbWUlMjIlM0ExNzYxNDk5MTE2NTcyJTJDJTIybGFzdEV2ZW50SWQlMjIlM0E0NyUyQyUyMnBhZ2VDb3VudGVyJTIyJTNBMCU3RA==; ttcsid_CNEUHBJC77U2VU4MQ0OG=1761497295308::zREMP2DVfx10MMKl5dTz.4.1761499136280.0; ttcsid_C9BVJTBC77U6S6FSASIG=1761497295308::w_scepWTCFPtL2jx0S_t.4.1761499280259.0; ttcsid=1761497295307::Q3z_WOxq0LN5b_FMrFS_.4.1761499280259.0"
+            },
+            {
+              "name": "cookie",
+              "value": "_ga=GA1.1.235288730.1761190328;FPID=FPID2.2.mPHhCMRwSl3%2FkWxC8BTuLLZgd%2B4E6PDbspePrwtthrU%3D.1761190328;_tt_enable_cookie=1;_ttp=01K87HZDV2DNFY2AK9VG4ZG3KH_.tt.1;_fbp=fb.1.1761190328929.971847411587964508;amo_is_partner=false;session_id=tp0l7hbp3bptg7qd05er4pbcpn;_gcl_au=1.1.1326855853.1761190328.10182403.1761279295.1761279295;amo_user_email=iacorretorjh@gmail.com;amo_user_full_name=IA;amo_user_id=14085107;FPLC=nF7ebGq6uArzTwn1RAq0jKM4t7rSvjRgoZJ4vuiOYurj0GFAqOKxMl75MtBad%2FoN83NdMgQ22YymUf1d2348EXz19S%2BhUGAeYYWYfdwplkscKthkhlRJbs0NSgv9qw%3D%3D;_clck=88rj0g%5E2%5Eg0h%5E0%5E2122;refresh_token=def5020077c04bbff180bf14f3bee914cc10aee7dbea1a2cb5bdbc9c88ea95d25e132649db5d51f9b499a709dd70cc5e0e80674870e4bd66077da8918fb398842c5d14db0aed8f3b010014d3796772a3d33e787f1e8576e0c4507d5ad992374deae4e8f9f758dbdd203746da859bf6882e7afa3afb824209dcfde20c6c586738fa8134f511d427a1602df7dbe59d69fe98f3c5d283b0a7696b6e2fa5d30b5e36e0f8560e3e0a9962caf8961dfc22f06b7c701c1e4c52fd94d7324a552bac22cc76b8ef7ea49ad90f2192d48a354406d533a16544c98a347c8811413a93e4bda85e09ec68d3154d9c95c3361ce4b0380ad16ba4132acb4411190e6207996ff5d2596429737eb05f85fd714f91436d0bd302a51a763df8bf3f5350e40d8320d77e26801a9d55756644e52685c5dbe884b93739866a0ff49674f897ec78414ded4bb235e812aab81fc7c2e4ad1e4c057caf628de42fb7d58ac75bd4b0d4ebaa6cd26efcaa00d748b25f516c1b1935aa1a810ac2244fc3f41ed11edba648a5fbefc17d1d2a82f3a468444aac33db6087137952c6c00557f450def560c806489daa8ba271d7ec4d2d6a3870eb7f1b9175d31cc85b8df20d85c6caa4b88b8b5e18de2c2a6b5efe421c2f5b2e70c95c3c4fef1b95aa57050a;access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE2ZDY4YzZhNWUxODU1M2U1NWU4OTBlOTJkMzc1NzY3MDRlYTEwYmM3YzExYjliOWM4ZjVlNDRiZmE1ZTI4OTU5MTViYzZmMzlmYTZhOTFkIn0.eyJhdWQiOiI3YjQ5MGYxOC0yYmU1LTRhNTUtYTc0ZS0xOTYzYzk2NDFiOTgiLCJqdGkiOiIxNmQ2OGM2YTVlMTg1NTNlNTVlODkwZTkyZDM3NTc2NzA0ZWExMGJjN2MxMWI5YjljOGY1ZTQ0YmZhNWUyODk1OTE1YmM2ZjM5ZmE2YTkxZCIsImlhdCI6MTc2MTQ5NzMxMCwibmJmIjoxNzYxNDk3MzEwLCJleHAiOjE3NjE0OTk3MTAsInN1YiI6IjE0MDg1MTA3IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjAsImJhc2VfZG9tYWluIjpudWxsLCJ2ZXJzaW9uIjoxLCJzY29wZXMiOlsiY2hhdHMiLCJjcm0iLCJtYWlsIiwibm90aWZpY2F0aW9ucyIsInVuc29ydGVkIl0sImhhc2hfdXVpZCI6ImY4YTY4YmVlLTFjZTktNDYyMC1hNGU0LTkwOWE0YTRiNDllZiIsInVzZXJfZmxhZ3MiOjB9.aoA37pvgYWRRNFsQUh6Uh-jWIIapqWOUTs7AOhWS_gangLbZsJklmR0bgfUvZaAN8XWrQ3FYnpob8EKiXCc1QfJBoIhKOOyRt40CuXQQudYQz6gHPeys-g-87S1HqpdwO8VQSgO2cJAz90wcukeKNULh8ScOn1EsZOEz64EN118uHTaN9r7bl5BKfuIitrHqQC3z4epNGVJrcvzVrgMWBA_bbMMqivGk9puxv1AmGvr8At1omxM2grbDzE7j86S_MoDbOMLRsJp49VBBCQMvgwFsi2e5YR7UyR4fovpz7OSlimkOsXUYggEO9Vj-uIuedMJptgRAizCM3p-I2h0B0Q;server_time=1761497894;amp_f7cf4e=6yfeVdpPQ129Qr0EEuSYk5.MzQzMzI4OTk=..1j8gn9kk9.1j8gn9kk9.0.1.1;_uetsid=d8303d30b21e11f09c11a7ecb11e179e;_uetvid=da79ac80afc011f09055fb403abbfedd;_ga_VD1K6RXY5P=GS2.1.s1761497304$o4$g1$t1761497910$j43$l0$h1252102180;_clsk=rr0pyb%5E1761498344010%5E8%5E0%5Ei.clarity.ms%2Fcollect;AMP_f7cf4e417b=JTdCJTIyZGV2aWNlSWQlMjIlM0ElMjI2Mzg4NTAwZS0xMDA2LTRiNmYtYjhmMC1iMjM4YmIyZmFiYjclMjIlMkMlMjJ1c2VySWQlMjIlM0EzNDMzMjg5OSUyQyUyMnNlc3Npb25JZCUyMiUzQTE3NjE0OTc4OTQwNTklMkMlMjJvcHRPdXQlMjIlM0FmYWxzZSUyQyUyMmxhc3RFdmVudFRpbWUlMjIlM0ExNzYxNDk5MTE2NTcyJTJDJTIybGFzdEV2ZW50SWQlMjIlM0E0NyUyQyUyMnBhZ2VDb3VudGVyJTIyJTNBMCU3RA==;ttcsid_CNEUHBJC77U2VU4MQ0OG=1761497295308::zREMP2DVfx10MMKl5dTz.4.1761499136280.0;ttcsid_C9BVJTBC77U6S6FSASIG=1761497295308::w_scepWTCFPtL2jx0S_t.4.1761499280259.0;ttcsid=1761497295307::Q3z_WOxq0LN5b_FMrFS_.4.1761499280259.0;"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"with_preview\":true,\n  \"billable\":true,\n  \"file_name\":\"{{ $json.file_name }}\",\n  \"file_size\":{{ $json.file_size }}\n}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1552,
+        -256
+      ],
+      "id": "8336f616-dcd2-4468-a48c-07ff18661277",
+      "name": "HTTP Request3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('HTTP Request3').item.json.body.upload_url }}",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/octet-stream",
+        "body": "={{ $('Split binary Chunks').item.binary }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1680,
+        480
+      ],
+      "id": "067a8de7-306b-4e92-9353-76925eac7f9a",
+      "name": "HTTP Request5"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "base64",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1488,
+        288
+      ],
+      "id": "d4817431-9345-4257-a760-2a7bca271a6d",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bf8e5505-91ef-4d97-8997-5d02f8e421c4",
+              "name": "base64",
+              "value": "={{ $('Get File').item.binary.data.data }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1312,
+        288
+      ],
+      "id": "aeeacd6e-aa50-42bd-92a9-d1015951ecf9",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "85698049-170c-4101-a627-a1e92e9e315d",
+              "leftValue": "={{ $json.body.toJsonString() }}",
+              "rightValue": "next_url",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1824,
+        480
+      ],
+      "id": "707ebfe1-a5f1-47e7-85b9-12332d6943d6",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.body.next_url }}",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/octet-stream",
+        "body": "={{ $('Get File').item.binary.data.data }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2080,
+        464
+      ],
+      "id": "860b2ac9-4184-4846-9397-5eccb051f2c5",
+      "name": "HTTP Request6"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "85698049-170c-4101-a627-a1e92e9e315d",
+              "leftValue": "={{ $json.body.toJsonString() }}",
+              "rightValue": "next_url",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2336,
+        464
+      ],
+      "id": "b56649d1-c28a-4fe5-9650-1b1d46ceb473",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Divide o arquivo em partes conforme max_part_size\nconst binaryData = $('HTTP Request4').item.binary.data.data;\nconst buffer = Buffer.from(binaryData, 'base64');\n\n// Altere o tamanho conforme o retornado pela sessão Kommo\nconst maxPartSize = 524288;\n\nconst chunks = [];\nfor (let i = 0; i < buffer.length; i += maxPartSize) {\n  const end = Math.min(i + maxPartSize, buffer.length);\n  const chunk = buffer.slice(i, end);\n  chunks.push(chunk.toString('base64'));\n}\n\nreturn chunks.map((chunk, index) => ({\n  json: { part: index + 1 },\n  binary: { data: { data: chunk } }\n}));"
+      },
+      "id": "481873d1-5840-4494-b197-49f845d3bfc7",
+      "name": "Dividir em Chunks",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "df8902ad-809d-4c66-9f66-638d00545ce5",
+      "name": "Split In Batches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$json[\"next_url\"] || $('HTTP Request3').item.json.body.upload_url || $json[\"initial_url\"]}}",
+        "options": {}
+      },
+      "id": "80eafee1-c5a4-4d8d-8688-37d0045e60da",
+      "name": "Enviar Chunk",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1744,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Atualiza URL para próxima parte ou finaliza\nconst body = items[0].json.body || items[0].json;\nif (body.next_url) {\n  return [{ json: { upload_url: body.next_url } }];\n}\nreturn [{ json: { done: true, result: body } }];"
+      },
+      "id": "86a1972b-a24b-4938-822d-864c505bdd74",
+      "name": "Próxima URL",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        2048,
+        672
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Verifica se acabou o upload e itera se não acabou\nif (items[0].json.done) {\n  return items;\n}\nreturn $items('Split In Batches', 0, $runIndex + 1);"
+      },
+      "id": "7ee3e34c-43f4-4906-b343-0d5d3d998a63",
+      "name": "Loop Próxima Parte",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        2336,
+        672
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('HTTP Request3').item.json.body.upload_url }}",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/octet-stream",
+        "body": "={{ $('Split binary Chunks').item.binary }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1744,
+        672
+      ],
+      "id": "34d610a6-9e65-4599-93d1-a8676802437a",
+      "name": "HTTP Request7"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('HTTP Request3').item.json.body.upload_url }}",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1936,
+        -256
+      ],
+      "id": "a10dd24d-8159-484b-9b98-537dc7422bf8",
+      "name": "HTTP Request8"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://drive-c.kommo.com/v1.0/sessions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "file_name",
+              "value": "={{ $json.file_name }}"
+            },
+            {
+              "name": "file_size",
+              "value": "={{ $json.file_size }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        48,
+        544
+      ],
+      "id": "cf7eb736-af00-4187-a4a3-3b69963dbeb4",
+      "name": "Create Session",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        },
+        "httpHeaderAuth": {
+          "id": "1yCcDVupD8YPq5x6",
+          "name": "[Kommo] - Token - IA"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://drive.usercontent.google.com/uc?id=1DIqmsZAg69sTL2IBMtUMtzhyoxaHhfYV&export=download",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -368,
+        544
+      ],
+      "id": "d62ec524-d26e-4f5c-9c11-25e14b20a122",
+      "name": "Get File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://joiceadv.kommo.com/upload/eokeoekoek",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "authorization",
+              "value": "Bearer tokenssssds"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "data",
+              "value": "download.jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSEhMWFhUXFxUXFxcXGBYVFxUVFxYWFxcXGBYYHSggGBolGxUVITEhJikrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQGi0lHSUtKy0uLS0tLS0rLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIDBAUGBwj/xABEEAABAwEFBQUGBAMHAwUBAAABAAIDEQQFEiExBkFRYXETIjKBkUJSobHB8AcUI9FikuEWJDNTgrLxY3JzQ0Sis8IV/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAEDAgQF/8QAKREAAgICAgEEAQMFAAAAAAAAAAECEQMxEiFBBBNRYTKBodEUInGRsf/aAAwDAQACEQMRAD8A5bL4gpMgUW1DvBTHDJQl4LR8jbQnk20JwDJJjQiiBCNGQgBGFOAJKUwoYIVRM2ptQnwUTtCkn2DXRGh0Tibs5qpcFmc80aKrbEhgBT7Fdj5NBlxWhubZQmjnrc3Ps5UDDSm mvolUnpBcVtmTuTZihGVSuiXBs22PvECqt7uulsY0zVkArY8VdvZKeS kJjjAyCDmA6hKQVyJX225opBRzAeoCyd6fhvZ31LG4T/AA5LepEsmEEpNWCdHBdqNjJLIC/EHN9CmNmtm3WipdUN5BWH4lbTSSymBooxpzO93Iclufw9vGzyQtYymIAVG9YeJG/dZhbx2DmZnGQ8ehWctd2yxGj43DnTL1Xox9hB0UC1XSDkWgrLxmlkZ5/jFUT2LsN4bE2eTPBhPFuSy967ASNzifXk79wovG0VWSLMMGpu22eraq2tdyWiLxxOpxAqPgojRuU3aKdMp7HJ7JTzwm7fAWuxBPRuxBafyZXwJaEqiJqUk2aCw1Tbmp5CizY6IpYUFIognyFRAtw7wUxnhUa8PEFIhOVFuWkYjthMCejCbAzTrNVlmkNvCFE5I1JYEeAE4UG6qZY7vllNI2OdzAy9dFajZOUNL5CGgCtK1K3GEpaRiU4x2yionorM52TWk/L1V3FYY2 zXmc/gpRPpw/ouiHo2/yZzz9WtRQzcGxocBJK85k91vAGni8lqmWGCzsxYQ0erq/VO3SykTOlfXOvxULac/pxsAFXPoDWmdDTz3LojjjHSISySa2WNmtDXgFhB  HFPxSuYcTHFp4j68Vhoo5WyBjQ4SVAAFQ4nougQWTsmRxzl7pX JzaFjCdGEe1zK3KkYjbJ0O1ro2VnbiApUtoCfLQq um obS3FE8Hi3Rw6tXPdrLP2UZYSDpQj4V4LK2eZzCHMJaRoQSD6hZ4J6Nc2jviC5ncu38rKNnb2rfeGT/wBnfBdEsloD2hwqKgGjhRwrnmFNxa2UjJPRJSXtByKBKOqyaKS89lrPNXEwGvJVtz7Fx2WQviqK7lrqowEWFENuIJwTFPkJJjQMYdKDq1NPYCpWEhCo3hAFbJYwdwKp7fszBJ4oxXjSh9QtSYxuKLk4LLihp0ctvb8OMYPZSU4B2Y9VirTsbbICax428WZ/DVehjZ2nQpmSxngCsPGjfNnmyaItyIIPAiiQ0r0FeFwwyiksTT1A ayl5fhpA phc5h4eIfHNSeJlFlXk5aAkubRau8dgrZFm1okH8JofQrOWmzPYS17S1w1DhQqLTWy0ZJ6IdEE5hRpDor70HeT9nbkk30zvJ6zHILctE0uwi1Tbuu2WZ1Io3PO/CCQOp0HmrTZO3WSKatsg7VhpTfgPEs0eP2W2vWxy2iMvsc7ZrN/lRUYYxwdEKVp6quLGp7ZPLkcNIw1ouAsNJJGA72sOMjTUju79xKn3DdcfaAYA7KpxZ/0Cbc0ioI01Byp5blabOt7zjXgM Z/ou6OCEFo4pZ5yL9jA3wig3UypyUK n/pO6gUUkvzPXMKr2ik7jWjeSa8gFRGGUjTwSiapISiOKoTNfYZWlowOqAAB6aH4qu2pswks5FMxnzBBVHFK5pq0/fRWbL1xjDIMtKj9lho3yD2E2kxuEU1O3jBDHkCr20of9QGq3Vvlkcx2IDs zJxYR48WWddaclgpdmYyWvbjY7xMcKtcD7zcuqvLtuuTIB00zsOrnF4H/5b8FJxKJlbtKT2IrxH/KzTOS3V77PmdvYsmi7Zve7LG0vw9BzVdcmx8rpP12lkbT3ycnOp7LeNeO4LakqMOLsK57KyCE260Nq1v EwCplfuNOAPy5Kv2V2pts1reKl5kxFseQDTllXc0BW9/3u572tYAxjSxrRWlG1pTC3os1cN6x2e9HyvNGhzxlurkubJPuzuwYk01XZ12wXnJXBNEWOGvtA8wQrOJ5J5blHu 0RStD43h4O8GqntYnZKmthgIUSsKFErHQVUdUiVpOibxOGoqmIeISC3ik/mANSkQWguOmSAFdieKX2ZTgKUlYURS0o2zEJ6pRlgKAIdtvOKJhfIQANSVDsF7WacVjkaehCb2l2ebaojGSQDwXMrZ HVrhdis8hy0zIPqE0Jtm12s2pbY8NKSEnJo1PRYbaK7bVa3C0iDC0jIA1d1Kt9k9iJnydrbKkjQE1XU4bM1rQ2goFicFJUahJp2ebJLDKDQxvBH8JQXo91gjOeEIKHsfZf3/o8vX34gjsoyCF/DMdU9d9nc jWNJKm/xKL8g3tVjc35iKs8JezCK4mmn/ACOq0lz7KgUdNn/Cr 9bvP5ObAyjWsJrpospvwUjVqy1t0MFpFJ2fqBo/VZk/MVqRo8Kks92QQxmX85Z wcaiQvpkBph1xa5Jm4tqIpAGzUjkAAxew gpv8AC6nquS34cgOdfn 67ffpKjn/AKO3Ll1R0a8durthyjEtreN9Oyjr1OZVI38UzI/DNYoDZ/8ALbUPb/E2Q71zl7kUciTySYLFjXR2qy3THaou3u95e01Jhf3ZW01A3PpxCqpIi0kOBBGRByI5ZpX4ek/lmEZGrqEZHxHer /NprOJmQW6MkOYCLQ3/EjNSBjaPG3LquiOaopyOSWC5NQM5RX9wXQ0g2i0UbAw7zTtHaBgPCuvprpMsGyXaSBwkbJBkRIw1xDUBtPa XzZ2ptchc OjmQxsLWtB7JjcMobnI7OpA3DfzWpTVdE4Y3fYz/bZ7ZpYrZGwsDhgY1ocGNoMIDq603gBaSzWiO12VzYXvMTmva1lXx4XgZASto5orrXEuX7XBrbTIXB2fZ0DRUn9Nqq5L7tjYTZ4pXQwkk0B75J18OY9Vzc6uzueG64rvoztqhmstpcx7i2aJ1C5rqkO4h411XU7u/E6bBZ4SG4u42SV5xE8XUyANFy42QAlzquOpLszX6 qn2azNlaCHUO8EV9KKPJ30dSxJxqdWbO to7JGf03OkcCDSPJtQSc3HUZrL2BnbzPe8GjyTThU11UqyXGBmW1HF/dA6NGZVjFC0EBtXHc0Cg8gNVZRnN3XRFyxYU1y7 hdyvtFllxRTkgeyDU e71XU9mdt2ylsVoAZIcgajC4/QrG3fslapQHODYIzvf3f/AI6rXXDsPZWgSOJmrmCcm QC2scY f8ARz5PUSyJJL9Xs21UEUbQAAEZckZEuem3ymmQql4KpeFAiiILn1eKK3iGWSddGDqEAymidhQYahRDNJdKBqkMUic mqRNaA0VUSNrpDV2TeHFAicx1UqiJraZJSQwg1BGjQASCNBAHntmyb7Q8OecLNeZW0ui6mRgRwsqeIGfmVe3dcD3UMndbw3n9lo7LZGRijGgLljilLejollS0VV3XB7UuZ93d5qdflkx2aWFuWNhaDStKjWiml6qNqZP7pP/AON3LdyXSoKK6I8nKSOJ7RWYMmdHGySICg7/AIqjV1DuKprRZGyU7fI6CVunIOH2V1exXtZbbEIrSwYmt3mjshrG/wAvCVmLx2ZLWGeyvFog3lo78fKSPUJ8Mc0uPTK 9mxN81a8mCtmz5ZnSrTo4Zg e48ioD7tpuWxsjjGSYjQHJ0bvC4cBXTocuiW2yRy1w0jeBUxuP8AtJ3fDmmnx6yL9fBmWNZFywu/p7X8lFcF8zWXJhqzex2nlwTu1N NtMrHtaW0YGkHPOp0I1GakT2WJuVTIfdYNOpOnoo5s59lrYxy7z/WuXqlJ81xj2PHF4nym0v lvcW0tphhjhbI6OJsmIhrQHFpcHPFdc 96qzvPaaIuLooS9xqMc5xZFxfQMGVK8TuHBUt0Xdje2Ors3ULg0yOz34R4lf2jYSWN5E0rGt1BaHPe4ZCojAqNd iw4ZI9F1PBkdmat14uleXyGrjSpHdGQoBQaCibjc2nJL2mu0We0Pha4uDcNCRQmrQdB1VfZia5edVOMJSdF55oY4p CTDarIJC21RvdG4UxMdR0Zr4gPa6LQXbsY9xZNYJRaYSdWkNew00e0nLqqD y8tqxGytc8tGJzDqBydv6Ksuvt7PK9lZIXFpDh3mEjmN6qm8e0cc1H1DtM6zHsnHF3rZaKuoT2UXecacToNU9/aBlntMdlslmYzEATI7vSULScq5A5BZ227RQ6Ma Z1KUPdZoMiBm7RUos0lutLmulbZ5cPdBDmjIUAruyW5Zb6TJQ9PxTckbG8b2pIJLRKKtOTMRe45cB3Wmqu9hduGvDbPO0MIyY4aEbgeBWVsWwwhYDbLRHGAKmhxvdTeFObetks7a2Oz9o7dJL8wP Fbimc3Jo68x1dEMK5xcm3Ye4NmOB/H2StvYb2a80NKUGY0UmmiiaZZAURlJJqMkSRoMOSgU3jO8IdoCgBZcm3srqEoNTgCAI4sjag0UgBGgkOgkSNCiAEtKUgjogAIII0gILpEh0ibcU05yoYHXSKp2lf/dZ/wDxu SmOeqy/QX2eVjcy5hA6kJPQ4fkjkLXaKzu2O1wObPBiZiFQ6owubUijgTQ5jQqnLS1 BwoQaEHqul3Ne9kexlkBrQUa2UYceZPcdoXcgarlxxtnq oycY2lZmn2yxWx5ZIW2S1glpd/wC3lduz9hx9OqrLxuuWzvDJ4hlm2uYdza4ZEH/lK2y2Clj7S02dzpWF1XR4ayMBqXHLxAZZAVzVRcO3Fss8fYskDmCuASNEhiP/AEy7w9MxyV1lcepK0cX9PHJ/didM0Vh2WtUza9mIY/ekIiYOnEdKqYLmsFna50sj7S9rS4tZ3I8hWhfqfJZzZm8LVbHzOmmfK79PxEkCpd4WjJvkAtgzZWd8bsLK4mPaKkNFSCBWpyzVVkclaOaWLjKpFNdu18z5IWQRx2aJ8kYIjbVzmlwBDpHZnJa 9LH3XOneyMENzmdTMSF3 Ew60Aoandkl7M7Lths8cNoLHuaa0bUhrsVQWvyIpQaLKW/ZnFI99onzxGjWkzSBrnHDUk0aKc1JOS zpaxyfwl 5ltrbWye1yvidiZVoBFdA0DQ5gVCauS6pJ5WxRtq53o0byTwCq7fF2NqkjaTRr8NTqRlrRdcuh1hscJj7UGedor2feeMYAAFPCAT6rWPIkn12Yz4m2mnaEWKzOFbFd0jWdlR885Fe0k0wjLSoz4J 7p5JXPgvWCEANBY99BjzocJ46aHfosHt9tHLFLJYbOTDBAMNGGjpHYQS5zhmdVcXYcVnuoSkvqZXnEak8Mys8rZv26ivj9y9t1jgs VjYG6VcRU1LqZOdnx3Ln942rFeUzi4CgIqTQaNXStpIbWYybAIgAypqCZjTcK5FcgfdMj3udLXETV1cjXmt1dKKJKSVuT2WFoveOpDXOkcQW1HhFeZ1U2wzZAck3dGzz5HYYoy88hp1O5b66/w wmtolFMu7HWp6k6KsVx7bITkpdRRkhZu0yDSTpkCTXyWw2WuS2xEF7gyLUtdm8jkNyvzabLYoyGgMFdB33uPPfVVn/APWtdpr Ws5DaHvP1PrkEN2ZSosdnNp455OzaS1wJBad9DSoWyXL9nNkbWJ2SyNbFhdU54i7jounFynJLwUg29gdRJjFdyNorqE4AsmwI0EEhgQKBQSASG70pBGmAAEEaCQBIJBkHEIJgVzwo8imOamnsWyZVWtxG6qhvxEZlW8sKhywoGZa rljlGJwo5uYcNcs8 KwlQRQio4fLoV1O2so13/afkVyaN658ypo9H0buLTNfcW1joWtjnxysDspKgyRtoAARrIBxrWnFXd57GWG3YbS0lpcCTJAWgSZUq5pB7wNOByoVzxr1aXReskIkDCRjbQgEjOo73J1Pa1SWTqpGp l75Y3TNrdt22G7GnDhY51KvmdikfTSjPo0BRr122YAOyaXk1zkLowM/cpiPwVTc yEkoEr3hgeMVRV0j265uOfqVqru2Vs8OeDE6lcT8zXpoqJyelSOaSxRf975P6MdPfVte0y4nhjfcbgjFTQZau13ko7famMgZJNLG0FsbgHEvcS1ziaRDJpz1Ws26AFkfQe1HypmNy5xJsPJOe2c6jXgEADOlBqUlyUvko3CWK6rsw953gJLVJKK0c8uG40Wm2UnE1piLWkDHGM9/fBqrSf8NCW/p1xcwc qa2e2ctkFobhhcXMc1wGElrqHTHoPNP22ycfUJPv4ZRbYysF42tzgXVlcMNMsgB9Fqr3ut8tlsTbOaPihx4c950qNFKZsdbJ5pHvs4jc97nEkgszNciul7O7Nss8YaQ0yEUe8Dxcuis4pHLHJLRzXZrbF8B7K2NcCNDTP8Aqt4yzWS2ASljJcvGO67o4j6qZfWycFpFJGA8xkR0Kpbn/DwxF7e3Jhfq2neI5mtPgnaMtMftW0dmgHZQgE6COEClebtK/FI/J2 1nI/l4j/ORzOvyWouq4bPZxSKMA 8c3HzKtFnklofH5M3dOxtnh7zh2j9cT88 i0TGgCgFOSBcme1rkEnb2aSSFyy0RRxmtSUuOPeU4kOgkaFEayMCbLzuSykOcmgHAgiHNGkAaCCCAAq 8rwDBQZu4cEi8rxw91ubvksHtLtE2EFrTikPwU5zrpbKQhfbLK03owOOOTvb80FzCScuJLiSTmUFDsvSPQRam3MUghJLV3HFREexRZY1YvYmnxJiKaez1WE2i2RNTJDrqWnf0XSJTQ0IPWiZkgB0WWk9m4ZJQdo4a4FpLXAgjUFSbOdehXSb92bjmGYo7c4aj91iJbgmgkoWlzSCGuaCammQoM6rnnia0eng9VGXUumdOuMUs0I/wCk3T/tCTeN8wwg45Gg4a4QauOqorDdF4zsYx7vy8TWhoHtluQ8LT8z5LQXRsdZoKOLO1ePbk72fJvhHkFZN10jhnCCk23f P5MvfFqnt7eys8DuzLmu7V/dGXAnI VVsrpuwRxRxk4i1oaTpWg4K1DOCHYhNKnZiU7XFKkNiEBHHnuoPRFM8Mzceg1JPADikMvBhbV3dO8Gn0NFomSmoyFVt7SU9whrK IGvkOasgCNfXVADjeaUq68b6hgBxvANKkVzA4ngqmy7aQygmKjgDQ6/VZGahJf1VNHtHGaVFK6Z0 dFPsltjlrgcCRQkaEA6VHOhz5IAXUuy3J OOiMZJSGwSBRBBBIYKoFN4CSnUxAoiojCNIYSCCNABKqvW88NWM8W8 7/VJvW9KVjjPe0c73eQ5rC7RX8Iv0YiDK7U 7zJ4qU5 EUhDyw9pdoRCCyM4pTrvpzKwD3FxLnZuJ1Voyz1zObvarnmoM7KHJSiy7QyCUE5h4DJEtGT0SiXL7HfVqsuTgcPFoL2ebNW S1l0bYwygY 6feb3m e9vmuiMlLRzOLWzSURFqEUgcA5pBB0INR6hKTENOhCT2A4J9BOwI/5YcK9UpkYG6ieISSPsIsAYUeFMsqKkOxDgKZJ1pO8emaADLVCvG3CIAAVcdBoPMqcCie0EUIBB3HMHySsRSx2DtH9tI6pGja6fsOSs5LMx7e zL0 SRHdsbX42ih6mikOr9/unYJFbPYu/iMbZGECgLQ50dBTug5YTrQZ147okltgcSxspa8VAYxzWUpvIdQfNTLZbv1AwH2XEjTe0a8gT8VS2/Zayz/AOJGTSmjnCgG4DMAeSTY6M669rFJaRZ5J2WiZzjVrWyPAJPtOaA0nQcFp4tnYWFzo2Na52rSKNPKgzHWpT917P2eznGxhxDRz3ueWilO6HGjPIBTnTj2czy08ykBSWq66xl8VQW1D43GpbnUitO83QjkUzBPCMBf VxEOaHPje55w5hoeN2enNaSGRrKlxArhJLsgK1Az3VyVezZ5rnd53cBq1zSQ6h90tph5nOvmkBGivOaMYY4ocNSRVz2 dHFOtvy0/5cG/23K7ZdkI1ja48XAOP8xzTn5OPdGz VqOP2OzPi/wC0HLDZ68Mbv2SjfFr9yz/zvH0V4274q17Nn8rf2Tv5WP3G/wAoRX2FjV2TyPYDI1rXfwEuaRxqQFLCAFEEwAgiQQAFS3petaxxHk543cWt589yZvS9S scR7ujng Li1h4cXenFYy/b9DD XgpjpmdzQozyeEVhDywto7 EQMMNDJTM7m/1WMgJNS7N2pO8qY zYSSTWvirxOR SjSMLTy5LESjJ1jdU89CPqjtFnBzyG6n1UVjiDiBzHzVoaOZUA0I60P3VZapmk7KWSzipzKCmPDwaZH0QWrFRqbuv8As84FHgE6NdQV6HR3kU9arkjccQBY/wB5vdPw1XKb/sPZMMsBLCKEgUoQeSlXBtfaoo2vdUsO7xNFCR4TmBluKVeUK/DOiwG12Y4o3YxXPDRrvNvhd6BX907cMccEzcLumE/yHXq0lZK59uLPLQOOA8dW15nVvmPNXk1linbmGvacwRn6ELSyyWzLxp6N3ZbWyQVjcHDlu6jUJ5cwZdc0RxWeU5aNeTpwDx3h8VZ2LbWSIhtrjI/iOn847vqArRyRZKUJI3qIiuRUG773hmAwPFTuOR8uPkp62YGHWf3TT1 wnWgpSCAEnmjARoqJAHVBNTR13kdPnRJYHDfXX7rrx 9WBV39dbn0lhOGVunA8iqBu0PZuw2pj4HDLEBijPnoN2tOi3DhXVJkgY4Uc0EcCBRAGcs17WeYtDJmPc4mgxVrRpPdAyrl8FYxxfv  Sg3pshZ30kijbHKDVr2gAh3FQILwtUc7o7U1oa6nYvboCBmHHfU1PnRKgsn2q0yxPIMbpYpAS10dTIH0FGEe6QDR2QFKHWqoLNfksT29pZJ7O1xGJwLSxpJ9ptA0jnQFa6w2hrjiNAW1DgfZJ3g 6eP9VYzRte0tcMQO470qTGVdivioBNHtOjoyM/9NaO/0kqys9pY/wADgSNRo4dWnNUU2x0IcXwvfC4mpDDVh6sOR81XvuW3xZskjtLRmO1GB45NezMI7Do2aNZexXzKTgDJS6g7jmPcA73e2AAy55c1p2VoK67 qaAOqCCBNMzkEAArNXnepmrHEf0tHPGRk5N/g5792Wrd5XkbQcDMod5zBm6bxH/u6a5HaW/8P93gPeOTnDRvIfuoznfSKwh5YNotoAz9Cz5u9ojRo4Cn3u6ZqFpYK1qcjU78t/IjJN2WGgz8WZJ3nj981IYzhw /vop0VHbU2oDhmPp9/JImYaUy5fP76J6zHu4DwqPvhVMmJ 7pnuP2fiUIYxCzUOGdac1NsUwacJ8LsjwB3H4qPIx1a8fUJ1zeA8QPrr86psRLcOIqeOE5/BGmorxNACCTxqR0yrwQWKY7RRX24dg8Ebm5ciqnZ6nYgcKelST81cbQN/Tef4Wj0/qqTZ91Iv8AV9/NaWhPZKtF2RvOId1wrRzSRUZcOqTY7VarKccbi4HWhod2oPddqNQp0YLajWhP00 CXTLMbvoNyEIu7n/EJjjgnaQeIyd5sJz6gnotdZbZDO3uPa8bxvHVpzC5pabvZK0Ymg5A6Z1ocvmq11gmheHQvJAzAJPPRwzGiVJj7R1Ce4Ggl0DjE7WgzYerTl6ZqTZdorXZqCZnaM95tXUHMeIfFYG7vxCljIbaGV3GuR8ngUPmFtrs2hs89A14Dj7L6A R0d5FaU5RMuMZGuunaqzzjJ1DvB4/TzV41wOYzXO7dckUhxULX  3uu9RqE3Z5bbZs439swbjRrqf7XfBVjlT2Slia0dJQWUunbeJ5wSgxv4OFPgfmKrURTNcKtII4jNUJi0CEEaAE0QKUggAqKNeFhZMwseMj8FKQTAycWOJ/Zv8YBwOOkrOB/iH9eKubrtwcSw1rqK79xHUcFIvGwtlbhORGbXDVp3EFZy1WV9WhwkY8Ob342Oc0muThTIdCkBraJSRHWgrr6JSBhokETnACpyAzJOQA4lABk0zKy95278wcDT jv4ymv8A9f8Au6aneN4Gc4W5Qj1l5ke5y378slkNodoM/wAvAauOTnjQV3VCjOd9IrCFdsr9vds22ZvYw5yOyqNB5jcPjoN5VBZm91j/AHwHE7yfaHwTG1d14rOXAVcyj66k6V  YSdnrQHwYd7KOHQ6/QqTeiqWy5ewa0z4/E/UjogGUPPlvrXRIs4qMLTWg3 f0PyToZQjEaEU8 HwotCCLvaGorX5kdDr5lTXk0qMwR6jOteefxUYMFMjQ1p9c/gnrHJU4XDUkjnvy9D6IAiugefPprw88s0QkDhhzBrkeBrl6/VS5muGQz 6ffRRpo9HcfLdWh5poAGAH2sPKiCNstRWqCKCyuv9w7B WgaPMkn9lntmicJpxPpVBBZWgey5JzNBTPrwTxZpXSgFf9KCCBjsR7o5AfCqac2uQ5/v 6CCQCY4WucWvAIqK eX1VbaLgDXDsXFhrSmo9EEEPY0iVYtqbVY 7IatHPE30Jq3yWyufbSGagcCxxpTIuaa8N48wggiurFfZeT2SOQUe0OHMfXcokVlngNbLMQB/6b6ltOAdqPOqJBCbWgaT2W93bc0cIrVGWP4to4HnktfZLW2QYmGo6EfNBBdUHyjbOaa4ypD6CCCYgIIIIACCCCYAQQQSACyt43j Y7rcoQfOQg6kbm8t 9BBTytpFMa7MhtNfxDvy0OTjk53DkFR2GPACDm4UNeIJ hQQUSxKtMdQW01Dgeh0 YWHuB5imdGfZcW R0 aCCT0PybCEUJOVMj81JdkRXOv399UEER7QMW1oacJNa/H7FUiWKmYrVuYPTOqCCYmPuGp3ZH7 9yguzqK8iPiCPiggmhMY/Ljl8UEEEcmKj//Z"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1680,
+        1056
+      ],
+      "id": "8c4a8549-0055-4461-bfcf-b4d6605e370f",
+      "name": "HTTP Request4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Create Session').item.json.body.upload_url }}",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        432,
+        544
+      ],
+      "id": "2d16db7a-832f-4336-8968-828509353dc3",
+      "name": "Upload File"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lê o binário do nó anterior (ajuste o nome do nó se necessário)\nconst binary = $input.first().binary.data;\n\n// Converte de base64 para buffer para calcular o tamanho real em bytes\nconst buffer = Buffer.from(binary.data, \"base64\");\nconst fileSize = buffer.length;\n\nreturn [\n  {\n    json: {\n      with_preview: true,\n      billable: true,\n      file_name: binary.fileName,\n      file_size: fileSize,\n      mime_type: binary.mimeType\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        544
+      ],
+      "id": "0bc85d2f-8cdc-48f2-9459-c8d6b6381292",
+      "name": "Get File Size"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega o binário do nó anterior (ajuste o nome se necessário)\nconst inputBinary = $(\"Get File\").item.binary.data;\n\n// Converte de base64 para buffer\nconst buffer = Buffer.from(inputBinary.data, \"base64\");\n\n// Tamanho máximo da parte (ajuste conforme retorno da API Kommo)\nconst maxPartSize = 524288; // 512 KB\n\n// Cria os chunks\nconst chunks = [];\nfor (let i = 0; i < buffer.length; i += maxPartSize) {\n  const end = Math.min(i + maxPartSize, buffer.length);\n  const chunk = buffer.slice(i, end);\n  chunks.push(chunk);\n}\n\n// Retorna cada chunk como item binário separado\nreturn chunks.map((chunk, index) => {\n  return {\n    json: { part: index + 1 },\n    binary: {\n      data: {\n        data: chunk.toString(\"base64\"),\n        mimeType: inputBinary.mimeType,\n        fileName: `${inputBinary.fileName || \"file\"}_part${index + 1}`,\n      },\n    },\n  };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        544
+      ],
+      "id": "758051d1-146d-4125-922a-d1b223550b2a",
+      "name": "Split binary Chunks"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://amojo.kommo.com/v2/1f93b147-adc7-4d83-8b7d-8e3bdb218e91/sendMessage",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "stand",
+              "value": "v16"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Host",
+              "value": "amojo.kommo.com"
+            },
+            {
+              "name": "Content-Length",
+              "value": "473"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "9f079a3e-06bc-4e57-b74c-642b4a5930e5"
+            },
+            {
+              "name": "Sec-Ch-Ua-Platform",
+              "value": "\"macOS\""
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9"
+            },
+            {
+              "name": "Sec-Ch-Ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\""
+            },
+            {
+              "name": "Sec-Ch-Ua-Mobile",
+              "value": "?0"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Origin",
+              "value": "https://joiceadv.kommo.com"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Referer",
+              "value": "https://joiceadv.kommo.com/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient_id\": \"1772d23f-e9d2-4652-9f2b-e4be12aa00e6\",\n  \"group_id\": null,\n  \"text\": \"Teste mensagem nova\",\n  \"crm_dialog_id\": 3685,\n  \"crm_contact_id\": 20965646,\n  \"crm_account_id\": 34332899,\n  \"crm_entity\": {\n    \"id\": 16956464,\n    \"type\": 2\n  },\n  \"attachments\": [\n    {\n      \"external_file_id\": \"{{ $json.body.uuid }}\",\n      \"external_file_vers_id\": \"{{ $json.body.version_uuid }}\",\n      \"type\": \"picture\"\n    }\n  ],\n  \"persona_name\": \"IA\",\n  \"persona_avatar\": \"https://images.kommo.com/frontend/images/interface/avatars/-1.jpeg\"\n}",
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        656,
+        544
+      ],
+      "id": "05fc7988-9760-439c-a97e-5e5103136f6b",
+      "name": "Send Message"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "3a5566e2-0f23-455a-8149-b716d4a80203",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -624,
+        800
+      ],
+      "id": "afb1c022-ef06-434f-b553-a6d6c76a51b5",
+      "name": "Webhook",
+      "webhookId": "3a5566e2-0f23-455a-8149-b716d4a80203"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "messages": {
+          "messageValues": [
+            {
+              "type": "ai"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        1312,
+        -112
+      ],
+      "id": "881c8549-11c6-4f4c-bc89-2dc7637f34f8",
+      "name": "Chat Memory Manager"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        1296,
+        96
+      ],
+      "id": "5e0b2ee5-fad9-4d74-84db-6b62ec088a02",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "W73OMQ2Q4L81MFjv",
+          "name": "Postgres account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-26T17:26:28.024Z",
+      "updatedAt": "2025-10-26T17:26:28.024Z",
+      "role": "workflow:owner",
+      "workflowId": "GCg3eCYLNQbZyNbk",
+      "projectId": "CdOjQfB3kNlqg1ah"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-28T02:37:39.989Z",
+  "versionId": "035fd115-e266-41de-9daf-80fc625a608d"
+}
