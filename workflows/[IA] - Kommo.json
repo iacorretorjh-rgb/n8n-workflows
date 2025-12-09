@@ -1,0 +1,5207 @@
+{
+  "active": false,
+  "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Chat Memory Manager",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Audio File": {
+      "main": [
+        [
+          {
+            "node": "Transcribe Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set audioUrl": {
+      "main": [
+        [
+          {
+            "node": "Get Audio File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe Audio": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set message": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Get Token": {
+      "main": [
+        [
+          {
+            "node": "Send Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Message": {
+      "main": [
+        [
+          {
+            "node": "Update Token",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gerar outro Token": {
+      "main": [
+        [
+          {
+            "node": "Get Token",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch - voice or text1": {
+      "main": [
+        [
+          {
+            "node": "Chat Memory Manager2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set audioUrl",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Metadata2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Chat Memory Manager": {
+      "main": [
+        []
+      ]
+    },
+    "Save Chat History": {
+      "main": [
+        [
+          {
+            "node": "Mais de 3 mensagens",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mais de 3 mensagens": {
+      "main": [
+        [
+          {
+            "node": "Move Lead to TRIAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis6": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis7": {
+      "main": [
+        [
+          {
+            "node": "If6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis8": {
+      "main": [
+        [
+          {
+            "node": "Set message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If6": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Redis7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Redis6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Redis8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set message1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "Chat Memory Manager",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Set message props",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set message props": {
+      "main": [
+        [
+          {
+            "node": "Get Empreendimentos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Metadata": {
+      "main": [
+        [
+          {
+            "node": "Gerar outro Token",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Metadata2": {
+      "main": [
+        [
+          {
+            "node": "Send Message5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "move_lead": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Move_Lead1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Lead": {
+      "main": [
+        [
+          {
+            "node": "Get Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Chat Memory Manager1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "faq_tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "Chat Memory Manager1",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "Chat Memory Manager3",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "Chat Memory Manager2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_empreendimento": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mover_material": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mover_simulacao": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_tipo_renda": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_renda_mensal": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_estado_civil": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_imposto": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_nascimento_mensal": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mover_negociacao": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Request Human": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        []
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_material": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_media_simulacao": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_name": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Set Empreendimento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Empreendimento": {
+      "main": [
+        [
+          {
+            "node": "Switch - voice or text1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Empreendimentos": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table": {
+      "main": [
+        []
+      ]
+    },
+    "preenche_motivo": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preencher_data_visita_lead": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat Memory Manager1": {
+      "main": [
+        [
+          {
+            "node": "Chat Memory Manager3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consultar_empreendimentos": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "img_capa": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-23T03:56:58.518Z",
+  "id": "KwU5NkKFL7T8MF2U",
+  "isArchived": false,
+  "meta": null,
+  "name": "[IA] - Kommo",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<importante> \n- current time: {{ $now.format('ffff') }}\n- Se o Lead perguntar algo, chame a ferramenta \"consultar_empreenidmento\"\n</importante>\n\n---\n\n# mensagem do usuário:\n\n{{ $json.text ? $json.text : 'mensagem vazia' }}",
+        "options": {
+          "systemMessage": "=### ROLE\n\nVocê é o agente de IA de triagem e atendimento inicial da Joice Cordeiro, corretora de lançamentos imobiliários em Itatiba.\n\n### PRIMARY GOAL\n\nSua missão: Receber leads de forma calorosa, identificar o empreendimento de interesse, fornecer informações detalhadas sobre os imóveis, enviar materiais audiovisuais, coletar dados essenciais do lead, registrar essas informações no Kommo, e conduzir o lead até o estágio de simulação e negociação – sempre promovendo uma experiência consultiva, acolhedora e eficiente.\n\n### DOMAIN CONTEXT\n\n• São atendidos leads interessados em diferentes empreendimentos imobiliários em lançamento, com possibilidade de inclusão dinâmica de novos empreendimentos.\n\n• O funil contempla as etapas: Saudação/Menu → Empreendimento → Material → Simulação → Negociação.\n\n• Cada ação de informação ou coleta de dados deve ser registrada em sistemas via ferramentas específicas (ex: `preenche_empreendimento`, `preenche_estado_civil`, etc).\n\n• Materiais (fotos, vídeos, PDFs, links) são enviados de acordo com cada empreendimento para convencer o lead a solicitar simulação.\n\n{{$('Set Empreendimento').item.json['Empreendimento escolhido']['financing'] == 'construtora' ? '' \n: \n'• Dados coletados para simulação: estado civil, renda mensal (individual ou conjunta), tipo de renda (formal/informal), declaração de IR, data(s) de nascimento.' }}\n\n\n• O lead pode desistir, pedir falar com humano ou demonstrar hesitação/irritação a qualquer momento.\n\n### AVAILABLE TOOLS\n\n> ⚠️ Cada ferramenta só deve ser chamada **apenas uma vez por informação nova** e nunca repetida para o mesmo dado.\n\n1. **preenche_empreendimento** – Use ao identificar a escolha do empreendimento, informando o número da opção selecionada.\n\n2. **mover_interessado** – Use após registrar o empreendimento e iniciar o envio de materiais.\n\n3. **mover_empreendimento_material** – Use quando o lead aceitar receber o material do empreendimento.\n\n4. **mover_simulacao** – Use ao engajar o lead para fazer simulação personalizada.\n\n5. **preenche_estado_civil** – Use ao receber o estado civil do lead (indique o número da resposta).\n\n6. **preenche_renda_mensal** – Use ao receber o valor da renda (individual ou conjunta).\n\n7. **preenche_tipo_renda** – Use ao receber o tipo de renda (número da escolha).\n\n8. **preenche_imposto_renda** – Use ao receber resposta sobre declaração de IR.\n\n9. **preencher_data_nascimento** – Use ao receber data(s) de nascimento.\n\n10. **mover_negociacao** – Use após finalizar a coleta dos dados da simulação e avisar o lead sobre o próximo contato.\n\n11. **request_human** – Use se lead pedir para falar com humano, reclamar, ou demonstrar frustração/negatividade.\n\n12. **img_capa** – Use **exatamente uma única vez por conversa**, e somente logo após registrar o empreendimento com `preenche_empreendimento`.  \n   - Antes de chamar `img_capa`, verifique no histórico se ela já foi usada; se já tiver sido chamada, **não chame novamente em hipótese alguma**.  \n   - Não chame `img_capa` em nenhuma outra etapa (inclusive depois do envio de material).\n\n13. **enviar_material** – Use para enviar a série de materiais do empreendimento **uma única vez**, assim que o lead responder positivamente à sua primeira pergunta do tipo:  \n   \"Posso te enviar o material do empreendimento?\"  \n   - Considere como resposta afirmativa qualquer mensagem como: \"pode\", \"sim\", \"manda\", \"envia\", \"ok\", \"quero sim\", etc.  \n   - Após uma resposta afirmativa, chame imediatamente `mover_empreendimento_material` e `enviar_material`, **sem repetir a pergunta**. \n\n14. **envia_media_simulacao** - Use para enviar a mídia de simulação logo após o lead informar que quer saber o valor do empreendimento\n\n15. **preenche_motivo** - Use para preencher qual o motivo do lead ('moradia' ou 'investimento')\n\n16. **consultar_empreendimentos** - Use para consultar informações para poder responder dúvidas do lead. Sempre que o lead fizer qualquer pergunta, chame essa ferramenta\n\n### STYLE & TONE\n\n• Seja empático, acolhedor e cordial – converse como um amigo que entende do assunto, mostrando interesse real, naturalidade e transparência.\n\n• Sempre utilize listas numeradas para opções, nunca texto corrido.\n\n• Use emojis para aproximar e humanizar, sem exageros.\n\n### SAFETY & ACCURACY\n\nNunca faça afirmações não suportadas, não compartilhe informações sensíveis nem promessas irreais.\n\nSe não souber algo, explique isso e ofereça buscar/falar com o humano.\n\n### RESPONSE FORMAT\n\n• Estruture os diálogos para avançar de etapa em etapa, confirmando dados recebidos e orientando sobre o próximo passo. Porém siga de forma natural. Caso o lead faça perguntas, responda as dúvidas dele chamando `consultar_empreendimentos`\n\n• A cada nova informação relevante recebida, utilize a ferramenta adequada imediatamente após a resposta do lead.\n\n• Se o lead não responder a uma pergunta obrigatória, reforce gentilmente a solicitação antes de avançar.\n\n• Nunca repita a ferramenta para o mesmo valor já registrado no Kommo.\n\n---\n\n#### Exemplos Resumidos de Fluxo\n(obs. O fluxo abaixo é um exemplo sugerido. Mas você pode adaptar os textos para o cenário e contexto da conversa)\n\n##### **1. Saudação & escolha do empreendimento**\n\n```plaintext\n\nOi! Tudo bem? 👋\n\nSou  a assistente virtual da Joice Cordeiro, corretora de lançamentos em Itatiba.\n\nVi sua visita no nosso anúncio e vou te ajudar com todas as informações do empreendimento.\n\nPrimeiramente, como você gostaria de ser chamado(a)?\n\n```\n\n(Ao receber o nome, siga:)\n- Pergunte se está buscando imóveis para investimento ou moradia\napós a resposta, chame a ferramenta `preenche_motivo` e inclua o motivo escolhido ('investimento' ou 'moradia')\n\n\n(Após preencher o motivo, siga:)\n```plaintext\n\nObrigado! Agora vamos continuar com seu atendimento...\n\nSobre qual empreendimento você gostaria de saber mais?\n\n{{ $('Aggregate').item.json['Nome do Empreendimento'].append('Outros').map((v, i) => `${i + 1} - ${v}`).join('\\n\\n') }}\n\n```\nlembre-se de não usar listas numeradas\n\n(Somente no momento em que o lead escolher qual empreendimento ele quer, acione `preenche_empreendimento` passando o nome exato do empreenidmento e somente após, chame `img_capa`)\n- lembre-se de responder todas as duvidas do lead antes de marcar a escolha do empreendimento\n- Lembre-se de chamar essa ferramenta somente nessa etapa. após o lead receber a imagem de capa, você não poderá enviá-la novamente\n- Nunca chame `img_capa` se ela já tiver sido chamada anteriormente nesta conversa.  \n  Sempre verifique o histórico de ferramentas: se `img_capa` já foi usada uma vez, é proibido chamá-la novamente.\n- Nunca escreva algo do tipo: \"imagem enviada\", \"material enviado\", etc\n\n\n##### **2. Envio do material inicial do empreendimento**\n- siga o exemplo abaixo. Mas deixe a conversa natural. Se o lead ja manifestou interesse no material, não precisa perguntar novamente.\n\n```plaintext\nFico feliz pelo seu interesse no {Nome do empreendimento}\n\nVou te enviar o material do empreendimento. OK?\n\n```\n\n- Se o lead responder afirmativamente (por exemplo: \"pode\", \"sim\", \"manda\", \"envia\", \"ok\", \"quero sim\"), você deve, na mesma resposta:\n  - Parar de perguntar \"Posso enviar?\" (não repita essa pergunta).\n  - Acionar imediatamente `mover_empreendimento_material` e `enviar_material`.  \n  - Essa será a **única vez** em que você acionará `enviar_material` para este lead.\n\n- Se o lead não quiser receber o material, não insista. Ignore esta etapa e siga para os próximos passos do funil.\n\n- Nessa etapa, chame **somente** `enviar_material` (e `mover_empreendimento_material` quando for enviar).  \n  Nunca, em hipótese alguma, chame `img_capa` aqui.\n- caso o lead nao queira o material, não insista. ignore esta etapa e siga o atendimento para os proximos passos.\n- nessa etapa. chame somente `enviar_material`. Nunca, jamais, chame `img_capa`\n\n##### **3. Material de apresentação e convite para simulação**\n\napós chamar a ferramenta `enviar_material` e receber o retorno dela, pergunte:\n\n```plaintext\n\nGostaria de Agendar uma visita ou já prefere fazer uma simulação?\n\n```\n\n3.1 - Agendar visita:\nSe o lead responder que quer agendar uma visita, pergunte a data e hora de preferência.\napós a resposta do lead, chame a ferramenta `agendar_visita` passando a data e hora escolhida.\napós isso, diga que a joice vai entrar em contato para confirmar a disponibilidade de horário. E pergunte se ajuda em algo mais por enquanto. \nCaso o lead diga que nao precisa de mais ajuda, chame `request_human`\n\n3.2 - Simulação:\n\n(Se o lead responder que quer fazera simulação, responda calorosamente e chame a ferramenta `envia_media_simulacao`)\n\n\n_!IMPORTANTE: A partir desse ponto é expressamente proibido chamar `img_capa`, `enviar_material`_\n\n{{$('Set Empreendimento').item.json['Empreendimento escolhido']['financing'] == 'construtora' ? \n$json.prompt_construtora\n:\n$json.prompt_banco\n}}\n\n---\n\n### Uso de ferramentas (regra global)\n\n- Antes de chamar qualquer ferramenta, releia a conversa e verifique se essa ferramenta já foi utilizada.\n- Se uma ferramenta já tiver sido chamada com sucesso para aquele dado (por exemplo: `img_capa`, `enviar_material`, `preenche_empreendimento` para o mesmo empreendimento), **não repita a chamada**.\n- Em especial:\n  - `img_capa` só pode ser usada uma vez em toda a conversa.\n  - `enviar_material` só pode ser usada uma vez em toda a conversa.\n\n---\n\n### Notas Gerais\n\n- Se lead desviar do assunto, traga de volta de forma natural e cordial.\n\n- Se lead pedir para parar/ficar irritado/pedir humano, acione `request_human`.\n\n- Nunca repita perguntas ou ferramentas se o lead já respondeu/registrou resposta idêntica.\n\n- Não envie links formatados; envie sempre em texto puro.\n\n- Nunca diga 'Material enviado' e 'Midia Enviada' após enviar o material. \n\n- Se o lead não passar a informação após a segunda tentativa, pare de insistir e siga o atendimento ignorando a pergunta\n\n- Se o lead disser que nao quer mais o atendimento, você nao deve dizer que vai encerrar o atendimento, deve dizer que vai \"passar para a corretora Joice\" e que ela vai entrar em contato. Em seguida chame `Request Human`\n\n- Não utilize listas numeradas.\n\n- Separe mensagens longas (acima de 80 caracteres) com duas quebras de linha.\n\n- Sempre siga a ordem das etapas do funil como uma sequência de estados:\n  1) Saudação/Menu  \n  2) Empreendimento (escolha + `preenche_empreendimento` + `img_capa` uma única vez)  \n  3) Material (`mover_empreendimento_material` + `enviar_material` uma única vez, após resposta afirmativa)  \n  4) Simulação  \n  5) Negociação  \n\n- Nunca volte para uma etapa anterior para repetir envio de capa (`img_capa`) ou material (`enviar_material`) se essas ferramentas já tiverem sido usadas.\n\n## Metadata\n- Nome do Empreendimento: {{$('Set Empreendimento').item.json['Empreendimento escolhido']['name'] || '' }}\n- Informações do Empreendimento: \"\"\"\n{{ $('Set Empreendimento').item.json['Empreendimento escolhido']['description']|| '' }}\n\"\"\"\n- Preço dos imóveis: {{ $('Set Empreendimento').item.json['Empreendimento escolhido']['priceRange'] || '' }}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -336,
+        672
+      ],
+      "id": "2f234fbb-7a15-4132-b644-372bf9277af4",
+      "name": "AI Agent",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.audioUrl }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2656,
+        448
+      ],
+      "id": "c9a8380c-cde7-4243-8095-0f8266307398",
+      "name": "Get Audio File"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0d457490-d16b-4c57-bfc0-ae5c37991a3a",
+              "name": "audioUrl",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body[\"message[add][0][attachment][link]\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2880,
+        448
+      ],
+      "id": "516129aa-d3a8-495c-9ace-dfe8b0d20ff2",
+      "name": "Set audioUrl"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -2432,
+        448
+      ],
+      "id": "80375e63-e352-4ae2-833c-c446e9757963",
+      "name": "Transcribe Audio",
+      "credentials": {
+        "openAiApi": {
+          "id": "968yT8h8Gf0veMrE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {
+          "frequencyPenalty": 0,
+          "temperature": 0.1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -480,
+        800
+      ],
+      "id": "a4d1302b-b8e1-4585-845e-dceacf79d5c6",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "968yT8h8Gf0veMrE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fa1c73bf-2b10-4c3e-b194-b78c2943f9c9",
+              "name": "text",
+              "value": "={{ $('Set message props').item.json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2656,
+        688
+      ],
+      "id": "55990d8a-6289-4896-ba3a-0c3e59a8b34c",
+      "name": "Set message"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Set message props').last().json.prefix }}.kommo.com/ajax/v1/chats/session",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Host",
+              "value": "={{ $('Set message props').last().json.prefix }}.kommo.com"
+            },
+            {
+              "name": "Content-Length",
+              "value": "50"
+            },
+            {
+              "name": "Sec-Ch-Ua-Platform",
+              "value": "\\\"Linux\\\""
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9"
+            },
+            {
+              "name": "Sec-Ch-Ua",
+              "value": "\\\"Chromium\\\";v=\\\"133\\\", \\\"Not(A:Brand\\\";v=\\\"99\\\""
+            },
+            {
+              "name": "Sec-Ch-Ua-Mobile",
+              "value": "?0"
+            },
+            {
+              "name": "X-Requested-With",
+              "value": "XMLHttpRequest"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Origin",
+              "value": "=https://{{ $('Set message props').last().json.prefix }}.kommo.com"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-origin"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Referer",
+              "value": "=https://{{ $('Set message props').last().json.prefix }}.kommo.com/dashboard/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Priority",
+              "value": "u=1, i"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/x-www-form-urlencoded; charset=UTF-8",
+        "body": "request%5Bchats%5D%5Bsession%5D%5Baction%5D=create",
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        832,
+        528
+      ],
+      "id": "8aa2fd90-4919-4ca2-9e8c-84786a6e0912",
+      "name": "Get Token",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "1yCcDVupD8YPq5x6",
+          "name": "[Kommo] - Token - IA"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://amojo.kommo.com/v1/chats/{{ $json.body.response.chats.session.account.id }}/{{ $('Set message props').last().json.chat_id }}/messages ",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "with_video",
+              "value": "true"
+            },
+            {
+              "name": "stand",
+              "value": "v16"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "=  https://{{ $('Set message props').last().json.prefix }}.kommo.com"
+            },
+            {
+              "name": "Referer",
+              "value": "=https://{{ $('Set message props').last().json.prefix }}.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "={{ $json.body.response.chats.session.access_token }}"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"silent\": false,\n  \"priority\": \"low\",\n  \"crm_entity\": {\n    \"id\": {{ $('Set message props').last().json.crm_entity.id }},\n    \"type\": 2\n  },\n  \"persona_name\": \"\",\n  \"persona_avatar\": \"https://images.kommo.com/frontend/images/interface/avatars/-5.jpeg\",\n    \"text\": {{ JSON.stringify($('AI Agent').item.json.output)}},\n  \"recipient_id\": \"{{ $('Set message props').last().json.recipient_id }}\",\n  \"group_id\": null,\n  \"crm_dialog_id\": {{ $('Set message props').last().json.crm_dialog_id }},\n  \"crm_contact_id\": {{ $('Set message props').last().json.crm_contact_id }},\n  \"crm_account_id\": {{ $('Set message props').last().json.crm_account_id }},\n  \"skip_link_shortener\": false\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1280,
+        528
+      ],
+      "id": "81c555e0-bfa8-4f6b-bead-16214f7bb38a",
+      "name": "Send Message",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "676ee0c4-066c-4666-8547-7ccad3dbca97",
+              "leftValue": "={{$json}}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "b6f91a7b-2aa1-4ced-aea8-f8eba33899ec",
+              "leftValue": "={{ $json.expired_at?.toDateTime() }}",
+              "rightValue": "={{ $now.plus(20, 'hour') }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            },
+            {
+              "id": "db7ee72b-3ea2-4100-a638-7a8f6fea01d2",
+              "leftValue": "={{ $json.expired_at }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "3628b95f-42b3-447e-b7e5-1b65cdb43d86",
+              "leftValue": "={{ $json.acces_token }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "82cd383a-4657-4b9a-be01-57d9ad8675ef",
+              "leftValue": "={{ $json.amojo_id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        384,
+        672
+      ],
+      "id": "570064d6-7830-46c7-9c7d-d8b168c16973",
+      "name": "Gerar outro Token"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://amojo.kommo.com/v1/chats/{{ $json.amojo_id }}/{{ $('Set message props').last().json.chat_id }}/messages ",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "with_video",
+              "value": "true"
+            },
+            {
+              "name": "stand",
+              "value": "v16"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "=https://{{ $('Set message props').last().json.prefix }}.kommo.com "
+            },
+            {
+              "name": "Referer",
+              "value": "=https://{{ $('Set message props').last().json.prefix }}.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "={{ $json.acces_token }}"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"silent\": false,\n  \"priority\": \"low\",\n  \"crm_entity\": {\n    \"id\": {{ $('Set message props').last().json.crm_entity.id }},\n    \"type\": 2\n  },\n  \"persona_name\": \"\",\n  \"persona_avatar\": \"https://images.kommo.com/frontend/images/interface/avatars/-5.jpeg\",\n    \"text\": {{ JSON.stringify($('AI Agent').item.json.output)}},\n  \"recipient_id\": \"{{ $('Set message props').last().json.recipient_id }}\",\n  \"group_id\": null,\n  \"crm_dialog_id\": {{ $('Set message props').last().json.crm_dialog_id }},\n  \"crm_contact_id\": {{ $('Set message props').last().json.crm_contact_id }},\n  \"crm_account_id\": {{ $('Set message props').last().json.crm_account_id }},\n  \"skip_link_shortener\": false\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        832,
+        880
+      ],
+      "id": "cde7fec9-95ad-4ec6-83ed-ae825535d654",
+      "name": "Send Message2",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "content": "## Configurar Credencial \n1. Na parte de integrações no Kommo, ir na integração que foi criada e gerar um *token de longaduração*\n2. Acessar a credencial desse node HTTP (Get Token) e alterar o valor para: access_token={TOKEN_GERADO};\n\n**Ex.: access_token=eyJ0e[...]wr7rA;  (com o ponto-e-virgula incluso)**",
+        "height": 340,
+        "width": 500
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        624,
+        336
+      ],
+      "id": "464df2f9-7a0d-4cab-8c06-10037b0ab336",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Criar conta no BaseRow (ou criar credencial para outro banco de dados existente)\n\n\no intuito aqui é puxar os dados de token de acesso salvos no banco de dados para nao ter que gerá-los a cada execução\n\nCaso o token nao exista ou esteja expirando, geramos um novo token",
+        "height": 460,
+        "width": 440,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        96,
+        400
+      ],
+      "id": "829c8c26-0c75-4f9f-a09c-f0dd83ed1d45",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Transcrever Audio",
+        "height": 260,
+        "width": 680,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2960,
+        368
+      ],
+      "id": "974e79e0-0204-44fd-8490-a58ad6f20596",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Salva o token gerado\n\nSalva o token gerado para nao precisar gerar novamente. \n- O token tem validade de 3 dias",
+        "height": 340,
+        "width": 340,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        336
+      ],
+      "id": "0e6e6060-5fd3-40e4-a391-19eb8ac2d482",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Envia mensagem\n\nEnvia uma mensagem pelo kommo no chat em questão\n",
+        "height": 340,
+        "width": 280,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        336
+      ],
+      "id": "98212198-4f5f-407d-ae1c-22386d28e1f1",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "## Envia mensagem\n\nEnvia uma mensagem pelo kommo no chat em questão\n",
+        "height": 340,
+        "width": 280,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        736,
+        704
+      ],
+      "id": "064cc3de-ebb6-425d-af1d-79582a95e018",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7c004751-87cb-4c4f-adce-e8a2449318c6",
+                    "leftValue": "={{ $('Set message props').item.json.text }}",
+                    "rightValue": "/clean",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Clean"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('When Executed by Another Workflow').item.json.body[\"message[add][0][attachment][type]\"] }}",
+                    "rightValue": "voice",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "39019b38-74d2-4889-9c70-53e5915641dd"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "bd7adc0d-5a4d-4add-aed7-f27b4b810f5f",
+                    "leftValue": "={{ $('When Executed by Another Workflow').item.json.body['message[add][0][text]'] }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "9f4ab82a-be21-4ff0-9808-bbfe50d88f51",
+                    "leftValue": "={{ $('When Executed by Another Workflow').item.json.body[\"message[add][0][attachment][type]\"] }}",
+                    "rightValue": "picture",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Image"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f14300a2-517b-44e7-af79-4db63db608fc",
+                    "leftValue": "={{ $('When Executed by Another Workflow').item.json.body[\"message[add][0][attachment][type]\"] }}",
+                    "rightValue": "video",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Video"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -3376,
+        688
+      ],
+      "id": "023c5a08-a0b7-4c1d-b342-6df0d182950d",
+      "name": "Switch - voice or text1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('When Executed by Another Workflow').item.json.body['message[add][0][attachment][link]'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2656,
+        912
+      ],
+      "id": "2b22e098-ea23-43ec-883d-ffc2cff83dab",
+      "name": "Download Image",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://amojo.kommo.com/v1/chats/{{ $json.amojo_id }}/{{ $('Set message props').item.json.chat_id }}/messages ",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "with_video",
+              "value": "true"
+            },
+            {
+              "name": "stand",
+              "value": "v16"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "=https://{{ $('Set message props').item.json.prefix }}.kommo.com "
+            },
+            {
+              "name": "Referer",
+              "value": "=https://{{ $('Set message props').item.json.prefix }}.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "={{ $json.access_token }}"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"silent\": false,\n  \"priority\": \"low\",\n  \"crm_entity\": {\n    \"id\": {{ $('Set message props').item.json.crm_entity.id }},\n    \"type\": 2\n  },\n  \"persona_name\": \"\",\n  \"persona_avatar\": \"https://images.kommo.com/frontend/images/interface/avatars/-5.jpeg\",\n    \"text\": {{ JSON.stringify('Não estou conseguindo ver vídeos, você poderia me descrever do que se trata?')}},\n  \"recipient_id\": \"{{ $('Set message props').item.json.recipient_id }}\",\n  \"group_id\": null,\n  \"crm_dialog_id\": {{ $('Set message props').item.json.crm_dialog_id }},\n  \"crm_contact_id\": {{ $('Set message props').item.json.crm_contact_id }},\n  \"crm_account_id\": {{ $('Set message props').item.json.crm_account_id }},\n  \"skip_link_shortener\": false\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2528,
+        1088
+      ],
+      "id": "69d942d7-1fd0-49d0-8d9d-aa1555b90b16",
+      "name": "Send Message5",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "options": {
+          "groupMessages": true
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        112,
+        80
+      ],
+      "id": "6453eaca-43cc-42ed-9409-ef433358945e",
+      "name": "Chat Memory Manager"
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "chat_messages",
+          "mode": "list",
+          "cachedResultName": "chat_messages"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "lead_id": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}",
+            "lead_question": "={{ $json.messages.last().human }}",
+            "ai_answer": "={{ $json.messages.last().ai }}",
+            "chat_id": "={{ $('Set message props').item.json.chat_id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "lead_id",
+              "displayName": "lead_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "lead_question",
+              "displayName": "lead_question",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ai_answer",
+              "displayName": "ai_answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        656,
+        -432
+      ],
+      "id": "6e24e86d-45e5-4f3b-929a-87e51bb4b2e5",
+      "name": "Save Chat History",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Salva Histórico de Mensagens",
+        "height": 260,
+        "width": 680,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        48,
+        -32
+      ],
+      "id": "8f98baed-d62f-47da-b67c-b8a57e209f12",
+      "name": "Sticky Note16"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "501f54fd-b75b-4d52-ad2a-9d8b2da2c1b7",
+              "leftValue": "={{ $('Chat Memory Manager').item.json.messages.length }}",
+              "rightValue": 3,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "id": "f6b642cd-6c55-424d-862d-0ba8d60653cb",
+              "leftValue": "={{ $('When Executed by Another Workflow').item.json.getLead.json.pipeline_id }}",
+              "rightValue": 11649772,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "6adf4b3d-08f7-4b81-ba25-5abdd7995602",
+              "leftValue": "={{ [89500452] }}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.getLead.json.status_id }}",
+              "operator": {
+                "type": "array",
+                "operation": "contains",
+                "rightType": "any"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        864,
+        -432
+      ],
+      "id": "11a52eba-2aa6-4015-9208-be7f0bccf7ba",
+      "name": "Mais de 3 mensagens",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "=chat-buffer:{{ $('Set message props').last().json.chat_id }}",
+        "messageData": "={{ $json.text }}",
+        "tail": true
+      },
+      "id": "9b0e349a-375d-4870-8ffb-08b7ca248390",
+      "name": "Redis6",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1936,
+        544
+      ],
+      "credentials": {
+        "redis": {
+          "id": "JE4ExRgQqxXYLjRp",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "=chat-buffer:{{ $('Set message props').last().json.chat_id }}",
+        "options": {}
+      },
+      "id": "c26c1823-fb41-494c-9c48-44a7a6e1dd83",
+      "name": "Redis7",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1568,
+        544
+      ],
+      "credentials": {
+        "redis": {
+          "id": "JE4ExRgQqxXYLjRp",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "174996c3-091b-4031-9bc5-2a5d6573377f",
+      "name": "No Operation, do nothing1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1168,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "=chat-buffer:{{ $('Set message props').last().json.chat_id }}"
+      },
+      "id": "5011fadc-0444-4b8c-8e96-107c488fa415",
+      "name": "Redis8",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -976,
+        384
+      ],
+      "credentials": {
+        "redis": {
+          "id": "JE4ExRgQqxXYLjRp",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "21fd20d7-f940-4a66-91d5-5ea4c031bb50",
+              "leftValue": "={{ $json.propertyName.last() }}",
+              "rightValue": "={{ $('Wait2').item.json.text }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "be326b12-6e36-4dc6-ad96-83fd21a19fe7",
+      "name": "If6",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1392,
+        544
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "8df36170-715f-4c8e-a5e0-4c3faa00cab1",
+      "name": "Wait2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1760,
+        544
+      ],
+      "webhookId": "8d1f0684-333a-48f1-aa28-380ae948d1ba"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        -2176,
+        544
+      ],
+      "id": "fbd42b16-c4bc-45a6-b23f-699f86758b14",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "37f63b88-4a52-4421-aa95-db9114e521bc",
+              "name": "listaMensagens",
+              "value": "={{ $json.propertyName.join(', ') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "221d49ea-d44b-451e-b2c3-a791c8888eed",
+      "name": "Edit Fields3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1168,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Buffer",
+        "height": 460,
+        "width": 1200
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1968,
+        304
+      ],
+      "typeVersion": 1,
+      "id": "7b52ebb1-4839-498c-88e4-5d2b9a0a3569",
+      "name": "Sticky Note22"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fa1c73bf-2b10-4c3e-b194-b78c2943f9c9",
+              "name": "text",
+              "value": "={{ $json.listaMensagens }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -720,
+        384
+      ],
+      "id": "d5bcfaad-9e59-4fc7-9866-03ac82959932",
+      "name": "Set message1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Set message props').last().json.chat_id }}-1",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        784
+      ],
+      "id": "4bacf50b-03e8-4ec7-8476-4058742723cb",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "W73OMQ2Q4L81MFjv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -4608,
+        752
+      ],
+      "id": "b0914aae-663d-41f0-909b-27c433123dd7",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3a9216c6-21ea-424c-98c4-744f2c5b4926",
+              "name": "prefix",
+              "value": "={{ $json.body[\"account[subdomain]\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "77ef0e9d-764b-48e5-9b46-9af9ad8b6fce",
+              "name": "crm_entity.id",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body['message[add][0][entity_id]'] }}",
+              "type": "number"
+            },
+            {
+              "id": "ae976995-0420-4fb0-9fb0-97b876a02a9a",
+              "name": "recipient_id",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body['message[add][0][author][id]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "f2aac850-3cf6-4193-8802-9762c5bc8f0c",
+              "name": "crm_dialog_id",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body['message[add][0][talk_id]'] }}",
+              "type": "number"
+            },
+            {
+              "id": "d3367635-8e16-4f43-93af-79d398be6531",
+              "name": "crm_contact_id",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body['message[add][0][contact_id]'] }}",
+              "type": "number"
+            },
+            {
+              "id": "478b6a11-b01f-4342-9b00-fd88ac05a08e",
+              "name": "crm_account_id",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body['account[id]'] }}",
+              "type": "number"
+            },
+            {
+              "id": "fa1c73bf-2b10-4c3e-b194-b78c2943f9c9",
+              "name": "text",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body['message[add][0][text]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "6aae851f-2f36-43d9-934e-74e0f0a2c171",
+              "name": "chat_id",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body['message[add][0][chat_id]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "34fb489d-93ab-4dbe-ba8b-7905e326092c",
+              "name": "lead_name",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body[\"message[add][0][author][name]\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "33483713-4c08-4bed-b8d4-54aef5f62d60",
+              "name": "contact_id",
+              "value": "={{ $('When Executed by Another Workflow').item.json.body[\"message[add][0][contact_id]\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -4384,
+        752
+      ],
+      "id": "ce5c9f47-b191-42a3-8ecb-ee185dd3c726",
+      "name": "Set message props"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "value": "kommo",
+          "mode": "list",
+          "cachedResultName": "kommo"
+        },
+        "table": {
+          "__rl": true,
+          "value": "metadata",
+          "mode": "list",
+          "cachedResultName": "metadata"
+        },
+        "limit": 1,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        160,
+        672
+      ],
+      "id": "a3e9d19b-6625-4376-be4f-fd7a01e37c0c",
+      "name": "Get Metadata",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "W73OMQ2Q4L81MFjv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "value": "kommo",
+          "mode": "list",
+          "cachedResultName": "kommo"
+        },
+        "table": {
+          "__rl": true,
+          "value": "metadata",
+          "mode": "list",
+          "cachedResultName": "metadata"
+        },
+        "limit": 1,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -2848,
+        1088
+      ],
+      "id": "3a7768ad-360f-475f-a9c0-f389177fa088",
+      "name": "Get Metadata2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "W73OMQ2Q4L81MFjv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "kommo",
+          "mode": "list",
+          "cachedResultName": "kommo"
+        },
+        "table": {
+          "__rl": true,
+          "value": "metadata",
+          "mode": "list",
+          "cachedResultName": "metadata"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": 1,
+            "acces_token": "={{ $('Get Token').item.json.body.response.chats.session.access_token }}",
+            "expired_at": "={{ $('Get Token').item.json.body.response.chats.session.expired_at.toDateTime('s') }}",
+            "amojo_id": "={{ $('Get Token').item.json.body.response.chats.session.account.id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "order",
+              "displayName": "order",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": true
+            },
+            {
+              "id": "acces_token",
+              "displayName": "acces_token",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "expired_at",
+              "displayName": "expired_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "amojo_id",
+              "displayName": "amojo_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1664,
+        528
+      ],
+      "id": "f537c03c-5149-4dd4-974b-f78939c058e0",
+      "name": "Update Token",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "W73OMQ2Q4L81MFjv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Olá! 👋",
+        "options": {
+          "subtitle": "Seletor",
+          "title": "Beatriz"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -3056,
+        1728
+      ],
+      "id": "53ab540f-69c9-4a13-8656-f08d3b828930",
+      "name": "When chat message received",
+      "webhookId": "3078a986-fd94-42b7-b4e9-dcfca30751ea"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {
+          "frequencyPenalty": 0,
+          "temperature": 0.1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -2880,
+        1952
+      ],
+      "id": "17ba987b-4c3b-445f-8d01-8c761c98eedc",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "968yT8h8Gf0veMrE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -2736,
+        1952
+      ],
+      "id": "56d6876f-93da-4cbc-9794-1a29d4d8c356",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<importante> \n- current time: {{ $now.format('ffff') }}\n- Se o Lead perguntar algo, chame a ferramenta \"faq\"\n</importante>\n\n---\n\n# mensagem do usuário:\n\n{{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "=### ROLE\n\nVocê é o agente de IA de triagem e atendimento inicial da Joice Cordeiro, corretora de lançamentos imobiliários em Itatiba.\n\n### PRIMARY GOAL\n\nSua missão: Receber leads de forma calorosa, identificar o empreendimento de interesse, fornecer informações detalhadas sobre os imóveis, enviar materiais audiovisuais, coletar dados essenciais do lead, registrar essas informações no Kommo, e conduzir o lead até o estágio de simulação e negociação – sempre promovendo uma experiência consultiva, acolhedora e eficiente.\n\n### DOMAIN CONTEXT\n\n• São atendidos leads interessados em diferentes empreendimentos imobiliários em lançamento, com possibilidade de inclusão dinâmica de novos empreendimentos.\n\n• O funil contempla as etapas: Saudação/Menu → Empreendimento → Material → Simulação → Negociação.\n\n• Cada ação de informação ou coleta de dados deve ser registrada em sistemas via ferramentas específicas (ex: `preenche_empreendimento`, `preenche_estado_civil`, etc).\n\n• Materiais (fotos, vídeos, PDFs, links) são enviados de acordo com cada empreendimento para convencer o lead a solicitar simulação.\n\n• Dados coletados para simulação: estado civil, renda mensal (individual ou conjunta), tipo de renda (formal/informal), declaração de IR, data(s) de nascimento.\n\n• O lead pode desistir, pedir falar com humano ou demonstrar hesitação/irritação a qualquer momento.\n\n### AVAILABLE TOOLS\n\n> ⚠️ Cada ferramenta só deve ser chamada **apenas uma vez por informação nova** e nunca repetida para o mesmo dado.\n\n1. **preenche_empreendimento** – Use ao identificar a escolha do empreendimento, informando o número da opção selecionada.\n\n2. **mover_interessado** – Use após registrar o empreendimento e iniciar o envio de materiais.\n\n3. **mover_empreendimento_material** – Use quando o lead aceitar receber vídeos do empreendimento.\n\n4. **mover_simulacao** – Use ao engajar o lead para fazer simulação personalizada.\n\n5. **preenche_estado_civil** – Use ao receber o estado civil do lead (indique o número da resposta).\n\n6. **preenche_renda_mensal** – Use ao receber o valor da renda (individual ou conjunta).\n\n  7. **preenche_tipo_renda** – Use ao receber o tipo de renda (número da escolha).\n\n8. **preenche_imposto_renda** – Use ao receber resposta sobre declaração de IR.\n\n9. **preencher_data_nascimento** – Use ao receber data(s) de nascimento.\n\n10. **mover_negociacao** – Use após finalizar a coleta dos dados da simulação e avisar o lead sobre o próximo contato.\n\n11. **request_human** – Use se lead pedir para falar com humano, reclamar, ou demonstrar frustração/negatividade.\n\n### STYLE & TONE\n\n• Seja empático, acolhedor e cordial – converse como um amigo que entende do assunto, mostrando interesse real, naturalidade e transparência.\n\n• Sempre utilize listas numeradas para opções, nunca texto corrido.\n\n• Use emojis para aproximar e humanizar, sem exageros.\n\n### SAFETY & ACCURACY\n\nNunca faça afirmações não suportadas, não compartilhe informações sensíveis nem promessas irreais.\n\nSe não souber algo, explique isso e ofereça buscar/falar com o humano.\n\n### RESPONSE FORMAT\n\n• Estruture os diálogos para avançar de etapa em etapa, confirmando dados recebidos e orientando sobre o próximo passo.\n\n• A cada nova informação relevante recebida, utilize a ferramenta adequada imediatamente após a resposta do lead.\n\n• Se o lead não responder a uma pergunta obrigatória, reforce gentilmente a solicitação antes de avançar.\n\n• Nunca repita a ferramenta para o mesmo valor já registrado no Kommo.\n\n---\n\n#### Exemplos Resumidos de Fluxo\n\n**1. Saudação & escolha do empreendimento**\n\n```plaintext\n\nOi! Tudo bem? 👋\n\nSou Joice Cordeiro, corretora de lançamentos em Itatiba.\n\nVi sua visita no nosso anúncio e vou te ajudar com todas as informações do empreendimento.\n\nPrimeiramente, como você gostaria de ser chamado(a)?\n\n```\n\n(Ao receber o nome, siga:)\n\n```plaintext\n\nObrigado! Agora vamos continuar com seu atendimento...\n\nDigite apenas o número correspondente ao atendimento desejado:\n\n1 - Casas Villa das Araucárias\n\n2 - Sou Viver - Apartamento\n\n3 - Residencial Absoluto - Apartamento\n\n4 - Varanda Visconde - Apartamento\n\n5 - Buritis - Apartamento\n\n6 - Outros\n\n```\n\n(Assim que o lead responder, acione `preenche_empreendimento(opcao)` e `mover_interessado`)\n\n**2. Envio do material inicial do empreendimento**\n\n```plaintext\n\n[FOTO]\n\nFico feliz pelo seu interesse no {Nome do empreendimento}\n\nPosso te enviar um vídeo do empreendimento?\n\n1️⃣ Sim\n2️⃣ Não\n\n```\n\n(Se sim, acione `mover_empreendimento_material`. Se não, peça o canal preferido para receber mais informações.)\n\n**3. Material de apresentação e convite para simulação**\n\nEnvie fotos, informações e book do empreendimento. No final, pergunte:\n\n```plaintext\n\n✨ Gostou do material que te enviei até agora?\n\nPara facilitar, aqui está o link do tour virtual: {Link do empreendimento}\n\n📚 E segue também o book completo em PDF!\n\n📞 Podemos falar agora sobre os valores das casas?\n\n```\n\n(Se positivo, responda calorosamente e acione `mover_simulacao`)\n\n**4. Coleta de dados para simulação**\n\nPara cada resposta do lead, acione a ferramenta correspondente. Exemplo:\n\n```plaintext\n\nQual seu estado civil?\n\n1 - Solteiro.\n\n2 - Casado.\n\n3 - Pretendo comprar com outra pessoa.\n\n```\n\n(Ao responder, chame `preenche_estado_civil(opcao)`; siga coletando: renda, tipo de renda, IR, data de nascimento.)\n\n**5. Finalização e negociação**\n\n```plaintext\n\nPerfeito! Em breve te envio a simulação da Caixa com os valores de entrada, parcelas e condições pra você! 🏡💰\n\nSe surgir qualquer dúvida, pode me chamar aqui! 😊📲\n\n```\n\n(Acione `mover_negociacao`)\n\n---\n\n### Notas Gerais\n\n- Se lead desviar do assunto, traga de volta de forma natural e cordial.\n\n- Se lead pedir para parar/ficar irritado/pedir humano, acione `request_human`.\n\n- Nunca repita perguntas ou ferramentas se o lead já respondeu/registrou resposta idêntica.\n\n- Não envie links formatados; envie sempre em texto puro.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -2816,
+        1728
+      ],
+      "id": "62578abd-59bb-415e-b736-3c6e70960d2b",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "description": "Chame essa ferramenta para mover o lead para o SDR correspondente. \n\nsempre chame após o lead escolher o serviço",
+        "jsCode": "// Example: convert the incoming query to uppercase and return it\nreturn 'ok'",
+        "specifyInputSchema": true,
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"servico\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"direito_da_familia\",\n        \"trabalhista\",\n        \"superendividado\",\n        \"previdenciario\",\n        \"juridico_empresarial\",\n        \"defesa_da_saude\",\n        \"analise_de_contratos\",\n        \"advocacia_com_asas\",\n        \"mentoria\"\n      ],\n      \"description\": \"Escolha um dos servicos juridicos disponiveis.\"\n    }\n  },\n  \"required\": [\"servico\"]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.2,
+      "position": [
+        -2560,
+        1952
+      ],
+      "id": "a274f126-d702-411c-ace9-66a47f55d112",
+      "name": "move_lead",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "Chame essa ferramenta para mover o lead para o SDR correspondente. \n\nsempre chame após o lead escolher o serviço",
+        "method": "POST",
+        "url": "=https://viegaseviegas.up.railway.app/webhook/d5434114-cc39-45d7-a43a-6b25e503c8d4",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead",
+              "valueProvider": "fieldValue",
+              "value": "=123"
+            },
+            {
+              "name": "servico"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "servico",
+              "description": "=\"properties\": {\n    \"servico\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"direito_da_familia\",\n        \"trabalhista\",\n        \"superendividado\",\n        \"previdenciario\",\n        \"juridico_empresarial\",\n        \"defesa_da_saude\",\n        \"analise_de_contratos\",\n        \"advocacia_com_asas\",\n        \"mentoria\"\n      ],\n      \"description\": \"Escolha um dos servicos juridicos disponiveis.\"\n    }",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        -2384,
+        1952
+      ],
+      "id": "37c76fb2-a9f8-4738-9096-43fbc00bdb98",
+      "name": "Move_Lead1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "=https://joiceadv.kommo.com/api/v4/leads/16956464",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "with",
+              "value": "contacts,companies"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2960,
+        1488
+      ],
+      "id": "19fbe0f2-4dcf-459f-ac65-f1973c00dcef",
+      "name": "Get Lead",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://joiceadv.kommo.com/api/v4/contacts/{{ $json._embedded.contacts.first().id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2768,
+        1488
+      ],
+      "id": "d519f293-1de8-481a-ada9-3529a6233eb3",
+      "name": "Get Contact",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3216,
+        1488
+      ],
+      "id": "5cadfc65-f5df-4169-8fc2-65e4df2c83f3",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://joiceadv.kommo.com/api/v4/leads/custom_fields",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2480,
+        1488
+      ],
+      "id": "1415779c-fa79-462d-a2c2-417b999051ee",
+      "name": "Get Custom Field",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Testes\n",
+        "height": 1108,
+        "width": 1460
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -3296,
+        1392
+      ],
+      "typeVersion": 1,
+      "id": "40ae2a7a-064d-4640-b009-a6a7be08fd42",
+      "name": "Sticky Note17"
+    },
+    {
+      "parameters": {
+        "url": "https://joiceadv.kommo.com/api/v4/leads/pipelines/10762739/statuses",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2240,
+        1488
+      ],
+      "id": "aa6178f6-bd39-4a10-80aa-45a6cf81f9b0",
+      "name": "Get Pipeline Stages",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://joiceadv.kommo.com/api/v4/users",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2000,
+        1696
+      ],
+      "id": "dc28e5df-a932-4dc4-b74a-6074584f44f6",
+      "name": "Get Users",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        848
+      ],
+      "id": "2c958f48-0bfe-4e66-8f20-5d7378dbeb81",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "url": "https://joiceadv.kommo.com/api/v4/leads/pipelines",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2000,
+        1488
+      ],
+      "id": "2e5ad066-2be1-4f57-97e6-2d864e7668a4",
+      "name": "Get Pipelines",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "https://prefix.kommo.com/api/v4/leads/21811099",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"custom_fields_values\": [\n    \n    {\n      \"field_id\": 1569161,\n      \"values\": [\n        {\n          \"value\": \"Casado\"\n        }\n      ]\n    }\n  ]\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2000,
+        1888
+      ],
+      "id": "ef1a379c-619d-4579-acd8-a24b0f10ca8f",
+      "name": "Update Lead"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CREATE SCHEMA IF NOT EXISTS kommo;\n\nCREATE TABLE kommo.metadata (\n  id SERIAL PRIMARY KEY,\n   \"order\" NUMERIC(20, 18),\n   \"Name\" TEXT,\n   acces_token TEXT,\n   expired_at TIMESTAMP WITH TIME ZONE,\n   amojo_id TEXT\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -2240,
+        1696
+      ],
+      "id": "50c6b704-8f7a-48fb-8612-d8681d3755ee",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "W73OMQ2Q4L81MFjv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Chame essa ferramenta para obter as perguntas e respostas do nosso FAQ.\nSempre que o cliente fizer uma pergunta, confira se ja existe uma resposta para isso no FAQ\n\nVocê só saberá a resposta depois de chamar a ferramenta",
+        "operation": "get",
+        "documentURL": "https://docs.google.com/document/d/1wHgWSivHYRqQgttpK_tqARrSGq5762OWUXMgTbikHPs/edit?tab=t.0"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        -304,
+        960
+      ],
+      "id": "353958ee-268d-4541-8a2b-a7c6d768d027",
+      "name": "faq_tool",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "mode": "delete"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        -3152,
+        2160
+      ],
+      "id": "5ad13aab-796f-4f47-9daf-8bb485fce1d6",
+      "name": "Chat Memory Manager1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=7cd90f4d-ac4c-410a-99fc-732d6165aab8-1",
+        "contextWindowLength": 25
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        -3152,
+        2368
+      ],
+      "id": "720f68c6-e6c1-4f60-b34f-241cd229ea0a",
+      "name": "Postgres Chat Memory1",
+      "credentials": {
+        "postgres": {
+          "id": "W73OMQ2Q4L81MFjv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "delete",
+        "deleteMode": "all"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        -2960,
+        192
+      ],
+      "id": "24eb2ae0-7968-4274-afbf-d669c4cf4174",
+      "name": "Chat Memory Manager2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Set message props').last().json.chat_id }}-1",
+        "contextWindowLength": 25
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        -2624,
+        192
+      ],
+      "id": "c4cd02f5-35bc-4e5d-b85d-dc0025ce37fb",
+      "name": "Postgres Chat Memory2",
+      "credentials": {
+        "postgres": {
+          "id": "W73OMQ2Q4L81MFjv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://{{ $('Set message props').item.json.prefix }}.kommo.com/api/v4/leads/{{ $('When Executed by Another Workflow').item.json.getLead.json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "status_id",
+              "value": "={{89500456}}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1136,
+        -448
+      ],
+      "id": "f7ad3818-609c-488e-a869-cb12d2ea60a0",
+      "name": "Move Lead to TRIAGEM",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "YgpgTfTiRvkNqmYU",
+          "name": "[Kommo] - OAuth2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a urgência: \n1 - Se já está na cidade \n2 - Se virá dentro em até 60 dias.\n3 - Se a viagem está programada para +60 dias \n4 - Não sabe quando viajará\n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "urgencia"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "urgencia",
+              "description": "número da opção informada pelo lead \n1 - Se já está na cidade \n2 - Se virá dentro em até 60 dias.\n3 - Se a viagem está programada para +60 dias \n4 - Não sabe quando viajará",
+              "type": "number"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2096,
+        1248
+      ],
+      "id": "5a62eb22-09b5-461f-98ca-26093dd217e9",
+      "name": "preencher_urgencia_lead"
+    },
+    {
+      "parameters": {
+        "content": "## Preenche data_chegada\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2288,
+        1136
+      ],
+      "typeVersion": 1,
+      "id": "42e28138-ecae-487b-b068-a316f0ea5b7b",
+      "name": "Sticky Note data_chegada",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche data_partida\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2560,
+        1136
+      ],
+      "typeVersion": 1,
+      "id": "62620b87-143f-442b-b5a5-25c7f7ab435f",
+      "name": "Sticky Note data_partida",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o grupo: \n  1. Solo  \n  2. Casal  \n  3. Amigos  \n  4. Família com filhos  \n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-grupo",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "grupo"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "grupo",
+              "description": "número da opção informada pelo lead \n  1. Solo  \n  2. Casal  \n  3. Amigos  \n  4. Família com filhos  ",
+              "type": "number"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1824,
+        1536
+      ],
+      "id": "7c7acd7b-b59f-4b9a-bb50-65bc85a3ee51",
+      "name": "preencher_grupo_lead"
+    },
+    {
+      "parameters": {
+        "content": "## Preenche grupo do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1744,
+        1424
+      ],
+      "typeVersion": 1,
+      "id": "956dba05-ec90-4476-b52a-9c77116d503d",
+      "name": "Sticky Note Origem1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a data_chegada",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "data_chegada"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "data_chegada",
+              "description": "data_chegada informada pelo lead no formato 'yyyy-MM-dd'",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2368,
+        1248
+      ],
+      "id": "d912dfad-4812-4320-baf0-721f279d145a",
+      "name": "preencher_data_chegada_lead"
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a data_partida",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-data_partida",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "data_partida"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "data_partida",
+              "description": "data_partida informada pelo lead no formato 'yyyy-MM-dd'",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2640,
+        1248
+      ],
+      "id": "0f648fcd-67d9-492e-a8a0-68bb7d6c728b",
+      "name": "preencher_data_partida_lead"
+    },
+    {
+      "parameters": {
+        "content": "## Preenche perfil do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2016,
+        1424
+      ],
+      "typeVersion": 1,
+      "id": "6f569bf4-5884-4dd3-baa9-0012f00e3c33",
+      "name": "Sticky Note Origem2",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o perfil: \n  1. Há idosos  \n  2. Há crianças  \n  3. Há PNE\nPodendo ser informado mais de um perfil. Ex: '1,3'",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-perfil",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "perfil"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "perfil",
+              "description": "uma lista separada por virgulas com o número das opções informadas pelo lead \n  1. Há idosos  \n  2. Há crianças  \n  3. Há PNE\n\nEx: \"1,2\"",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2096,
+        1536
+      ],
+      "id": "1180a0f2-ba80-4c9b-8bcc-0f6098c554e0",
+      "name": "preencher_idade_perfil_lead"
+    },
+    {
+      "parameters": {
+        "content": "## Preenche passeio do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2288,
+        1424
+      ],
+      "typeVersion": 1,
+      "id": "d70d764a-b39f-4ab2-8f0f-42e997c36401",
+      "name": "Sticky Note Origem3",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o tipo de passeio: \n  1. Em Grupo  \n  2. Privativo  \n  3. Compartilhado  \n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-passeio",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "passeio"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "passeio",
+              "description": "número da opção informada pelo lead \n  1. Em Grupo  \n  2. Privativo  \n  3. Compartilhado  ",
+              "type": "number"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2368,
+        1536
+      ],
+      "id": "0be8a341-be69-46d9-b8b1-cbfb93fd6c00",
+      "name": "preencher_tipo_passeio_lead",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Mover Perda\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2016,
+        1712
+      ],
+      "typeVersion": 1,
+      "id": "7e59ad8e-b387-499e-9743-fc0c01c169a4",
+      "name": "Sticky Note15",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "Após tirar as dúvidas do lead, chame essa ferramenta caso o lead não tenha mais perguntas e não quiser falar com um humano",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-perda",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2096,
+        1824
+      ],
+      "id": "4b92de6d-9254-45c5-a6c1-827a881d76cb",
+      "name": "mover_perda"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para transferir imediatamente o lead para o funil de “PÓS VENDAS”, quando o lead informar que já é cliente.",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-pos_vendas",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2368,
+        1824
+      ],
+      "id": "bd2ccb63-965a-439f-b5cc-fd9fd7e18e23",
+      "name": "mover_pos_vendas"
+    },
+    {
+      "parameters": {
+        "content": "## Mover pos_vendas\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2288,
+        1712
+      ],
+      "typeVersion": 1,
+      "id": "800f804e-742a-457f-a9a4-6f9abcd6662c",
+      "name": "Sticky Note18",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para mover o lead para a etapa de “QUALIFICADO”, quando: \n1. o lead já estiver na cidade, \n2. finalizar a triagem, \n3. Escolher o Passeio ou \n4. solicitar atendimento personalizado ou orçamento.",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-qualificado",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2640,
+        1824
+      ],
+      "id": "8c66f2e1-908c-48f1-a874-9a21643cd896",
+      "name": "mover_qualificado"
+    },
+    {
+      "parameters": {
+        "content": "## Mover qualificado\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2560,
+        1712
+      ],
+      "typeVersion": 1,
+      "id": "d4ffa0a5-71d3-4f0e-a32b-e7eaff9ed1b3",
+      "name": "Sticky Note20",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche pessoas\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2832,
+        1424
+      ],
+      "typeVersion": 1,
+      "id": "f166d9b5-7770-4abd-aa54-dcba0da1c7b1",
+      "name": "Sticky Note pessoas",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a quantidade de pessoas",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-pessoas",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "pessoas"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "pessoas",
+              "description": "quantidade de pessoas informada pelo lead",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2912,
+        1536
+      ],
+      "id": "d8408485-538b-4379-b539-88b6178adf10",
+      "name": "preencher_numero_pessoas_lead"
+    },
+    {
+      "parameters": {
+        "content": "## Preenche hospedagem\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2832,
+        1136
+      ],
+      "typeVersion": 1,
+      "id": "92c99200-2d0a-4e4d-b3ef-9d8fcf4f181c",
+      "name": "Sticky Note hospedagem",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a sua hospedagem",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-hospedagem",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "hospedagem"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "hospedagem",
+              "description": "hospedagem (nome do hotel) informada pelo lead",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2912,
+        1248
+      ],
+      "id": "fe439009-3a64-4f99-b933-94690f5a60c1",
+      "name": "preencher_hospedagem_lead"
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a idade das criacas: \n  1. 0 - 3 anos  \n  2. 4 - 9 anos  \n  3. Acima de 10 anos\nPodendo ser informado mais de um item. Ex: '1,3'",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-idade_criacas",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "idade_criacas"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "idade_criacas",
+              "description": "uma lista separada por virgulas com o número das opções informadas pelo lead \n  1. 0 - 3 anos  \n  2. 4 - 9 anos  \n  3. Acima de 10 anos\n\nEx: \"1,2\"",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2912,
+        1824
+      ],
+      "id": "42a2b23d-7431-44d6-9859-166a912b4f69",
+      "name": "preencher_idade_idade_criacas_lead"
+    },
+    {
+      "parameters": {
+        "content": "## Preenche idade_criacas do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2832,
+        1712
+      ],
+      "typeVersion": 1,
+      "id": "ce7e5cdc-92eb-4cdd-b037-cd99fc6719c7",
+      "name": "Sticky Note Origem4",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Request Human\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        448,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "9156e3f2-788c-4e92-b926-f5338215d05b",
+      "name": "Sticky Note21",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche Nome\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1008,
+        1168
+      ],
+      "typeVersion": 1,
+      "id": "70d0c1db-3612-4c39-b9a9-0e0e1ece7e69",
+      "name": "Sticky Note23",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche Urgencia do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2016,
+        1136
+      ],
+      "typeVersion": 1,
+      "id": "b3e740e1-8599-4f5b-ae2a-71692ea64ac0",
+      "name": "Sticky Note Origem5",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche empreendimento\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        1168
+      ],
+      "typeVersion": 1,
+      "id": "4b62d258-c1d9-442b-888d-a0b63fda328a",
+      "name": "Sticky Note empreendimento",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o empreendimento\npreencha com o nome exato do empreendimento conforme aparece na mensagem ao lado do numero da opção. Não o número da opção e sim o Nome exato",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-empreendimento",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "empreendimento"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "empreendimento",
+              "description": "empreendimento informado pelo lead",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        -32,
+        1264
+      ],
+      "id": "4b0b6a21-2c8a-4128-b250-80de7a767dca",
+      "name": "preenche_empreendimento",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para mover o lead para a etapa de “interessado”, quando: \n1. o lead já estiver na cidade, \n2. finalizar a triagem, \n3. Escolher o Passeio ou \n4. solicitar atendimento personalizado ou orçamento.",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-interessado",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        256,
+        1264
+      ],
+      "id": "48aef4d8-48f6-45aa-ac2e-aff466f06d18",
+      "name": "mover_interessado",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Mover interessado\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        176,
+        1168
+      ],
+      "typeVersion": 1,
+      "id": "ef408c44-79b8-47b5-ac15-a57faf94afa0",
+      "name": "Sticky Note24",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para mover o lead para a etapa de “material”, quando ele afirmar que quer receber um video do empreendimento",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-material",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        528,
+        1264
+      ],
+      "id": "143eea79-9d79-4f12-ac34-61b2ba833949",
+      "name": "mover_material",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Mover material\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        448,
+        1168
+      ],
+      "typeVersion": 1,
+      "id": "09be3f64-aabf-4db8-948a-63374ca0f23d",
+      "name": "Sticky Note25",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para mover o lead para a etapa de “simulacao”, quando ele afirmar que quer saber sobre os valores das casas",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-simulacao",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        1264
+      ],
+      "id": "19d642df-766f-45f2-8286-4a47aa7d5089",
+      "name": "mover_simulacao",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Mover simulacao\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        720,
+        1168
+      ],
+      "typeVersion": 1,
+      "id": "eaed78f3-471d-4d85-918b-6f8cd51dc8cb",
+      "name": "Sticky Note26",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche estado_civil do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        1488
+      ],
+      "typeVersion": 1,
+      "id": "dd8144ab-205e-4103-b171-da834b969324",
+      "name": "Sticky Note Origem",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche renda\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        176,
+        1488
+      ],
+      "typeVersion": 1,
+      "id": "6f324542-b9b0-4ac9-8725-8820f9d3c477",
+      "name": "Sticky Note renda",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche tipo_renda do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        448,
+        1488
+      ],
+      "typeVersion": 1,
+      "id": "630ca7b8-e0c3-475c-999c-5fc8c64efae5",
+      "name": "Sticky Note Origem6",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o tipo_renda: \n  1. Formal  \n  2. Informal   \n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-tipo_renda",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "tipo_renda"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "tipo_renda",
+              "description": "número da opção informada pelo lead \n  1. Formal \n  2. Informal",
+              "type": "number"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        528,
+        1584
+      ],
+      "id": "78c28d9f-5aa6-4a5a-b09f-0c505a67a35d",
+      "name": "preenche_tipo_renda",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a renda",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-renda",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "renda"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "renda",
+              "description": "renda informada pelo lead",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        256,
+        1584
+      ],
+      "id": "1c1b328b-a69b-46c3-956a-e0742f882c78",
+      "name": "preenche_renda_mensal",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o estado_civil: \n  1. Solteiro  \n  2. Casado  \n  3. Pretendo Comprar com Outra Pessoa  \n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-estado_civil",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "estado_civil"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "estado_civil",
+              "description": "número da opção informada pelo lead \n  1. Solteiro \n  2. Casado  \n  3. Comprar com outra pessoa  ",
+              "type": "number"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        -32,
+        1584
+      ],
+      "id": "67edc5f7-d4d2-44f7-844f-4626c83c022a",
+      "name": "preenche_estado_civil",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar se declarou imposto: \n  1. Sim  \n  2. Não   \n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-imposto",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "imposto"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "imposto",
+              "description": "número da opção informada pelo lead \n  1. Sim \n  2. Não",
+              "type": "number"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        1584
+      ],
+      "id": "bf896998-fad3-44c7-a531-703093997a88",
+      "name": "preenche_imposto",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Preenche imposto do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        720,
+        1488
+      ],
+      "typeVersion": 1,
+      "id": "212d1385-db75-436b-8333-b00bb641ddb5",
+      "name": "Sticky Note Origem7",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche nascimento\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "29d9d135-cbbc-444a-9d4a-5480729a0946",
+      "name": "Sticky Note nascimento",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a data de nascimento",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-nascimento",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "nascimento"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "nascimento",
+              "description": "nascimento informado pelo lead",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        -32,
+        1888
+      ],
+      "id": "8c8f59fb-b9e1-4f17-afc5-6dbe454fb2b2",
+      "name": "preenche_nascimento_mensal",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para mover o lead para a etapa de “negociacao”, quando ele Finalizar as respsotas de simulação",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-negociacao",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        256,
+        1888
+      ],
+      "id": "15aa89a4-1a1c-4735-b47b-c7d9dba8c4d2",
+      "name": "mover_negociacao",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Mover negociacao\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        176,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "3b1d46b6-e956-4958-86c8-1f554b918641",
+      "name": "Sticky Note27",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "Chame essa ferramenta caso o usuário solicite falar com um humano, ou caso ele faça alguma reclamação ou perceba que o usuário está ficando irritado.",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-human",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        528,
+        1888
+      ],
+      "id": "69a29d1b-58ae-4aa5-a81f-4e9db1247ea3",
+      "name": "Request Human",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1bzkWAhQJvXmtKmWjE6aFsPb4XNH9BkySg7EBCmj9GSo",
+          "mode": "list",
+          "cachedResultName": "Teste 1 (respostas)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bzkWAhQJvXmtKmWjE6aFsPb4XNH9BkySg7EBCmj9GSo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2109325036,
+          "mode": "list",
+          "cachedResultName": "Respostas ao formulário 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bzkWAhQJvXmtKmWjE6aFsPb4XNH9BkySg7EBCmj9GSo/edit#gid=2109325036"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -4160,
+        1024
+      ],
+      "id": "c460c681-dee8-41ce-912d-9320dc7c3c69",
+      "name": "Get row(s) in sheet",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "mON6xvVmy3RLWJPW",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Envia Imagem 1\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -592,
+        1472
+      ],
+      "typeVersion": 1,
+      "id": "4528c8bf-715c-49fb-9b57-1656bdce649e",
+      "name": "Sticky Note empreendimento1",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -640,
+        672
+      ],
+      "id": "bfb3f65b-7d03-4a8b-99c7-65df0d3196ae",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "content": "## Envia Material\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -896,
+        1472
+      ],
+      "typeVersion": 1,
+      "id": "4f8d4847-60cd-4942-9a90-e38e2c96ca97",
+      "name": "Sticky Note empreendimento2",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta após o lead informar que deseja receber um vídeo sobre o empreendimento.\nEssa ferramenta enviará uma série de materiais para o lead.\n\nA ferramenta irá retornar a instrução do que repsonder em seguida",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/8910e964-8830-4fdf-8cc6-2d9fc977c5bb-media",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "message_props",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').item.json }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        -816,
+        1568
+      ],
+      "id": "1d4b8a2b-9e8c-403f-a320-8f7eb725e530",
+      "name": "envia_material",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Envia Media Simulação\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1184,
+        1472
+      ],
+      "typeVersion": 1,
+      "id": "77face66-4c2b-47ce-b277-5a2d2ac80e8a",
+      "name": "Sticky Note empreendimento3",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta após a etapa 3 quando o lead informar que deseja saber sobre o preço / Valor do empreendimento.\n\nChame essa ferramenta se ao enviar a mensagem: \"📞 Podemos falar agora sobre os valores do empreendimento?\", o lead responder que \"sim\" ou qualquer outra mensagem afirmativa\n\nEssa ferramenta enviará uma imagem e uma mensagem padrão\n\nA ferramenta irá retornar a instrução do que repsonder em seguida",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/8910e964-8830-4fdf-8cc6-2d9fc977c5bb-media-simulacao",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "message_props",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').item.json }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        -1104,
+        1568
+      ],
+      "id": "4eadf5b1-edab-489d-905b-372297806245",
+      "name": "envia_media_simulacao",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o nome dele.",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/233276e9-fd98-46c4-a8e4-6be36738a6ec-nome",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "contact_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getContact.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "name",
+              "description": "o nome correto informado pelo lead",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1088,
+        1264
+      ],
+      "id": "d457b88a-543a-429f-b93c-c8d889ffadb0",
+      "name": "set_name",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "name",
+              "renameField": true,
+              "outputFieldName": "Nome do Empreendimento"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -3936,
+        752
+      ],
+      "id": "f32d7b28-9b99-47dc-95e8-f10adfc15c0f",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2b1df782-1a1c-4088-b16e-a8641779a544",
+              "name": "Empreendimento escolhido",
+              "value": "={{\n  $('Get Empreendimentos')\n    .all()\n    .find(\n      item =>\n        item.json.name === (\n          $('When Executed by Another Workflow')\n            .item\n            .json\n            .getLead\n            ?.json\n            ?.custom_fields_values\n            ?.find(i => i.field_id == 1025278)\n            ?.values?.[0]?.value\n            ?? ''\n        )\n    )?.json ?? {}\n}}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {
+          "ignoreConversionErrors": true
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3648,
+        752
+      ],
+      "id": "551ab3ac-f3db-42d2-b83b-bcbc6a263ad6",
+      "name": "Set Empreendimento"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ventures",
+          "mode": "list",
+          "cachedResultName": "ventures"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "active",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "name",
+            "id",
+            "description",
+            "priceRange",
+            "financing"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -4160,
+        752
+      ],
+      "id": "7f5b91fb-3e9c-4492-a247-16d0596c9b5c",
+      "name": "Get Empreendimentos",
+      "credentials": {
+        "postgres": {
+          "id": "M5tr6zjLSosI1qkl",
+          "name": "Postgres FrontEnd"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ventures",
+          "mode": "list",
+          "cachedResultName": "ventures"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "name",
+              "value": "={{ \n(\n          $('When Executed by Another Workflow')\n            .item\n            .json\n            .getLead\n            ?.json\n            ?.custom_fields_values\n            ?.find(i => i.field_id == 1025278)\n            ?.values?.[0]?.value\n            ?? ''\n        )\n}}"
+            },
+            {
+              "column": "active",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "id",
+            "name",
+            "description",
+            "priceRange"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -3648,
+        560
+      ],
+      "id": "8f1ccc57-871b-4d89-b617-e996c9c04699",
+      "name": "Select rows from a table",
+      "credentials": {
+        "postgres": {
+          "id": "M5tr6zjLSosI1qkl",
+          "name": "Postgres FrontEnd"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Preenche motivo\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1008,
+        1488
+      ],
+      "typeVersion": 1,
+      "id": "40331967-39e2-41be-9b28-d9f027813782",
+      "name": "Sticky Note motivo",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o motivo\npreencha com o nome exato do motivo conforme aparece na mensagem ao lado do numero da opção. Não o número da opção e sim o Nome exato",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-motivo",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "motivo"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "motivo",
+              "description": "motivo informado pelo lead",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1088,
+        1584
+      ],
+      "id": "bfa9a203-f23b-4699-8806-c361be6e6cff",
+      "name": "preenche_motivo",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Preenche data_visita\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        720,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "4f059746-830e-486a-9ad2-96cac204bb41",
+      "name": "Sticky Note data_visita",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a data de visita",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-data_visita",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "data_visita"
+            },
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "data_visita",
+              "description": "data_visita informada pelo lead no formato 'yyyy-MM-dd HH:mm'",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        1904
+      ],
+      "id": "dde944ae-d12c-48be-aed7-56ff0580f296",
+      "name": "preencher_data_visita_lead",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        -2800,
+        2160
+      ],
+      "id": "d5841c4b-a979-42c9-93e6-d3573b1718ab",
+      "name": "Chat Memory Manager3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1bc68f5b-245d-4222-a1ae-e11bd5b0d018",
+              "name": "prompt_construtora",
+              "value": "=##### **4. Finalização e negociação**\nnão pergunte os dados de estado civil, renda, etc. Pule direto para essa etapa e envie a mensagem abaixo:\n```plaintext\n\nEm breve te envio a simulação da Construtora com os valores de entrada, parcelas e condições pra você! 🏡💰\n\nSe surgir qualquer dúvida, pode me chamar aqui! 😊📲\n\n```\n\n(Acione `mover_negociacao`)\n",
+              "type": "string"
+            },
+            {
+              "id": "27c35378-db4b-471d-95a1-1b3308276b95",
+              "name": "prompt_banco",
+              "value": "=##### **4. Coleta de dados para simulação**\n\nPara cada resposta do lead, acione a ferramenta correspondente.\n\n_!IMPORTANTE: A partir desse ponto é expressamente proibido chamar `enviar_img_1`, `enviar_material` e `envia_media_simulacao`_\n\nAbaixo estão os exemplos completos de cada pergunta e a ferramenta que deve ser chamada:\n\n---\n\n**Pergunta 1 – Estado Civil**\n\n```plaintext\nQual seu estado civil? Ou seja, você é casado ou solteiro?  \n \n1 - Solteiro.  \n2 - Casado.  \n3 - Pretendo comprar com outra pessoa.\n```\n**Ferramenta a ser chamada:** `preenche_estado_civil`\n\n---\n\n**Pergunta 2 – Renda Mensal**\n\n```plaintext\n(Se o lead for solteiro ou casado)\nQual valor da sua renda mensal, {Nome}?\n\n(Se o lead pretende comprar com outra pessoa)\nQual valor da renda de vocês dois juntos mensal?\n```\n\n**Ferramenta a ser chamada:** `preenche_renda_mensal`\n\n---\n\n**Pergunta 3 – Tipo de Renda**\n\n```plaintext\n{Nome}, só para eu te orientar melhor com as possibilidades de financiamento:  \nVocê(s) trabalha(m) com renda formal (com registro em carteira ou CNPJ)  \nou renda informal (autônomo, sem registro)?  \n\n1 - Renda Formal  \n2 - Renda Informal\n```\n\n**Ferramenta a ser chamada:** `preenche_tipo_renda`\n\n---\n\n**Pergunta 4 – Declaração de Imposto de Renda**\n\n```plaintext\n{Nome}, você(s) declarou(raram) Imposto de Renda esse ano?  \n```\n\n**Ferramenta a ser chamada:** `preenche_imposto_renda`\n\n---\n\n**Pergunta 5 – Data de Nascimento**\n\n```plaintext\nE por último, qual a sua data de nascimento?  \nSe for comprar com mais alguém, envie também a data de nascimento da outra pessoa.\n```\n\n**Ferramenta a ser chamada:** `preencher_data_nascimento`\n\n\n##### **5. Finalização e negociação**\n\n```plaintext\n\nPerfeito! Em breve te envio a simulação da Caixa com os valores de entrada, parcelas e condições pra você! 🏡💰\n\nSe surgir qualquer dúvida, pode me chamar aqui! 😊📲\n\n```\n\n(Acione `mover_negociacao`)\n",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -480,
+        672
+      ],
+      "id": "42d9b83c-e57e-4c18-8986-1f84e8785f01",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "content": "## Consultar Empreendimentos\n\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -976,
+        928
+      ],
+      "typeVersion": 1,
+      "id": "1811d4ff-0f57-4806-b304-ccdd94946568",
+      "name": "Sticky Note empreendimento4",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Chame essa ferramenta para responder quaisquer dúvidas do lead sobre os empreendimentos",
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ventures",
+          "mode": "list",
+          "cachedResultName": "ventures"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "active",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "name",
+            "description",
+            "priceRange",
+            "link"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.6,
+      "position": [
+        -896,
+        1024
+      ],
+      "id": "3f5c7e12-87e9-4a07-a191-81975e27f947",
+      "name": "consultar_empreendimentos",
+      "credentials": {
+        "postgres": {
+          "id": "M5tr6zjLSosI1qkl",
+          "name": "Postgres FrontEnd"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta logo após o lead informar o empreendimento que ele tem interesse ( e somente nessa etapa. nunca chame em outro momento ). \nEssa ferramenta envia a primeira foto do empreendimento. Após isso, siga com o atendimento\n\nA ferramenta irá retornar com as instruções caso dê erro.",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-img-1",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "message_props",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').item.json }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        -512,
+        1568
+      ],
+      "id": "ce657e21-a4f6-4656-97ac-ead4f87c9500",
+      "name": "img_capa",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "JkIMD1dDp2CjIaFX",
+          "name": "[Tools] - Basic Auth"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "body": {
+            "account[subdomain]": "joiceadv",
+            "account[id]": "34332899",
+            "account[_links][self]": "https://joiceadv.amocrm.com",
+            "message[add][0][id]": "64b398c5-a861-4286-84b4-4607f69f5500",
+            "message[add][0][chat_id]": "7cd90f4d-ac4c-410a-99fc-732d6165aab8",
+            "message[add][0][talk_id]": "4137",
+            "message[add][0][contact_id]": "22398914",
+            "message[add][0][text]": "simulaçao",
+            "message[add][0][created_at]": "1765097438",
+            "message[add][0][element_type]": "2",
+            "message[add][0][entity_type]": "lead",
+            "message[add][0][element_id]": "18135878",
+            "message[add][0][entity_id]": "18135878",
+            "message[add][0][type]": "incoming",
+            "message[add][0][author][id]": "31485898-c4ec-4380-bb45-058336ede156",
+            "message[add][0][author][type]": "external",
+            "message[add][0][author][name]": "Emerson",
+            "message[add][0][origin]": "telegram"
+          },
+          "getLead": {
+            "json": {
+              "id": 18135878,
+              "name": "[Teste n8n] - Market Hunters",
+              "price": 0,
+              "responsible_user_id": 14085107,
+              "group_id": 0,
+              "status_id": 92937719,
+              "pipeline_id": 10762739,
+              "loss_reason_id": null,
+              "created_by": 0,
+              "updated_by": 0,
+              "created_at": 1765081354,
+              "updated_at": 1765097438,
+              "closed_at": null,
+              "closest_task_at": 1765162740,
+              "is_deleted": false,
+              "custom_fields_values": [
+                {
+                  "field_id": 1025278,
+                  "field_name": "Interesse (Empreendimento)",
+                  "field_code": null,
+                  "field_type": "text",
+                  "values": [
+                    {
+                      "value": "Buritis - Apartamento"
+                    }
+                  ]
+                },
+                {
+                  "field_id": 1061478,
+                  "field_name": "Estado Civil",
+                  "field_code": null,
+                  "field_type": "select",
+                  "values": [
+                    {
+                      "value": "Casado",
+                      "enum_id": 908246,
+                      "enum_code": null
+                    }
+                  ]
+                },
+                {
+                  "field_id": 1062936,
+                  "field_name": "Motivo",
+                  "field_code": null,
+                  "field_type": "text",
+                  "values": [
+                    {
+                      "value": "Investimento"
+                    }
+                  ]
+                },
+                {
+                  "field_id": 1061418,
+                  "field_name": "Data e Hora da Visita",
+                  "field_code": null,
+                  "field_type": "date_time",
+                  "values": [
+                    {
+                      "value": 1765378800
+                    }
+                  ]
+                }
+              ],
+              "score": null,
+              "account_id": 34332899,
+              "labor_cost": null,
+              "_links": {
+                "self": {
+                  "href": "https://joiceadv.kommo.com/api/v4/leads/18135878?with=contacts%2Ccompanies&page=1&limit=250"
+                }
+              },
+              "_embedded": {
+                "tags": [],
+                "companies": [],
+                "contacts": [
+                  {
+                    "id": 22398914,
+                    "is_main": true,
+                    "_links": {
+                      "self": {
+                        "href": "https://joiceadv.kommo.com/api/v4/contacts/22398914?with=contacts%2Ccompanies&page=1&limit=250"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "pairedItem": {
+              "item": 0
+            }
+          },
+          "getContact": {
+            "json": {
+              "id": 22398914,
+              "name": "Emerson",
+              "first_name": "Emerson",
+              "last_name": "",
+              "responsible_user_id": 14085107,
+              "group_id": 0,
+              "created_by": 0,
+              "updated_by": 0,
+              "created_at": 1765081354,
+              "updated_at": 1765096033,
+              "closest_task_at": null,
+              "is_deleted": false,
+              "is_unsorted": false,
+              "custom_fields_values": null,
+              "account_id": 34332899,
+              "_links": {
+                "self": {
+                  "href": "https://joiceadv.kommo.com/api/v4/contacts/22398914?page=1&limit=250"
+                }
+              },
+              "_embedded": {
+                "tags": [],
+                "companies": []
+              }
+            },
+            "pairedItem": {
+              "item": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-23T03:56:58.518Z",
+      "updatedAt": "2025-10-23T03:56:58.518Z",
+      "role": "workflow:owner",
+      "workflowId": "KwU5NkKFL7T8MF2U",
+      "projectId": "CdOjQfB3kNlqg1ah"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-09T04:26:35.026Z",
+  "versionId": "0e3c0ffb-3f32-4aad-ab81-1211d3cea5b5"
+}
