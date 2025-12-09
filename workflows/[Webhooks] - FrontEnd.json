@@ -1,0 +1,437 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-27T22:14:56.398Z",
+  "id": "pQgC9DWM4AuVGmuM",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[Webhooks] - FrontEnd",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "a249db10-e473-40c8-9a71-26a5a5d9ceb0",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        -160
+      ],
+      "id": "aa1cc7e7-b527-4295-9257-c1addd85ca8d",
+      "name": "Webhook",
+      "webhookId": "a249db10-e473-40c8-9a71-26a5a5d9ceb0"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "a249db10-e473-40c8-9a71-26a5a5d9ceb0",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        16
+      ],
+      "id": "bba01cd1-0433-4fda-b179-c4152d24b8cc",
+      "name": "Webhook1",
+      "webhookId": "a249db10-e473-40c8-9a71-26a5a5d9ceb0"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8d98f030-3deb-41ab-82c2-581644d07191",
+              "name": "name",
+              "value": "={{ $json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "4d6e5cbb-e488-4756-9313-43ab1eda1901",
+              "name": "description",
+              "value": "={{ $json.body.description }}",
+              "type": "string"
+            },
+            {
+              "id": "787a07ee-0790-4185-89b9-4a560032a4ef",
+              "name": "priceRange",
+              "value": "={{ $json.body.priceRange }}",
+              "type": "string"
+            },
+            {
+              "id": "65863750-baf1-42f5-9e6b-52df80b7a00a",
+              "name": "link",
+              "value": "={{ $json.body.link }}",
+              "type": "string"
+            },
+            {
+              "id": "40e5370b-7f1d-4aba-8a0c-2aa659f47a0d",
+              "name": "active",
+              "value": "={{ $json.body.active }}",
+              "type": "string"
+            },
+            {
+              "id": "d05c3018-b23e-4cdd-a478-5526750a046e",
+              "name": "media",
+              "value": "={{ $json.body.media.parseJson() }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        16
+      ],
+      "id": "a3725d2f-b4ca-4db5-88df-6f79d49fecac",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        416,
+        -160
+      ],
+      "id": "78c9fe79-798e-46e8-9914-6a7bd1498f85",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0bfac1a4-e182-4598-b3c5-94cf7c52424a",
+              "name": "",
+              "value": "={{ [\n  {\n    \"id\": \"1\",\n    \"name\": \"Residencial Vista do Sol\",\n    \"coverImage\": \"https://example.com/images/vista-do-sol.jpg\",\n    \"description\": \"Apartamentos de 2 e 3 dormitórios com vista para o mar.\",\n    \"priceRange\": \"R$ 500k - R$ 800k\",\n    \"link\": \"https://example.com/vista-do-sol\",\n    \"pdf\": \"https://example.com/pdfs/vista-do-sol.pdf\",\n    \"active\": true,\n    \"media\": [\n      {\n        \"id\": \"media-1\",\n        \"url\": \"https://example.com/images/piscina.jpg\",\n        \"text\": \"Nossa incrível área de lazer com piscina.\"\n      },\n      {\n        \"id\": \"media-2\",\n        \"url\": \"https://example.com/videos/apartamento-decorado.mp4\",\n        \"text\": \"Tour virtual pelo apartamento decorado.\"\n      }\n    ]\n  },\n  {\n    \"id\": \"2\",\n    \"name\": \"Condomínio Morada da Serra\",\n    \"coverImage\": \"https://example.com/images/morada-da-serra.jpg\",\n    \"description\": \"Casas de alto padrão em condomínio fechado.\",\n    \"priceRange\": \"R$ 1.2M - R$ 2.5M\",\n    \"link\": \"https://example.com/morada-da-serra\",\n    \"pdf\": \"https://example.com/pdfs/morada-da-serra.pdf\",\n    \"active\": false,\n    \"media\": []\n  }\n] }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        -160
+      ],
+      "id": "7c322d37-78e8-41a2-a157-14edf625630a",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  username VARCHAR(255) UNIQUE NOT NULL,\n  password_hash VARCHAR(255) NOT NULL\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        560,
+        80
+      ],
+      "id": "d2c57b6f-9e47-4bd5-bbfd-4db9a07e7188",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "M5tr6zjLSosI1qkl",
+          "name": "Postgres FrontEnd"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ventures",
+          "mode": "list",
+          "cachedResultName": "ventures"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        656,
+        -160
+      ],
+      "id": "35a03ec4-59ec-4de1-8fdf-34900f24f1e6",
+      "name": "Select rows from a table",
+      "credentials": {
+        "postgres": {
+          "id": "M5tr6zjLSosI1qkl",
+          "name": "Postgres FrontEnd"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "username": "admin",
+            "password_hash": "$2a$12$OHhD6Ztiqcguz9uQ41/5C.s/j9TPIjr5XTSWqGC1Ncxq2Ly.7DLgK"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "username",
+              "displayName": "username",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "password_hash",
+              "displayName": "password_hash",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        800,
+        64
+      ],
+      "id": "07120ab4-5487-42de-ba68-c9f8e9779b06",
+      "name": "Insert rows in a table",
+      "credentials": {
+        "postgres": {
+          "id": "M5tr6zjLSosI1qkl",
+          "name": "Postgres FrontEnd"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "ALTER TABLE ventures\nADD COLUMN financing TEXT;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        608,
+        288
+      ],
+      "id": "b2d8f277-6e6d-44fb-a1f8-fa52263d8c9a",
+      "name": "Execute a SQL query1",
+      "credentials": {
+        "postgres": {
+          "id": "M5tr6zjLSosI1qkl",
+          "name": "Postgres FrontEnd"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Webhook1": [
+      {
+        "json": {
+          "headers": {
+            "host": "joiceadv.up.railway.app",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) dyad/0.28.0 Chrome/140.0.7339.133 Electron/38.2.2 Safari/537.36",
+            "content-length": "796",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-BR",
+            "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryKXlS5TQVwi2FCAsj",
+            "origin": "http://localhost:50298",
+            "priority": "u=1, i",
+            "referer": "http://localhost:50298/",
+            "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "179.100.116.98",
+            "x-forwarded-host": "joiceadv.up.railway.app",
+            "x-forwarded-proto": "https",
+            "x-railway-edge": "railway/us-east4-eqdc4a",
+            "x-railway-request-id": "GaSrfdTwQXSLziCqezItjw",
+            "x-real-ip": "179.100.116.98",
+            "x-request-start": "1764281789969"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "name": "Teste 1",
+            "description": "esse é um teste",
+            "priceRange": "123000",
+            "link": "https://linkaqui.com",
+            "active": "false",
+            "media": "[{\"id\":\"media-1764281774691\",\"text\":\"texto1\"},{\"id\":\"media-1764281784400\",\"text\":\"texto2\"},{\"id\":\"media-1764281779730\",\"text\":\"texto3\"}]"
+          },
+          "webhookUrl": "https://joiceadv.up.railway.app/webhook/a249db10-e473-40c8-9a71-26a5a5d9ceb0",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Edit Fields": [
+      {
+        "json": {
+          "name": "Teste 1",
+          "description": "esse é um teste",
+          "priceRange": "123000",
+          "link": "https://linkaqui.com",
+          "active": "false",
+          "media": [
+            {
+              "id": "media-1764281774691",
+              "text": "texto1"
+            },
+            {
+              "id": "media-1764281784400",
+              "text": "texto2"
+            },
+            {
+              "id": "media-1764281779730",
+              "text": "texto3"
+            }
+          ]
+        }
+      }
+    ],
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "joiceadv.up.railway.app",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) dyad/0.28.0 Chrome/140.0.7339.133 Electron/38.2.2 Safari/537.36",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-BR",
+            "origin": "http://localhost:50298",
+            "priority": "u=1, i",
+            "referer": "http://localhost:50298/",
+            "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "179.100.116.98",
+            "x-forwarded-host": "joiceadv.up.railway.app",
+            "x-forwarded-proto": "https",
+            "x-railway-edge": "railway/us-east4-eqdc4a",
+            "x-railway-request-id": "v5Xwopn1Q9epTuqzAax-fw",
+            "x-real-ip": "179.100.116.98",
+            "x-request-start": "1764281989072"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "https://joiceadv.up.railway.app/webhook/a249db10-e473-40c8-9a71-26a5a5d9ceb0",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-27T22:14:56.398Z",
+      "updatedAt": "2025-11-27T22:14:56.398Z",
+      "role": "workflow:owner",
+      "workflowId": "pQgC9DWM4AuVGmuM",
+      "projectId": "CdOjQfB3kNlqg1ah"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-12-07T09:06:45.534Z",
+  "versionId": "36df35ff-4757-46c4-9248-780fc38aae7e"
+}
