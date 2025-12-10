@@ -1,0 +1,1081 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Create Session1": {
+      "main": [
+        [
+          {
+            "node": "Split binary Chunks1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload File1": {
+      "main": [
+        [
+          {
+            "node": "set_next_url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get File Size1": {
+      "main": [
+        [
+          {
+            "node": "Create Session1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file1": {
+      "main": [
+        [
+          {
+            "node": "Get File Size1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Message4": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Metadata1": {
+      "main": [
+        [
+          {
+            "node": "Send Message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Upload File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_next_url": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Get Metadata1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Get Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set base64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Message": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Metadata": {
+      "main": [
+        [
+          {
+            "node": "Send Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set base64": {
+      "main": [
+        [
+          {
+            "node": "Get File Size",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Metadata2": {
+      "main": [
+        [
+          {
+            "node": "Send Message5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get File Size": {
+      "main": [
+        [
+          {
+            "node": "Create Session",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Session": {
+      "main": [
+        [
+          {
+            "node": "Split binary Chunks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split binary Chunks": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload File": {
+      "main": [
+        [
+          {
+            "node": "Get Metadata2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-09T05:37:47.819Z",
+  "id": "0VWBUpj6613YbfWp",
+  "isArchived": false,
+  "meta": null,
+  "name": "[Tool] - Enviar Midia",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "media_url"
+            },
+            {
+              "name": "text_message"
+            },
+            {
+              "name": "message_props",
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -368,
+        -64
+      ],
+      "id": "4a908cab-56cd-4f55-9828-ee4bbfebba82",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://drive-c.kommo.com/v1.0/sessions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "file_name",
+              "value": "={{ $json.file_name }}"
+            },
+            {
+              "name": "file_size",
+              "value": "={{ $json.file_size }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        384,
+        832
+      ],
+      "id": "198cd540-dfe9-4ef7-8a60-f92a2392b23b",
+      "name": "Create Session1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('set_next_url').next_url || $('Create Session').item.json.body.upload_url }}",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1248,
+        144
+      ],
+      "id": "298252ad-0d1a-465b-932b-cf279f96a627",
+      "name": "Upload File1",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lê o binário do nó anterior (ajuste o nome do nó se necessário)\nconst binary = $input.first().binary.data;\n\n// Converte de base64 para buffer para calcular o tamanho real em bytes\nconst buffer = Buffer.from(binary.data, \"base64\");\nconst fileSize = buffer.length;\n\nreturn [\n  {\n    json: {\n      with_preview: true,\n      billable: true,\n      file_name: binary.fileName,\n      file_size: fileSize,\n      mime_type: binary.mimeType\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        160,
+        832
+      ],
+      "id": "d959f2e8-41c8-47b2-be0d-cb93c8d1b6b6",
+      "name": "Get File Size1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega o binário do nó anterior (ajuste o nome se necessário)\nconst inputBinary = $(\"Download file1\").item.binary.data;\n\n// Converte de base64 para buffer\nconst buffer = Buffer.from(inputBinary.data, \"base64\");\n\n// Tamanho máximo da parte (ajuste conforme retorno da API Kommo)\nconst maxPartSize = 524288; // 512 KB\n\n// Cria os chunks\nconst chunks = [];\nfor (let i = 0; i < buffer.length; i += maxPartSize) {\n  const end = Math.min(i + maxPartSize, buffer.length);\n  const chunk = buffer.slice(i, end);\n  chunks.push(chunk);\n}\n\n// Retorna cada chunk como item binário separado\nreturn chunks.map((chunk, index) => {\n  return {\n    json: { part: index + 1 },\n    binary: {\n      data: {\n        data: chunk.toString(\"base64\"),\n        mimeType: inputBinary.mimeType,\n        fileName: `${inputBinary.fileName || \"file\"}_part${index + 1}`,\n      },\n    },\n  };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        608,
+        832
+      ],
+      "id": "e16a4b60-507b-4493-80eb-c8e977d854a1",
+      "name": "Split binary Chunks1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.media_url.split('=').last() }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -64,
+        832
+      ],
+      "id": "2870ca5f-cb6b-41cd-b0d0-0b718173548b",
+      "name": "Download file1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://amojo.kommo.com/v2/{{ $('When Executed by Another Workflow').item.json.message_props.chat_id }}/sendMessage",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "with_video",
+              "value": "true"
+            },
+            {
+              "name": "stand",
+              "value": "v16"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "=https://{{ $('When Executed by Another Workflow').item.json.message_props.prefix }}.kommo.com "
+            },
+            {
+              "name": "Referer",
+              "value": "=https://{{ $('When Executed by Another Workflow').item.json.message_props.prefix }}.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "={{ $json.acces_token }}"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient_id\": \"{{ $('When Executed by Another Workflow').item.json.message_props.recipient_id }}\",\n  \"group_id\": null,\n  \"text\": {{ $('When Executed by Another Workflow').item.json.text_message.toJsonString() }},\n  \"crm_dialog_id\": {{ $('When Executed by Another Workflow').item.json.message_props.crm_dialog_id }},\n  \"crm_contact_id\": {{ $('When Executed by Another Workflow').item.json.message_props.crm_contact_id }},\n  \"crm_account_id\": {{ $('When Executed by Another Workflow').item.json.message_props.crm_account_id }},\n  \"crm_entity\": {\n    \"id\": {{ $('When Executed by Another Workflow').item.json.message_props.crm_entity.id }},\n    \"type\": 2\n  },\n  \"attachments\": [\n    {\n      \"external_file_id\": \"{{ $('Edit Fields').item.json.body.uuid }}\",\n      \"external_file_vers_id\": \"{{ $('Edit Fields').item.json.body.version_uuid }}\",\n      \"type\": \"picture\"\n    }\n  ],\n  \"persona_name\": \"IA\",\n  \"persona_avatar\": \"https://images.kommo.com/frontend/images/interface/avatars/-1.jpeg\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1696,
+        -64
+      ],
+      "id": "bad3dc15-12e7-40da-875a-daded2f3cdf1",
+      "name": "Send Message4",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "value": "kommo",
+          "mode": "list",
+          "cachedResultName": "kommo"
+        },
+        "table": {
+          "__rl": true,
+          "value": "metadata",
+          "mode": "list",
+          "cachedResultName": "metadata"
+        },
+        "limit": 1,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1472,
+        -64
+      ],
+      "id": "42bed853-9c01-4316-bc2f-1cae773834b8",
+      "name": "Get Metadata1",
+      "alwaysOutputData": true,
+      "executeOnce": true,
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1920,
+        -64
+      ],
+      "id": "6a223865-8313-4132-bd38-90370be26573",
+      "name": "Wait",
+      "webhookId": "68da160a-b081-4b26-9b9d-d806d2bf6318"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1024,
+        128
+      ],
+      "id": "97c52f3a-f8f3-47ad-9be7-7b1b25524369",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "468e4355-19c2-471d-8f8c-622f147914e8",
+              "name": "next_url",
+              "value": "={{ $json.body.next_url || ''}}",
+              "type": "string"
+            },
+            {
+              "id": "89a1e8e0-f108-4d6c-9c7d-a4af816cefd3",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1472,
+        208
+      ],
+      "id": "d52a5f9a-764d-4f73-9252-8572273e40df",
+      "name": "set_next_url"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d8a01d32-035a-4b09-8cb0-48bee1fa8c1d",
+              "name": "body.uuid",
+              "value": "={{ $('Upload File1').last().json.body.uuid }}",
+              "type": "string"
+            },
+            {
+              "id": "aef4062e-67c4-482c-91dd-cb1f78b85363",
+              "name": "body.version_uuid",
+              "value": "={{ $('Upload File1').last().json.body.version_uuid }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1248,
+        -64
+      ],
+      "id": "8531455c-deea-417a-9dac-7bcbe3a64a70",
+      "name": "Edit Fields",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ \n  $json.media_url.isEmpty() && \n  $json.text_message.isEmpty() \n}}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    },
+                    "id": "836577a5-02f7-4e7e-84c2-16fb6c177b9e"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Vazio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "bc1ebadb-fa6d-4b86-92cc-0b8ea17db2c1",
+                    "leftValue": "={{ \n  $json.media_url.isEmpty() && \n  $json.text_message.isNotEmpty() \n}}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Só Texto"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -80,
+        -80
+      ],
+      "id": "926185bb-0c0c-43b7-b64e-0a3ad246a901",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://amojo.kommo.com/v2/{{ $('When Executed by Another Workflow').item.json.message_props.chat_id }}/sendMessage",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "with_video",
+              "value": "true"
+            },
+            {
+              "name": "stand",
+              "value": "v16"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "=https://{{ $('When Executed by Another Workflow').item.json.message_props.prefix }}.kommo.com "
+            },
+            {
+              "name": "Referer",
+              "value": "=https://{{ $('When Executed by Another Workflow').item.json.message_props.prefix }}.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "={{ $json.acces_token }}"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient_id\": \"{{ $('When Executed by Another Workflow').item.json.message_props.recipient_id }}\",\n  \"group_id\": null,\n  \"text\": {{ $('When Executed by Another Workflow').item.json.text_message.toJsonString() }},\n  \"crm_dialog_id\": {{ $('When Executed by Another Workflow').item.json.message_props.crm_dialog_id }},\n  \"crm_contact_id\": {{ $('When Executed by Another Workflow').item.json.message_props.crm_contact_id }},\n  \"crm_account_id\": {{ $('When Executed by Another Workflow').item.json.message_props.crm_account_id }},\n  \"crm_entity\": {\n    \"id\": {{ $('When Executed by Another Workflow').item.json.message_props.crm_entity.id }},\n    \"type\": 2\n  },\n  \"persona_name\": \"IA\",\n  \"persona_avatar\": \"https://images.kommo.com/frontend/images/interface/avatars/-1.jpeg\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        576,
+        -64
+      ],
+      "id": "e2ae6132-3ee2-4586-8d7f-17f541c07f2b",
+      "name": "Send Message",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "value": "kommo",
+          "mode": "list",
+          "cachedResultName": "kommo"
+        },
+        "table": {
+          "__rl": true,
+          "value": "metadata",
+          "mode": "list",
+          "cachedResultName": "metadata"
+        },
+        "limit": 1,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        352,
+        -64
+      ],
+      "id": "72d2792b-9a80-4b35-8409-75eb95cb2433",
+      "name": "Get Metadata",
+      "alwaysOutputData": true,
+      "executeOnce": true,
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        -64
+      ],
+      "id": "90f4c341-1ace-4327-917a-06889385d28c",
+      "name": "Wait1",
+      "webhookId": "68da160a-b081-4b26-9b9d-d806d2bf6318"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5a95b800-a83f-441d-93ea-a57f974cc31b",
+              "name": "base64",
+              "value": "={{ $json.media_url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        112,
+        128
+      ],
+      "id": "70876c2e-5b17-4056-83d6-e6d18b4a7589",
+      "name": "Set base64"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://amojo.kommo.com/v2/{{ $('Webhook img 1').item.json.body.message_props.chat_id }}/sendMessage",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "with_video",
+              "value": "true"
+            },
+            {
+              "name": "stand",
+              "value": "v16"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/javascript, */*; q=0.01"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Origin",
+              "value": "=https://{{ $('Webhook img 1').item.json.body.message_props.prefix }}.kommo.com "
+            },
+            {
+              "name": "Referer",
+              "value": "=https://{{ $('Webhook img 1').item.json.body.message_props.prefix }}.kommo.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "X-Auth-Token",
+              "value": "={{ $json.acces_token }}"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Linux\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient_id\": \"{{ $('Webhook img 1').item.json.body.message_props.recipient_id }}\",\n  \"group_id\": null,\n  \"text\": \"\",\n  \"crm_dialog_id\": {{ $('Webhook img 1').item.json.body.message_props.crm_dialog_id }},\n  \"crm_contact_id\": {{ $('Webhook img 1').item.json.body.message_props.crm_contact_id }},\n  \"crm_account_id\": {{ $('Webhook img 1').item.json.body.message_props.crm_account_id }},\n  \"crm_entity\": {\n    \"id\": {{ $('Webhook img 1').item.json.body.message_props.crm_entity.id }},\n    \"type\": 2\n  },\n  \"attachments\": [\n    {\n      \"external_file_id\": \"{{ $('Upload File').item.json.body.uuid }}\",\n      \"external_file_vers_id\": \"{{ $('Upload File').item.json.body.version_uuid }}\",\n      \"type\": \"picture\"\n    }\n  ],\n  \"persona_name\": \"IA\",\n  \"persona_avatar\": \"https://images.kommo.com/frontend/images/interface/avatars/-1.jpeg\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1472,
+        704
+      ],
+      "id": "ade9eef5-009a-4f7b-9a9f-f4006e1b792b",
+      "name": "Send Message5",
+      "retryOnFail": false,
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "value": "kommo",
+          "mode": "list",
+          "cachedResultName": "kommo"
+        },
+        "table": {
+          "__rl": true,
+          "value": "metadata",
+          "mode": "list",
+          "cachedResultName": "metadata"
+        },
+        "limit": 1,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1248,
+        704
+      ],
+      "id": "ef8ee1cf-6171-4b77-a24e-ef7d8aebdfbe",
+      "name": "Get Metadata2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lê a string base64 do input (evita usar regex para grandes strings)\nconst base64String = $input.first().json.base64 || \"\";\n\n// Valores defaults\nlet mime_type = \"application/octet-stream\";\nlet base64Data = base64String;\n\n// Procura manualmente o prefixo \"base64,\" e extrai o MIME se existir\nconst marker = \"base64,\";\nconst idx = base64String.indexOf(marker);\nif (idx !== -1) {\n  const header = base64String.substring(0, idx);\n  base64Data = base64String.substring(idx + marker.length);\n  const colon = header.indexOf(\":\");\n  const semi = header.indexOf(\";\");\n  if (colon !== -1 && semi !== -1 && semi > colon) {\n    mime_type = header.substring(colon + 1, semi);\n  }\n}\n\n// Remove quebras de linha e espaços que podem quebrar o decode\nbase64Data = base64Data.replace(/\\s+/g, \"\");\n\n// Converte para buffer com proteção contra base64 inválido\nlet file_size = 0;\nlet buffer;\ntry {\n  buffer = Buffer.from(base64Data, \"base64\");\n  file_size = buffer.length;\n} catch (err) {\n  // Se falhar no decode, mantém size 0 e buffer undefined\n  file_size = 0;\n  buffer = undefined;\n}\n\n// Determina extensão a partir do mime_type\nlet extension = (mime_type.split(\"/\")[1] || \"bin\").split(\"+\")[0];\nif (extension === \"jpeg\") extension = \"jpg\";\nconst file_name = `upload.${extension}`;\n\nreturn [\n  {\n    json: {\n      with_preview: true,\n      billable: true,\n      file_name,\n      file_size,\n      mime_type\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        352,
+        128
+      ],
+      "id": "0bc69827-df2e-4df3-adb9-23069bb40e13",
+      "name": "Get File Size"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://drive-c.kommo.com/v1.0/sessions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "file_name",
+              "value": "={{ $json.file_name }}"
+            },
+            {
+              "name": "file_size",
+              "value": "={{ $json.file_size }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        576,
+        128
+      ],
+      "id": "b2131923-19da-442a-96cd-58e4303139ff",
+      "name": "Create Session",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "O1UhUo6s0R02p4aG",
+          "name": "[Kommo] - Oauth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lê a string base64 do nó \"Set base64\"\nconst base64String = $(\"Set base64\").item.json.base64 || \"\";\n\n// Evita usar regex para strings gigantes\nlet mimeType = \"application/octet-stream\";\nlet base64Data = base64String;\n\n// Localiza manualmente o marcador \"base64,\"\nconst marker = \"base64,\";\nconst idx = base64String.indexOf(marker);\n\nif (idx !== -1) {\n  mimeType = base64String.substring(5, idx - 1).replace(\"data:\", \"\") || mimeType;\n  base64Data = base64String.substring(idx + marker.length);\n}\n\n// Converte para buffer\nconst buffer = Buffer.from(base64Data, \"base64\");\n\n// Tamanho máximo da parte (Kommo: máx. ~512 KB por chunk)\nconst maxPartSize = 524288;\n\n// Cria os chunks\nconst chunks = [];\nfor (let i = 0; i < buffer.length; i += maxPartSize) {\n  const end = Math.min(i + maxPartSize, buffer.length);\n  chunks.push(buffer.slice(i, end));\n}\n\n// Nome base do arquivo\nconst ext = mimeType.split(\"/\")[1] || \"bin\";\nconst baseFileName = `upload.${ext}`;\n\n// Retorna cada parte como item binário\nreturn chunks.map((chunk, index) => ({\n  json: { part: index + 1 },\n  binary: {\n    data: {\n      data: chunk.toString(\"base64\"),\n      mimeType: mimeType,\n      fileName: `${baseFileName}_part${index + 1}`,\n    },\n  },\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        784,
+        128
+      ],
+      "id": "41c0f3cc-19a8-4f5b-8053-77e6fd32b6c8",
+      "name": "Split binary Chunks"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Create Session').item.json.body.upload_url }}",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        704
+      ],
+      "id": "9f43dc83-173e-462b-b4bd-7bf8c6704a67",
+      "name": "Upload File",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lê a string base64 do nó \"Set base64\"\nconst base64String = $(\"Set base64\").item.json.base64;\n\n// Extrai apenas o conteúdo base64 real (caso venha no formato data:mime;base64,xxx)\nconst match = base64String.match(/^data:(.+);base64,(.*)$/);\nconst mimeType = match?.[1] ?? \"application/octet-stream\";\nconst base64Data = match?.[2] ?? base64String;\n\n// Converte para buffer\nconst buffer = Buffer.from(base64Data, \"base64\");\n\n// Tamanho máximo da parte (Kommo: máx. ~512 KB por chunk)\nconst maxPartSize = 524288;\n\n// Cria os chunks\nconst chunks = [];\nfor (let i = 0; i < buffer.length; i += maxPartSize) {\n  const end = Math.min(i + maxPartSize, buffer.length);\n  const chunk = buffer.slice(i, end);\n  chunks.push(chunk);\n}\n\n// Nome base do arquivo\nconst ext = mimeType.split(\"/\")[1] || \"bin\";\nconst baseFileName = `upload.${ext}`;\n\n// Retorna cada parte como item binário\nreturn chunks.map((chunk, index) => ({\n  json: { part: index + 1 },\n  binary: {\n    data: {\n      data: chunk.toString(\"base64\"),\n      mimeType: mimeType,\n      fileName: `${baseFileName}_part${index + 1}`,\n    },\n  },\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        784,
+        416
+      ],
+      "id": "f9d0834e-1d72-437a-9ca7-8817bf2303f1",
+      "name": "Split binary Chunks2"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-09T05:37:47.819Z",
+      "createdAt": "2025-12-09T05:37:47.819Z",
+      "role": "workflow:owner",
+      "workflowId": "0VWBUpj6613YbfWp",
+      "projectId": "7Zo0ITtGQshcizrf"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-09T05:37:47.819Z",
+  "versionId": "dbded7b6-d23b-4d0b-923e-d85c5dde6a9f"
+}
