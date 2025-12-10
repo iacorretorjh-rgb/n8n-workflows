@@ -1,9 +1,9 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-09T05:35:17.558Z",
-    "createdAt": "2025-12-09T05:35:17.558Z",
-    "versionId": "561409d1-8ad7-4eb4-a595-eed4ba64a726",
+    "updatedAt": "2025-12-10T14:51:35.962Z",
+    "createdAt": "2025-12-10T14:51:35.962Z",
+    "versionId": "bc039c42-7a23-4ebf-bc87-4031d6807150",
     "workflowId": "AxRXDxKwsnYMt0sJ",
     "nodes": [
       {
@@ -90,7 +90,7 @@
               {
                 "id": "b2abcda0-d482-4f3c-9a1d-6610bbb7fe1d",
                 "leftValue": "={{ $('Get Lead').item.json.responsible_user_id }}",
-                "rightValue": 1,
+                "rightValue": 0,
                 "operator": {
                   "type": "number",
                   "operation": "equals"
@@ -450,7 +450,7 @@
     "name": null,
     "description": null
   },
-  "activeVersionId": "561409d1-8ad7-4eb4-a595-eed4ba64a726",
+  "activeVersionId": "bc039c42-7a23-4ebf-bc87-4031d6807150",
   "connections": {
     "Webhook": {
       "main": [
@@ -609,7 +609,7 @@
             {
               "id": "b2abcda0-d482-4f3c-9a1d-6610bbb7fe1d",
               "leftValue": "={{ $('Get Lead').item.json.responsible_user_id }}",
-              "rightValue": 1,
+              "rightValue": 0,
               "operator": {
                 "type": "number",
                 "operation": "equals"
@@ -959,6 +959,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-12-09T05:40:51.820Z",
-  "versionId": "561409d1-8ad7-4eb4-a595-eed4ba64a726"
+  "updatedAt": "2025-12-10T14:51:35.959Z",
+  "versionId": "bc039c42-7a23-4ebf-bc87-4031d6807150"
 }
