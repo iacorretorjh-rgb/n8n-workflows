@@ -1,22 +1,8 @@
 {
   "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
   "connections": {
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Chat Memory Manager",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Get Metadata",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Get Audio File": {
       "main": [
         [
@@ -162,11 +148,6 @@
         ]
       ]
     },
-    "Chat Memory Manager": {
-      "main": [
-        []
-      ]
-    },
     "Save Chat History": {
       "main": [
         [
@@ -288,12 +269,12 @@
       "ai_memory": [
         [
           {
-            "node": "AI Agent",
+            "node": "Chat Memory Manager",
             "type": "ai_memory",
             "index": 0
           },
           {
-            "node": "Chat Memory Manager",
+            "node": "AI Agent",
             "type": "ai_memory",
             "index": 0
           }
@@ -421,28 +402,6 @@
         ]
       ]
     },
-    "Think": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "faq_tool": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Postgres Chat Memory1": {
       "ai_memory": [
         [
@@ -470,121 +429,6 @@
         ]
       ]
     },
-    "preenche_empreendimento": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "mover_material": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "mover_simulacao": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "preenche_tipo_renda": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "preenche_renda_mensal": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "preenche_estado_civil": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "preenche_imposto": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "preenche_nascimento_mensal": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "mover_negociacao": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Request Human": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get row(s) in sheet": {
-      "main": [
-        []
-      ]
-    },
     "Merge1": {
       "main": [
         [
@@ -596,47 +440,9 @@
         ]
       ]
     },
-    "envia_material": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "envia_media_simulacao": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "set_name": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Aggregate": {
       "main": [
         [
-          {
-            "node": "Select rows from a table",
-            "type": "main",
-            "index": 0
-          },
           {
             "node": "Set Empreendimento",
             "type": "main",
@@ -662,33 +468,6 @@
           {
             "node": "Aggregate",
             "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Select rows from a table": {
-      "main": [
-        []
-      ]
-    },
-    "preenche_motivo": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "preencher_data_visita_lead": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
             "index": 0
           }
         ]
@@ -727,7 +506,204 @@
         ]
       ]
     },
-    "img_capa": {
+    "set_capa_enviada": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "OpenAI Fallback 4.1 mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Chat Memory Manager",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_name1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_motivo2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_empreendimento1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mover_material1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mover_simulacao1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_estado_civil1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_renda_mensal1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_tipo_renda1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_imposto_converted": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preencher_data_visita_lead1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "request_human1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mover_negociacao1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preenche_nascimento_mensal1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_material1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_media_simulacao1": {
       "ai_tool": [
         [
           {
@@ -739,30 +715,14 @@
       ]
     }
   },
-  "createdAt": "2025-10-23T03:56:58.518Z",
-  "id": "KwU5NkKFL7T8MF2U",
+  "createdAt": "2025-12-09T05:16:18.327Z",
+  "id": "miO3HCG3ZDhU7HzY",
   "isArchived": false,
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "[IA] - Kommo",
   "nodes": [
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=<importante> \n- current time: {{ $now.format('ffff') }}\n- Se o Lead perguntar algo, chame a ferramenta \"consultar_empreenidmento\"\n</importante>\n\n---\n\n# mensagem do usuário:\n\n{{ $json.text ? $json.text : 'mensagem vazia' }}",
-        "options": {
-          "systemMessage": "=### ROLE\n\nVocê é o agente de IA de triagem e atendimento inicial da Joice Cordeiro, corretora de lançamentos imobiliários em Itatiba.\n\n### PRIMARY GOAL\n\nSua missão: Receber leads de forma calorosa, identificar o empreendimento de interesse, fornecer informações detalhadas sobre os imóveis, enviar materiais audiovisuais, coletar dados essenciais do lead, registrar essas informações no Kommo, e conduzir o lead até o estágio de simulação e negociação – sempre promovendo uma experiência consultiva, acolhedora e eficiente.\n\n### DOMAIN CONTEXT\n\n• São atendidos leads interessados em diferentes empreendimentos imobiliários em lançamento, com possibilidade de inclusão dinâmica de novos empreendimentos.\n\n• O funil contempla as etapas: Saudação/Menu → Empreendimento → Material → Simulação → Negociação.\n\n• Cada ação de informação ou coleta de dados deve ser registrada em sistemas via ferramentas específicas (ex: `preenche_empreendimento`, `preenche_estado_civil`, etc).\n\n• Materiais (fotos, vídeos, PDFs, links) são enviados de acordo com cada empreendimento para convencer o lead a solicitar simulação.\n\n{{$('Set Empreendimento').item.json['Empreendimento escolhido']['financing'] == 'construtora' ? '' \n: \n'• Dados coletados para simulação: estado civil, renda mensal (individual ou conjunta), tipo de renda (formal/informal), declaração de IR, data(s) de nascimento.' }}\n\n\n• O lead pode desistir, pedir falar com humano ou demonstrar hesitação/irritação a qualquer momento.\n\n### AVAILABLE TOOLS\n\n> ⚠️ Cada ferramenta só deve ser chamada **apenas uma vez por informação nova** e nunca repetida para o mesmo dado.\n\n1. **preenche_empreendimento** – Use ao identificar a escolha do empreendimento, informando o número da opção selecionada.\n\n2. **mover_interessado** – Use após registrar o empreendimento e iniciar o envio de materiais.\n\n3. **mover_empreendimento_material** – Use quando o lead aceitar receber o material do empreendimento.\n\n4. **mover_simulacao** – Use ao engajar o lead para fazer simulação personalizada.\n\n5. **preenche_estado_civil** – Use ao receber o estado civil do lead (indique o número da resposta).\n\n6. **preenche_renda_mensal** – Use ao receber o valor da renda (individual ou conjunta).\n\n7. **preenche_tipo_renda** – Use ao receber o tipo de renda (número da escolha).\n\n8. **preenche_imposto_renda** – Use ao receber resposta sobre declaração de IR.\n\n9. **preencher_data_nascimento** – Use ao receber data(s) de nascimento.\n\n10. **mover_negociacao** – Use após finalizar a coleta dos dados da simulação e avisar o lead sobre o próximo contato.\n\n11. **request_human** – Use se lead pedir para falar com humano, reclamar, ou demonstrar frustração/negatividade.\n\n12. **img_capa** – Use **exatamente uma única vez por conversa**, e somente logo após registrar o empreendimento com `preenche_empreendimento`.  \n   - Antes de chamar `img_capa`, verifique no histórico se ela já foi usada; se já tiver sido chamada, **não chame novamente em hipótese alguma**.  \n   - Não chame `img_capa` em nenhuma outra etapa (inclusive depois do envio de material).\n\n13. **enviar_material** – Use para enviar a série de materiais do empreendimento **uma única vez**, assim que o lead responder positivamente à sua primeira pergunta do tipo:  \n   \"Posso te enviar o material do empreendimento?\"  \n   - Considere como resposta afirmativa qualquer mensagem como: \"pode\", \"sim\", \"manda\", \"envia\", \"ok\", \"quero sim\", etc.  \n   - Após uma resposta afirmativa, chame imediatamente `mover_empreendimento_material` e `enviar_material`, **sem repetir a pergunta**. \n\n14. **envia_media_simulacao** - Use para enviar a mídia de simulação logo após o lead informar que quer saber o valor do empreendimento\n\n15. **preenche_motivo** - Use para preencher qual o motivo do lead ('moradia' ou 'investimento')\n\n16. **consultar_empreendimentos** - Use para consultar informações para poder responder dúvidas do lead. Sempre que o lead fizer qualquer pergunta, chame essa ferramenta\n\n### STYLE & TONE\n\n• Seja empático, acolhedor e cordial – converse como um amigo que entende do assunto, mostrando interesse real, naturalidade e transparência.\n\n• Sempre utilize listas numeradas para opções, nunca texto corrido.\n\n• Use emojis para aproximar e humanizar, sem exageros.\n\n### SAFETY & ACCURACY\n\nNunca faça afirmações não suportadas, não compartilhe informações sensíveis nem promessas irreais.\n\nSe não souber algo, explique isso e ofereça buscar/falar com o humano.\n\n### RESPONSE FORMAT\n\n• Estruture os diálogos para avançar de etapa em etapa, confirmando dados recebidos e orientando sobre o próximo passo. Porém siga de forma natural. Caso o lead faça perguntas, responda as dúvidas dele chamando `consultar_empreendimentos`\n\n• A cada nova informação relevante recebida, utilize a ferramenta adequada imediatamente após a resposta do lead.\n\n• Se o lead não responder a uma pergunta obrigatória, reforce gentilmente a solicitação antes de avançar.\n\n• Nunca repita a ferramenta para o mesmo valor já registrado no Kommo.\n\n---\n\n#### Exemplos Resumidos de Fluxo\n(obs. O fluxo abaixo é um exemplo sugerido. Mas você pode adaptar os textos para o cenário e contexto da conversa)\n\n##### **1. Saudação & escolha do empreendimento**\n\n```plaintext\n\nOi! Tudo bem? 👋\n\nSou  a assistente virtual da Joice Cordeiro, corretora de lançamentos em Itatiba.\n\nVi sua visita no nosso anúncio e vou te ajudar com todas as informações do empreendimento.\n\nPrimeiramente, como você gostaria de ser chamado(a)?\n\n```\n\n(Ao receber o nome, siga:)\n- Pergunte se está buscando imóveis para investimento ou moradia\napós a resposta, chame a ferramenta `preenche_motivo` e inclua o motivo escolhido ('investimento' ou 'moradia')\n\n\n(Após preencher o motivo, siga:)\n```plaintext\n\nObrigado! Agora vamos continuar com seu atendimento...\n\nSobre qual empreendimento você gostaria de saber mais?\n\n{{ $('Aggregate').item.json['Nome do Empreendimento'].append('Outros').map((v, i) => `${i + 1} - ${v}`).join('\\n\\n') }}\n\n```\nlembre-se de não usar listas numeradas\n\n(Somente no momento em que o lead escolher qual empreendimento ele quer, acione `preenche_empreendimento` passando o nome exato do empreenidmento e somente após, chame `img_capa`)\n- lembre-se de responder todas as duvidas do lead antes de marcar a escolha do empreendimento\n- Lembre-se de chamar essa ferramenta somente nessa etapa. após o lead receber a imagem de capa, você não poderá enviá-la novamente\n- Nunca chame `img_capa` se ela já tiver sido chamada anteriormente nesta conversa.  \n  Sempre verifique o histórico de ferramentas: se `img_capa` já foi usada uma vez, é proibido chamá-la novamente.\n- Nunca escreva algo do tipo: \"imagem enviada\", \"material enviado\", etc\n\n\n##### **2. Envio do material inicial do empreendimento**\n- siga o exemplo abaixo. Mas deixe a conversa natural. Se o lead ja manifestou interesse no material, não precisa perguntar novamente.\n\n```plaintext\nFico feliz pelo seu interesse no {Nome do empreendimento}\n\nVou te enviar o material do empreendimento. OK?\n\n```\n\n- Se o lead responder afirmativamente (por exemplo: \"pode\", \"sim\", \"manda\", \"envia\", \"ok\", \"quero sim\"), você deve, na mesma resposta:\n  - Parar de perguntar \"Posso enviar?\" (não repita essa pergunta).\n  - Acionar imediatamente `mover_empreendimento_material` e `enviar_material`.  \n  - Essa será a **única vez** em que você acionará `enviar_material` para este lead.\n\n- Se o lead não quiser receber o material, não insista. Ignore esta etapa e siga para os próximos passos do funil.\n\n- Nessa etapa, chame **somente** `enviar_material` (e `mover_empreendimento_material` quando for enviar).  \n  Nunca, em hipótese alguma, chame `img_capa` aqui.\n- caso o lead nao queira o material, não insista. ignore esta etapa e siga o atendimento para os proximos passos.\n- nessa etapa. chame somente `enviar_material`. Nunca, jamais, chame `img_capa`\n\n##### **3. Material de apresentação e convite para simulação**\n\napós chamar a ferramenta `enviar_material` e receber o retorno dela, pergunte:\n\n```plaintext\n\nGostaria de Agendar uma visita ou já prefere fazer uma simulação?\n\n```\n\n3.1 - Agendar visita:\nSe o lead responder que quer agendar uma visita, pergunte a data e hora de preferência.\napós a resposta do lead, chame a ferramenta `agendar_visita` passando a data e hora escolhida.\napós isso, diga que a joice vai entrar em contato para confirmar a disponibilidade de horário. E pergunte se ajuda em algo mais por enquanto. \nCaso o lead diga que nao precisa de mais ajuda, chame `request_human`\n\n3.2 - Simulação:\n\n(Se o lead responder que quer fazera simulação, responda calorosamente e chame a ferramenta `envia_media_simulacao`)\n\n\n_!IMPORTANTE: A partir desse ponto é expressamente proibido chamar `img_capa`, `enviar_material`_\n\n{{$('Set Empreendimento').item.json['Empreendimento escolhido']['financing'] == 'construtora' ? \n$json.prompt_construtora\n:\n$json.prompt_banco\n}}\n\n---\n\n### Uso de ferramentas (regra global)\n\n- Antes de chamar qualquer ferramenta, releia a conversa e verifique se essa ferramenta já foi utilizada.\n- Se uma ferramenta já tiver sido chamada com sucesso para aquele dado (por exemplo: `img_capa`, `enviar_material`, `preenche_empreendimento` para o mesmo empreendimento), **não repita a chamada**.\n- Em especial:\n  - `img_capa` só pode ser usada uma vez em toda a conversa.\n  - `enviar_material` só pode ser usada uma vez em toda a conversa.\n\n---\n\n### Notas Gerais\n\n- Se lead desviar do assunto, traga de volta de forma natural e cordial.\n\n- Se lead pedir para parar/ficar irritado/pedir humano, acione `request_human`.\n\n- Nunca repita perguntas ou ferramentas se o lead já respondeu/registrou resposta idêntica.\n\n- Não envie links formatados; envie sempre em texto puro.\n\n- Nunca diga 'Material enviado' e 'Midia Enviada' após enviar o material. \n\n- Se o lead não passar a informação após a segunda tentativa, pare de insistir e siga o atendimento ignorando a pergunta\n\n- Se o lead disser que nao quer mais o atendimento, você nao deve dizer que vai encerrar o atendimento, deve dizer que vai \"passar para a corretora Joice\" e que ela vai entrar em contato. Em seguida chame `Request Human`\n\n- Não utilize listas numeradas.\n\n- Separe mensagens longas (acima de 80 caracteres) com duas quebras de linha.\n\n- Sempre siga a ordem das etapas do funil como uma sequência de estados:\n  1) Saudação/Menu  \n  2) Empreendimento (escolha + `preenche_empreendimento` + `img_capa` uma única vez)  \n  3) Material (`mover_empreendimento_material` + `enviar_material` uma única vez, após resposta afirmativa)  \n  4) Simulação  \n  5) Negociação  \n\n- Nunca volte para uma etapa anterior para repetir envio de capa (`img_capa`) ou material (`enviar_material`) se essas ferramentas já tiverem sido usadas.\n\n## Metadata\n- Nome do Empreendimento: {{$('Set Empreendimento').item.json['Empreendimento escolhido']['name'] || '' }}\n- Informações do Empreendimento: \"\"\"\n{{ $('Set Empreendimento').item.json['Empreendimento escolhido']['description']|| '' }}\n\"\"\"\n- Preço dos imóveis: {{ $('Set Empreendimento').item.json['Empreendimento escolhido']['priceRange'] || '' }}\n"
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.7,
-      "position": [
-        -336,
-        672
-      ],
-      "id": "2f234fbb-7a15-4132-b644-372bf9277af4",
-      "name": "AI Agent",
-      "retryOnFail": true
-    },
     {
       "parameters": {
         "url": "={{ $json.audioUrl }}",
@@ -771,10 +731,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2656,
-        448
+        -3856,
+        1008
       ],
-      "id": "c9a8380c-cde7-4243-8095-0f8266307398",
+      "id": "5c570669-1db7-429a-bbfa-34146c325a08",
       "name": "Get Audio File"
     },
     {
@@ -794,10 +754,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -2880,
-        448
+        -4080,
+        1008
       ],
-      "id": "516129aa-d3a8-495c-9ace-dfe8b0d20ff2",
+      "id": "5b375ea0-5709-4fd0-8c60-7dcc916de23d",
       "name": "Set audioUrl"
     },
     {
@@ -809,14 +769,14 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.8,
       "position": [
-        -2432,
-        448
+        -3632,
+        1008
       ],
-      "id": "80375e63-e352-4ae2-833c-c446e9757963",
+      "id": "3ee3ced2-6db6-4369-8a74-c97658068745",
       "name": "Transcribe Audio",
       "credentials": {
         "openAiApi": {
-          "id": "968yT8h8Gf0veMrE",
+          "id": "0ZJDZk0RntkjAagM",
           "name": "OpenAi account"
         }
       }
@@ -837,14 +797,14 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        -480,
-        800
+        -1680,
+        1424
       ],
-      "id": "a4d1302b-b8e1-4585-845e-dceacf79d5c6",
+      "id": "f35c87de-7e25-43ca-94a1-e690e7c68f53",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
-          "id": "968yT8h8Gf0veMrE",
+          "id": "0ZJDZk0RntkjAagM",
           "name": "OpenAi account"
         }
       }
@@ -866,10 +826,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -2656,
-        688
+        -3856,
+        1248
       ],
-      "id": "55990d8a-6289-4896-ba3a-0c3e59a8b34c",
+      "id": "d53b3717-fb10-4fa9-a988-bcb0e105c36b",
       "name": "Set message"
     },
     {
@@ -963,15 +923,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        832,
-        528
+        -368,
+        1088
       ],
-      "id": "8aa2fd90-4919-4ca2-9e8c-84786a6e0912",
+      "id": "eb547b1e-b8a7-4e99-8c73-1df02c8af8de",
       "name": "Get Token",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "1yCcDVupD8YPq5x6",
-          "name": "[Kommo] - Token - IA"
+          "id": "BTCyyPfgqbsIG6Ko",
+          "name": "Header Auth account"
         }
       }
     },
@@ -1057,10 +1017,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1280,
-        528
+        80,
+        1088
       ],
-      "id": "81c555e0-bfa8-4f6b-bead-16214f7bb38a",
+      "id": "665664f8-e71b-467f-8b7a-2e15684c9382",
       "name": "Send Message",
       "retryOnFail": false
     },
@@ -1132,10 +1092,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        384,
-        672
+        -816,
+        1232
       ],
-      "id": "570064d6-7830-46c7-9c7d-d8b168c16973",
+      "id": "6ab86e1c-699b-40df-b2a8-5d60c18a270f",
       "name": "Gerar outro Token"
     },
     {
@@ -1220,10 +1180,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        832,
-        880
+        -368,
+        1440
       ],
-      "id": "cde7fec9-95ad-4ec6-83ed-ae825535d654",
+      "id": "237a4921-72f1-41c5-ba09-a2d8e6229292",
       "name": "Send Message2",
       "retryOnFail": false
     },
@@ -1236,10 +1196,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        624,
-        336
+        -576,
+        896
       ],
-      "id": "464df2f9-7a0d-4cab-8c06-10037b0ab336",
+      "id": "f4c48a29-b801-4c8f-a32b-b3f946862c84",
       "name": "Sticky Note"
     },
     {
@@ -1252,10 +1212,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        96,
-        400
+        -1104,
+        960
       ],
-      "id": "829c8c26-0c75-4f9f-a09c-f0dd83ed1d45",
+      "id": "ae68922c-4161-4a24-8094-1cdc2e24426b",
       "name": "Sticky Note5"
     },
     {
@@ -1268,10 +1228,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -2960,
-        368
+        -4160,
+        928
       ],
-      "id": "974e79e0-0204-44fd-8490-a58ad6f20596",
+      "id": "dde5d56a-6b54-4533-a9a2-b17b447ed207",
       "name": "Sticky Note6"
     },
     {
@@ -1284,10 +1244,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1520,
-        336
+        320,
+        896
       ],
-      "id": "0e6e6060-5fd3-40e4-a391-19eb8ac2d482",
+      "id": "9a24cabb-4363-4273-b6e5-f2bb68ce07d2",
       "name": "Sticky Note7"
     },
     {
@@ -1300,10 +1260,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1168,
-        336
+        -16,
+        896
       ],
-      "id": "98212198-4f5f-407d-ae1c-22386d28e1f1",
+      "id": "4f33b12d-6560-445f-b24b-548e2a9b7084",
       "name": "Sticky Note8"
     },
     {
@@ -1316,10 +1276,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        736,
-        704
+        -464,
+        1264
       ],
-      "id": "064cc3de-ebb6-425d-af1d-79582a95e018",
+      "id": "7327b4d0-1715-48b9-972b-a02274da275d",
       "name": "Sticky Note9"
     },
     {
@@ -1459,10 +1419,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -3376,
-        688
+        -4576,
+        1248
       ],
-      "id": "023c5a08-a0b7-4c1d-b342-6df0d182950d",
+      "id": "5a859f34-abf0-4798-93e2-f15a541b020a",
       "name": "Switch - voice or text1"
     },
     {
@@ -1473,10 +1433,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2656,
-        912
+        -3856,
+        1472
       ],
-      "id": "2b22e098-ea23-43ec-883d-ffc2cff83dab",
+      "id": "42677701-7187-4abe-998b-3f38fbb30ddc",
       "name": "Download Image",
       "alwaysOutputData": true,
       "retryOnFail": true,
@@ -1564,10 +1524,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2528,
-        1088
+        -3728,
+        1648
       ],
-      "id": "69d942d7-1fd0-49d0-8d9d-aa1555b90b16",
+      "id": "26643e9d-0838-491c-92e2-10f60efa6360",
       "name": "Send Message5",
       "retryOnFail": false
     },
@@ -1580,10 +1540,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryManager",
       "typeVersion": 1.1,
       "position": [
-        112,
-        80
+        -1088,
+        640
       ],
-      "id": "6453eaca-43cc-42ed-9409-ef433358945e",
+      "id": "18cd016e-1ab9-455b-95fa-6a0585693f27",
       "name": "Chat Memory Manager"
     },
     {
@@ -1681,11 +1641,17 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.5,
       "position": [
-        656,
-        -432
+        -544,
+        128
       ],
-      "id": "6e24e86d-45e5-4f3b-929a-87e51bb4b2e5",
+      "id": "c855803a-e878-4257-bffd-254814705218",
       "name": "Save Chat History",
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      },
       "disabled": true
     },
     {
@@ -1698,10 +1664,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        48,
-        -32
+        -1152,
+        528
       ],
-      "id": "8f98baed-d62f-47da-b67c-b8a57e209f12",
+      "id": "c7c6ce59-60f1-472b-873b-78809b05934b",
       "name": "Sticky Note16"
     },
     {
@@ -1751,10 +1717,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        864,
-        -432
+        -336,
+        128
       ],
-      "id": "11a52eba-2aa6-4015-9208-be7f0bccf7ba",
+      "id": "03de6cdb-5b4f-4a0b-9233-8cf86ea6a316",
       "name": "Mais de 3 mensagens",
       "disabled": true
     },
@@ -1765,17 +1731,17 @@
         "messageData": "={{ $json.text }}",
         "tail": true
       },
-      "id": "9b0e349a-375d-4870-8ffb-08b7ca248390",
+      "id": "f219f50a-24fb-405c-86e1-0b19b7ecb3f4",
       "name": "Redis6",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -1936,
-        544
+        -3136,
+        1104
       ],
       "credentials": {
         "redis": {
-          "id": "JE4ExRgQqxXYLjRp",
+          "id": "G96Z4GZwJMWvp7g5",
           "name": "Redis account"
         }
       }
@@ -1786,30 +1752,30 @@
         "key": "=chat-buffer:{{ $('Set message props').last().json.chat_id }}",
         "options": {}
       },
-      "id": "c26c1823-fb41-494c-9c48-44a7a6e1dd83",
+      "id": "d6cc926b-1e56-4a57-8920-ebc983b84036",
       "name": "Redis7",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -1568,
-        544
+        -2768,
+        1104
       ],
       "credentials": {
         "redis": {
-          "id": "JE4ExRgQqxXYLjRp",
+          "id": "G96Z4GZwJMWvp7g5",
           "name": "Redis account"
         }
       }
     },
     {
       "parameters": {},
-      "id": "174996c3-091b-4031-9bc5-2a5d6573377f",
+      "id": "8f543e84-19f5-4e6d-bd5e-fb11fd363f73",
       "name": "No Operation, do nothing1",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -1168,
-        560
+        -2368,
+        1120
       ]
     },
     {
@@ -1817,17 +1783,17 @@
         "operation": "delete",
         "key": "=chat-buffer:{{ $('Set message props').last().json.chat_id }}"
       },
-      "id": "5011fadc-0444-4b8c-8e96-107c488fa415",
+      "id": "70c3ade4-f535-4623-81f4-8ff1200f02a3",
       "name": "Redis8",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -976,
-        384
+        -2176,
+        944
       ],
       "credentials": {
         "redis": {
-          "id": "JE4ExRgQqxXYLjRp",
+          "id": "G96Z4GZwJMWvp7g5",
           "name": "Redis account"
         }
       }
@@ -1857,24 +1823,24 @@
         },
         "options": {}
       },
-      "id": "be326b12-6e36-4dc6-ad96-83fd21a19fe7",
+      "id": "d6e5da00-bff6-498a-a73d-67a7db687d27",
       "name": "If6",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -1392,
-        544
+        -2592,
+        1104
       ]
     },
     {
       "parameters": {},
-      "id": "8df36170-715f-4c8e-a5e0-4c3faa00cab1",
+      "id": "832be585-e9c5-460c-875c-a67d2a22d81f",
       "name": "Wait2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -1760,
-        544
+        -2960,
+        1104
       ],
       "webhookId": "8d1f0684-333a-48f1-aa28-380ae948d1ba"
     },
@@ -1883,10 +1849,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        -2176,
-        544
+        -3376,
+        1104
       ],
-      "id": "fbd42b16-c4bc-45a6-b23f-699f86758b14",
+      "id": "6cd17bc4-13de-407f-92cf-a00a85907776",
       "name": "Merge"
     },
     {
@@ -1903,13 +1869,13 @@
         },
         "options": {}
       },
-      "id": "221d49ea-d44b-451e-b2c3-a791c8888eed",
+      "id": "e1104b50-800f-4eff-a56d-d6a36135c7ee",
       "name": "Edit Fields3",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1168,
-        384
+        -2368,
+        944
       ]
     },
     {
@@ -1920,11 +1886,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1968,
-        304
+        -3168,
+        864
       ],
       "typeVersion": 1,
-      "id": "7b52ebb1-4839-498c-88e4-5d2b9a0a3569",
+      "id": "6c045b77-21bf-4f8e-83ac-96c8cebb41a9",
       "name": "Sticky Note22"
     },
     {
@@ -1944,10 +1910,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -720,
-        384
+        -1920,
+        944
       ],
-      "id": "d5bcfaad-9e59-4fc7-9866-03ac82959932",
+      "id": "9d9c97f3-2077-4468-bcf7-3e3cd978dc11",
       "name": "Set message1"
     },
     {
@@ -1959,14 +1925,14 @@
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
       "typeVersion": 1.3,
       "position": [
-        0,
-        784
+        -1200,
+        1344
       ],
-      "id": "4bacf50b-03e8-4ec7-8476-4058742723cb",
+      "id": "1730c434-9827-4ce5-8a44-7ea7280f644b",
       "name": "Postgres Chat Memory",
       "credentials": {
         "postgres": {
-          "id": "W73OMQ2Q4L81MFjv",
+          "id": "3n2XFyKBHlGjd2GN",
           "name": "Postgres account"
         }
       }
@@ -1978,10 +1944,10 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        -4608,
-        752
+        -5808,
+        1312
       ],
-      "id": "b0914aae-663d-41f0-909b-27c433123dd7",
+      "id": "e05a7f9b-bccb-4f75-828d-41ba9a07737d",
       "name": "When Executed by Another Workflow"
     },
     {
@@ -2055,10 +2021,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -4384,
-        752
+        -5584,
+        1312
       ],
-      "id": "ce5c9f47-b191-42a3-8ecb-ee185dd3c726",
+      "id": "730dba98-f4c1-4e42-b8ef-a4f9d64df8af",
       "name": "Set message props"
     },
     {
@@ -2082,15 +2048,15 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        160,
-        672
+        -1040,
+        1232
       ],
-      "id": "a3e9d19b-6625-4376-be4f-fd7a01e37c0c",
+      "id": "82ceb27a-61d6-4ef7-bd45-e8d54ccdaded",
       "name": "Get Metadata",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "W73OMQ2Q4L81MFjv",
+          "id": "3n2XFyKBHlGjd2GN",
           "name": "Postgres account"
         }
       }
@@ -2116,15 +2082,15 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        -2848,
-        1088
+        -4048,
+        1648
       ],
-      "id": "3a7768ad-360f-475f-a9c0-f389177fa088",
+      "id": "0528bc5c-a6ca-4c79-881e-14a179a69b1d",
       "name": "Get Metadata2",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "W73OMQ2Q4L81MFjv",
+          "id": "3n2XFyKBHlGjd2GN",
           "name": "Postgres account"
         }
       }
@@ -2222,15 +2188,15 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        1664,
-        528
+        464,
+        1088
       ],
-      "id": "f537c03c-5149-4dd4-974b-f78939c058e0",
+      "id": "172de3a4-a03f-4def-853a-ea2962e14a16",
       "name": "Update Token",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "W73OMQ2Q4L81MFjv",
+          "id": "3n2XFyKBHlGjd2GN",
           "name": "Postgres account"
         }
       }
@@ -2247,10 +2213,10 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.1,
       "position": [
-        -3056,
-        1728
+        -4256,
+        2288
       ],
-      "id": "53ab540f-69c9-4a13-8656-f08d3b828930",
+      "id": "441bf79a-3546-43f1-848c-ebe84512f302",
       "name": "When chat message received",
       "webhookId": "3078a986-fd94-42b7-b4e9-dcfca30751ea"
     },
@@ -2270,14 +2236,14 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        -2880,
-        1952
+        -4080,
+        2512
       ],
-      "id": "17ba987b-4c3b-445f-8d01-8c761c98eedc",
+      "id": "996e27a1-8fc1-4cf2-86dd-19e6d4e42983",
       "name": "OpenAI Chat Model1",
       "credentials": {
         "openAiApi": {
-          "id": "968yT8h8Gf0veMrE",
+          "id": "0ZJDZk0RntkjAagM",
           "name": "OpenAi account"
         }
       }
@@ -2287,10 +2253,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        -2736,
-        1952
+        -3936,
+        2512
       ],
-      "id": "56d6876f-93da-4cbc-9794-1a29d4d8c356",
+      "id": "c5221ac0-cf75-477d-be38-6c7958f7b42d",
       "name": "Simple Memory"
     },
     {
@@ -2304,10 +2270,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2,
       "position": [
-        -2816,
-        1728
+        -4016,
+        2288
       ],
-      "id": "62578abd-59bb-415e-b736-3c6e70960d2b",
+      "id": "8c3e176a-0e08-4987-969e-033636b7f0ee",
       "name": "AI Agent1"
     },
     {
@@ -2321,10 +2287,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolCode",
       "typeVersion": 1.2,
       "position": [
-        -2560,
-        1952
+        -3760,
+        2512
       ],
-      "id": "a274f126-d702-411c-ace9-66a47f55d112",
+      "id": "396cbee2-153f-441e-830e-74c694fe577e",
       "name": "move_lead",
       "disabled": true
     },
@@ -2370,10 +2336,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        -2384,
-        1952
+        -3584,
+        2512
       ],
-      "id": "37c76fb2-a9f8-4738-9096-43fbc00bdb98",
+      "id": "27efeb13-f6d1-428c-b60a-06d26229b526",
       "name": "Move_Lead1",
       "disabled": true
     },
@@ -2411,15 +2377,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2960,
-        1488
+        -4160,
+        2048
       ],
-      "id": "19fbe0f2-4dcf-459f-ac65-f1973c00dcef",
+      "id": "64f927a6-4512-44d4-9114-6a5bfd88d741",
       "name": "Get Lead",
       "credentials": {
         "oAuth2Api": {
-          "id": "YgpgTfTiRvkNqmYU",
-          "name": "[Kommo] - OAuth2"
+          "id": "O1UhUo6s0R02p4aG",
+          "name": "[Kommo] - Oauth2"
         }
       }
     },
@@ -2454,15 +2420,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2768,
-        1488
+        -3968,
+        2048
       ],
-      "id": "d519f293-1de8-481a-ada9-3529a6233eb3",
+      "id": "e153db2f-764e-4793-9063-74da8cb1efef",
       "name": "Get Contact",
       "credentials": {
         "oAuth2Api": {
-          "id": "YgpgTfTiRvkNqmYU",
-          "name": "[Kommo] - OAuth2"
+          "id": "O1UhUo6s0R02p4aG",
+          "name": "[Kommo] - Oauth2"
         }
       }
     },
@@ -2471,10 +2437,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -3216,
-        1488
+        -4416,
+        2048
       ],
-      "id": "5cadfc65-f5df-4169-8fc2-65e4df2c83f3",
+      "id": "000258c3-c7ff-46a4-b23a-77d49a426fe2",
       "name": "When clicking ‘Execute workflow’"
     },
     {
@@ -2502,15 +2468,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2480,
-        1488
+        -3680,
+        2048
       ],
-      "id": "1415779c-fa79-462d-a2c2-417b999051ee",
+      "id": "3bde5eb2-7054-4563-8668-f0c6c37476c9",
       "name": "Get Custom Field",
       "credentials": {
         "oAuth2Api": {
-          "id": "YgpgTfTiRvkNqmYU",
-          "name": "[Kommo] - OAuth2"
+          "id": "O1UhUo6s0R02p4aG",
+          "name": "[Kommo] - Oauth2"
         }
       }
     },
@@ -2522,11 +2488,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -3296,
-        1392
+        -4496,
+        1952
       ],
       "typeVersion": 1,
-      "id": "40ae2a7a-064d-4640-b009-a6a7be08fd42",
+      "id": "04d7bc9a-159e-401f-a24d-37f56dec0249",
       "name": "Sticky Note17"
     },
     {
@@ -2554,15 +2520,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2240,
-        1488
+        -3440,
+        2048
       ],
-      "id": "aa6178f6-bd39-4a10-80aa-45a6cf81f9b0",
+      "id": "bd850c4a-6efe-4670-9003-29f2f0c2f1eb",
       "name": "Get Pipeline Stages",
       "credentials": {
         "oAuth2Api": {
-          "id": "YgpgTfTiRvkNqmYU",
-          "name": "[Kommo] - OAuth2"
+          "id": "O1UhUo6s0R02p4aG",
+          "name": "[Kommo] - Oauth2"
         }
       }
     },
@@ -2591,28 +2557,17 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2000,
-        1696
+        -3200,
+        2256
       ],
-      "id": "dc28e5df-a932-4dc4-b74a-6074584f44f6",
+      "id": "0e4db71b-d1f4-41d7-8beb-e5ed9bb1be50",
       "name": "Get Users",
       "credentials": {
         "oAuth2Api": {
-          "id": "YgpgTfTiRvkNqmYU",
-          "name": "[Kommo] - OAuth2"
+          "id": "O1UhUo6s0R02p4aG",
+          "name": "[Kommo] - Oauth2"
         }
       }
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.toolThink",
-      "typeVersion": 1,
-      "position": [
-        -368,
-        848
-      ],
-      "id": "2c958f48-0bfe-4e66-8f20-5d7378dbeb81",
-      "name": "Think"
     },
     {
       "parameters": {
@@ -2639,15 +2594,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2000,
-        1488
+        -3200,
+        2048
       ],
-      "id": "2e5ad066-2be1-4f57-97e6-2d864e7668a4",
+      "id": "50e3d984-f8c4-476d-af34-7bf8dbeb0e41",
       "name": "Get Pipelines",
       "credentials": {
         "oAuth2Api": {
-          "id": "YgpgTfTiRvkNqmYU",
-          "name": "[Kommo] - OAuth2"
+          "id": "O1UhUo6s0R02p4aG",
+          "name": "[Kommo] - Oauth2"
         }
       }
     },
@@ -2680,11 +2635,17 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -2000,
-        1888
+        -3200,
+        2448
       ],
-      "id": "ef1a379c-619d-4579-acd8-a24b0f10ca8f",
-      "name": "Update Lead"
+      "id": "a45282cf-8ffc-455c-a392-fdff1858c3fa",
+      "name": "Update Lead",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "O1UhUo6s0R02p4aG",
+          "name": "[Kommo] - Oauth2"
+        }
+      }
     },
     {
       "parameters": {
@@ -2695,34 +2656,17 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        -2240,
-        1696
+        -3440,
+        2256
       ],
-      "id": "50c6b704-8f7a-48fb-8612-d8681d3755ee",
+      "id": "c038cd4a-974c-4f5b-b3f9-9033511b321e",
       "name": "Execute a SQL query",
       "credentials": {
         "postgres": {
-          "id": "W73OMQ2Q4L81MFjv",
+          "id": "3n2XFyKBHlGjd2GN",
           "name": "Postgres account"
         }
       }
-    },
-    {
-      "parameters": {
-        "descriptionType": "manual",
-        "toolDescription": "Chame essa ferramenta para obter as perguntas e respostas do nosso FAQ.\nSempre que o cliente fizer uma pergunta, confira se ja existe uma resposta para isso no FAQ\n\nVocê só saberá a resposta depois de chamar a ferramenta",
-        "operation": "get",
-        "documentURL": "https://docs.google.com/document/d/1wHgWSivHYRqQgttpK_tqARrSGq5762OWUXMgTbikHPs/edit?tab=t.0"
-      },
-      "type": "n8n-nodes-base.googleDocsTool",
-      "typeVersion": 2,
-      "position": [
-        -304,
-        960
-      ],
-      "id": "353958ee-268d-4541-8a2b-a7c6d768d027",
-      "name": "faq_tool",
-      "disabled": true
     },
     {
       "parameters": {
@@ -2731,10 +2675,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryManager",
       "typeVersion": 1.1,
       "position": [
-        -3152,
-        2160
+        -4352,
+        2720
       ],
-      "id": "5ad13aab-796f-4f47-9daf-8bb485fce1d6",
+      "id": "bafe5e9c-39ce-4a67-b53e-72ae651eafd1",
       "name": "Chat Memory Manager1"
     },
     {
@@ -2746,14 +2690,14 @@
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
       "typeVersion": 1.3,
       "position": [
-        -3152,
-        2368
+        -4352,
+        2928
       ],
-      "id": "720f68c6-e6c1-4f60-b34f-241cd229ea0a",
+      "id": "4d12af15-73e8-42ba-a697-c00ef2e17bf9",
       "name": "Postgres Chat Memory1",
       "credentials": {
         "postgres": {
-          "id": "W73OMQ2Q4L81MFjv",
+          "id": "3n2XFyKBHlGjd2GN",
           "name": "Postgres account"
         }
       }
@@ -2766,10 +2710,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryManager",
       "typeVersion": 1.1,
       "position": [
-        -2960,
-        192
+        -4160,
+        752
       ],
-      "id": "24eb2ae0-7968-4274-afbf-d669c4cf4174",
+      "id": "f0823340-15d4-40d9-88c8-7037af9e13b0",
       "name": "Chat Memory Manager2"
     },
     {
@@ -2781,14 +2725,14 @@
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
       "typeVersion": 1.3,
       "position": [
-        -2624,
-        192
+        -3824,
+        752
       ],
-      "id": "c4cd02f5-35bc-4e5d-b85d-dc0025ce37fb",
+      "id": "de0deb49-f68b-41ac-bd31-aa1af738fed2",
       "name": "Postgres Chat Memory2",
       "credentials": {
         "postgres": {
-          "id": "W73OMQ2Q4L81MFjv",
+          "id": "3n2XFyKBHlGjd2GN",
           "name": "Postgres account"
         }
       }
@@ -2834,17 +2778,11 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1136,
-        -448
+        -64,
+        112
       ],
-      "id": "f7ad3818-609c-488e-a869-cb12d2ea60a0",
+      "id": "2cc0da0d-4f45-4bad-98f4-6ad957a06a25",
       "name": "Move Lead to TRIAGEM",
-      "credentials": {
-        "oAuth2Api": {
-          "id": "YgpgTfTiRvkNqmYU",
-          "name": "[Kommo] - OAuth2"
-        }
-      },
       "disabled": true
     },
     {
@@ -2891,11 +2829,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2096,
-        1248
+        896,
+        1808
       ],
-      "id": "5a62eb22-09b5-461f-98ca-26093dd217e9",
-      "name": "preencher_urgencia_lead"
+      "id": "bfb62da9-892b-48a2-a52e-578453119144",
+      "name": "preencher_urgencia_lead",
+      "disabled": true
     },
     {
       "parameters": {
@@ -2904,11 +2843,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2288,
-        1136
+        1088,
+        1696
       ],
       "typeVersion": 1,
-      "id": "42e28138-ecae-487b-b068-a316f0ea5b7b",
+      "id": "fd417907-1935-4cdb-b49f-a99788a6e277",
       "name": "Sticky Note data_chegada",
       "disabled": true
     },
@@ -2919,11 +2858,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2560,
-        1136
+        1360,
+        1696
       ],
       "typeVersion": 1,
-      "id": "62620b87-143f-442b-b5a5-25c7f7ab435f",
+      "id": "ccb3df5a-2893-46c5-9393-6303d847d590",
       "name": "Sticky Note data_partida",
       "disabled": true
     },
@@ -2971,11 +2910,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        1824,
-        1536
+        624,
+        2096
       ],
-      "id": "7c7acd7b-b59f-4b9a-bb50-65bc85a3ee51",
-      "name": "preencher_grupo_lead"
+      "id": "460fb0a8-88cb-4724-8749-999462af6bb6",
+      "name": "preencher_grupo_lead",
+      "disabled": true
     },
     {
       "parameters": {
@@ -2984,11 +2924,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1744,
-        1424
+        544,
+        1984
       ],
       "typeVersion": 1,
-      "id": "956dba05-ec90-4476-b52a-9c77116d503d",
+      "id": "572cfbbe-5308-4f3f-99d6-c5222b315df5",
       "name": "Sticky Note Origem1",
       "disabled": true
     },
@@ -3036,11 +2976,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2368,
-        1248
+        1168,
+        1808
       ],
-      "id": "d912dfad-4812-4320-baf0-721f279d145a",
-      "name": "preencher_data_chegada_lead"
+      "id": "a811410c-45ab-42c1-8753-96352e4b9752",
+      "name": "preencher_data_chegada_lead",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3086,11 +3027,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2640,
-        1248
+        1440,
+        1808
       ],
-      "id": "0f648fcd-67d9-492e-a8a0-68bb7d6c728b",
-      "name": "preencher_data_partida_lead"
+      "id": "8da19000-ba94-4abe-a47e-926652f22cdb",
+      "name": "preencher_data_partida_lead",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3099,11 +3041,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2016,
-        1424
+        816,
+        1984
       ],
       "typeVersion": 1,
-      "id": "6f569bf4-5884-4dd3-baa9-0012f00e3c33",
+      "id": "77f24bf6-e50e-42f3-8102-495d84418b12",
       "name": "Sticky Note Origem2",
       "disabled": true
     },
@@ -3151,11 +3093,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2096,
-        1536
+        896,
+        2096
       ],
-      "id": "1180a0f2-ba80-4c9b-8bcc-0f6098c554e0",
-      "name": "preencher_idade_perfil_lead"
+      "id": "2e0c6d40-c77c-4f10-847c-6de9b9914d34",
+      "name": "preencher_idade_perfil_lead",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3164,11 +3107,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2288,
-        1424
+        1088,
+        1984
       ],
       "typeVersion": 1,
-      "id": "d70d764a-b39f-4ab2-8f0f-42e997c36401",
+      "id": "b2b57d05-a7a0-41b9-91f4-97a5fe4efaaa",
       "name": "Sticky Note Origem3",
       "disabled": true
     },
@@ -3216,17 +3159,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2368,
-        1536
+        1168,
+        2096
       ],
-      "id": "0be8a341-be69-46d9-b8b1-cbfb93fd6c00",
+      "id": "99d9270e-881e-4982-a142-740216b84f78",
       "name": "preencher_tipo_passeio_lead",
-      "credentials": {
-        "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
-        }
-      }
+      "disabled": true
     },
     {
       "parameters": {
@@ -3236,11 +3174,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2016,
-        1712
+        816,
+        2272
       ],
       "typeVersion": 1,
-      "id": "7e59ad8e-b387-499e-9743-fc0c01c169a4",
+      "id": "eebe6377-9497-4ace-8c1e-0712aa87e33f",
       "name": "Sticky Note15",
       "disabled": true
     },
@@ -3276,11 +3214,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2096,
-        1824
+        896,
+        2384
       ],
-      "id": "4b92de6d-9254-45c5-a6c1-827a881d76cb",
-      "name": "mover_perda"
+      "id": "2c7278f2-33d1-426a-81ca-2e191ef5efd7",
+      "name": "mover_perda",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3314,11 +3253,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2368,
-        1824
+        1168,
+        2384
       ],
-      "id": "bd2ccb63-965a-439f-b5cc-fd9fd7e18e23",
-      "name": "mover_pos_vendas"
+      "id": "3f77d94a-e950-4344-94a3-e19f2f9101b1",
+      "name": "mover_pos_vendas",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3328,11 +3268,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2288,
-        1712
+        1088,
+        2272
       ],
       "typeVersion": 1,
-      "id": "800f804e-742a-457f-a9a4-6f9abcd6662c",
+      "id": "c70727ae-0a69-439a-8265-71dbd2a03b04",
       "name": "Sticky Note18",
       "disabled": true
     },
@@ -3368,11 +3308,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2640,
-        1824
+        1440,
+        2384
       ],
-      "id": "8c66f2e1-908c-48f1-a874-9a21643cd896",
-      "name": "mover_qualificado"
+      "id": "84d813b7-d50e-42a8-99cf-006374888e58",
+      "name": "mover_qualificado",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3382,11 +3323,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2560,
-        1712
+        1360,
+        2272
       ],
       "typeVersion": 1,
-      "id": "d4ffa0a5-71d3-4f0e-a32b-e7eaff9ed1b3",
+      "id": "467c85ca-f5e9-41a5-9ec7-29f1cce7d45a",
       "name": "Sticky Note20",
       "disabled": true
     },
@@ -3397,11 +3338,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2832,
-        1424
+        1632,
+        1984
       ],
       "typeVersion": 1,
-      "id": "f166d9b5-7770-4abd-aa54-dcba0da1c7b1",
+      "id": "abce3cd8-bd60-4390-ac2e-6ce773b1775a",
       "name": "Sticky Note pessoas",
       "disabled": true
     },
@@ -3449,11 +3390,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2912,
-        1536
+        1712,
+        2096
       ],
-      "id": "d8408485-538b-4379-b539-88b6178adf10",
-      "name": "preencher_numero_pessoas_lead"
+      "id": "4372a719-8df8-4dbc-839c-e018c8118b1d",
+      "name": "preencher_numero_pessoas_lead",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3462,11 +3404,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2832,
-        1136
+        1632,
+        1696
       ],
       "typeVersion": 1,
-      "id": "92c99200-2d0a-4e4d-b3ef-9d8fcf4f181c",
+      "id": "23c21d6c-165e-42e8-bea0-eaa4e2443a01",
       "name": "Sticky Note hospedagem",
       "disabled": true
     },
@@ -3514,11 +3456,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2912,
-        1248
+        1712,
+        1808
       ],
-      "id": "fe439009-3a64-4f99-b933-94690f5a60c1",
-      "name": "preencher_hospedagem_lead"
+      "id": "9ccb44d0-d722-42e8-9dbf-54bc242d5765",
+      "name": "preencher_hospedagem_lead",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3564,11 +3507,12 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        2912,
-        1824
+        1712,
+        2384
       ],
-      "id": "42a2b23d-7431-44d6-9859-166a912b4f69",
-      "name": "preencher_idade_idade_criacas_lead"
+      "id": "b891909b-e321-4237-8abd-8e137422f288",
+      "name": "preencher_idade_idade_criacas_lead",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3577,12 +3521,1077 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2832,
-        1712
+        1632,
+        2272
       ],
       "typeVersion": 1,
-      "id": "ce7e5cdc-92eb-4cdd-b037-cd99fc6719c7",
+      "id": "359b9d2c-85c5-4cf5-93c7-2d76a2aa85f6",
       "name": "Sticky Note Origem4",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche Urgencia do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        816,
+        1696
+      ],
+      "typeVersion": 1,
+      "id": "cb5c6d3f-0ae5-4216-a7b7-e3adbd9436df",
+      "name": "Sticky Note Origem5",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Envia Imagem 1\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1104,
+        3648
+      ],
+      "typeVersion": 1,
+      "id": "911f86c6-d1dd-4896-914a-77393532db28",
+      "name": "Sticky Note empreendimento1",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -1840,
+        1232
+      ],
+      "id": "e0107c2f-7f14-498a-a72b-2a27cab9797d",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "name",
+              "renameField": true,
+              "outputFieldName": "Nome do Empreendimento"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -5136,
+        1312
+      ],
+      "id": "41174071-b461-42a9-b21e-9afe4cba7075",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2b1df782-1a1c-4088-b16e-a8641779a544",
+              "name": "Empreendimento escolhido",
+              "value": "={{\n  $('Get Empreendimentos')\n    .all()\n    .find(\n      item =>\n        item.json.name === (\n          $('When Executed by Another Workflow')\n            .item\n            .json\n            .getLead\n            ?.json\n            ?.custom_fields_values\n            ?.find(i => i.field_id == 1025278)\n            ?.values?.[0]?.value\n            ?? ''\n        )\n    )?.json ?? {}\n}}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {
+          "ignoreConversionErrors": true
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -4848,
+        1312
+      ],
+      "id": "c2293b1e-0a2a-48fb-bf10-f800ddde5efb",
+      "name": "Set Empreendimento"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ventures",
+          "mode": "list",
+          "cachedResultName": "ventures"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "active",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "name",
+            "id",
+            "description",
+            "priceRange",
+            "financing"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -5360,
+        1312
+      ],
+      "id": "2379a84c-3364-4da9-802f-077a0e235cde",
+      "name": "Get Empreendimentos",
+      "credentials": {
+        "postgres": {
+          "id": "MRz8SFgYuZS9wEZe",
+          "name": "PG Frontend"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ventures",
+          "mode": "list",
+          "cachedResultName": "ventures"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "name",
+              "value": "={{ \n(\n          $('When Executed by Another Workflow')\n            .item\n            .json\n            .getLead\n            ?.json\n            ?.custom_fields_values\n            ?.find(i => i.field_id == 1025278)\n            ?.values?.[0]?.value\n            ?? ''\n        )\n}}"
+            },
+            {
+              "column": "active",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "id",
+            "name",
+            "description",
+            "priceRange"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -4848,
+        1120
+      ],
+      "id": "7493d93f-d0fd-4eb4-8d50-8998bde34970",
+      "name": "Select rows from a table",
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        -4000,
+        2720
+      ],
+      "id": "dea9c9f5-7027-4a98-8d18-04103fa6fcd3",
+      "name": "Chat Memory Manager3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1bc68f5b-245d-4222-a1ae-e11bd5b0d018",
+              "name": "prompt_construtora",
+              "value": "=##### **4. Finalização e negociação**\nnão pergunte os dados de estado civil, renda, etc. Pule direto para essa etapa e envie a mensagem abaixo:\n```plaintext\n\nEm breve te envio a simulação da Construtora com os valores de entrada, parcelas e condições pra você! 🏡💰\n\nSe surgir qualquer dúvida, pode me chamar aqui! 😊📲\n\n```\n\n(Acione `mover_negociacao`)\n",
+              "type": "string"
+            },
+            {
+              "id": "27c35378-db4b-471d-95a1-1b3308276b95",
+              "name": "prompt_banco",
+              "value": "=##### **4. Coleta de dados para simulação**\n\nPara cada resposta do lead, acione a ferramenta correspondente.\n\n_!IMPORTANTE: A partir desse ponto é expressamente proibido chamar `enviar_img_1`, `enviar_material` e `envia_media_simulacao`_\n\nAbaixo estão os exemplos completos de cada pergunta e a ferramenta que deve ser chamada:\n\n---\n\n**Pergunta 1 – Estado Civil**\n\n```plaintext\nQual seu estado civil? Ou seja, você é casado ou solteiro?  \n \nSolteiro.  \nCasado.  \nPretendo comprar com outra pessoa.\n```\n**Ferramenta a ser chamada:** `preenche_estado_civil`\n- lembre-se de seguir naturalmente com a mensagem e sem lista numerada\n\n---\n\n**Pergunta 2 – Renda Mensal**\n\n```plaintext\n(Se o lead for solteiro ou casado)\nQual valor da sua renda mensal, {Nome}?\n\n(Se o lead pretende comprar com outra pessoa)\nQual valor da renda de vocês dois juntos mensal?\n```\n\n**Ferramenta a ser chamada:** `preenche_renda_mensal`\n\n---\n\n**Pergunta 3 – Tipo de Renda**\n\n```plaintext\n{Nome}, só para eu te orientar melhor com as possibilidades de financiamento:  \nVocê(s) trabalha(m) com renda formal (com registro em carteira ou CNPJ)  \nou renda informal (autônomo, sem registro)?  \n\n1 - Renda Formal  \n2 - Renda Informal\n```\n\n**Ferramenta a ser chamada:** `preenche_tipo_renda`\n\n---\n\n**Pergunta 4 – Declaração de Imposto de Renda**\n\n```plaintext\n{Nome}, você(s) declarou(raram) Imposto de Renda esse ano?  \n```\n\n**Ferramenta a ser chamada:** `preenche_imposto_renda`\n\n---\n\n**Pergunta 5 – Data de Nascimento**\n\n```plaintext\nE por último, qual a sua data de nascimento?  \nSe for comprar com mais alguém, envie também a data de nascimento da outra pessoa.\n```\n\n**Ferramenta a ser chamada:** `preencher_data_nascimento`\n\n\n##### **5. Finalização e negociação**\n\n```plaintext\n\nPerfeito! Em breve te envio a simulação da Caixa com os valores de entrada, parcelas e condições pra você! 🏡💰\n\nSe surgir qualquer dúvida, pode me chamar aqui! 😊📲\n\n```\n\n(Acione `mover_negociacao`)\n",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1680,
+        1232
+      ],
+      "id": "dae7a1b3-1518-4ac7-b81f-a9fded824367",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "content": "## Consultar Empreendimentos\n\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2192,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "1bb35eca-ad3b-410c-ac0a-b362ebc0c3b3",
+      "name": "Sticky Note empreendimento4",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Chame essa ferramenta para responder quaisquer dúvidas do lead sobre os empreendimentos",
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "ventures",
+          "mode": "list",
+          "cachedResultName": "ventures"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "active",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "name",
+            "description",
+            "priceRange",
+            "link"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.6,
+      "position": [
+        -2112,
+        1888
+      ],
+      "id": "8232c6a5-a6cc-4a93-ab8c-beb7fba75727",
+      "name": "consultar_empreendimentos",
+      "credentials": {
+        "postgres": {
+          "id": "MRz8SFgYuZS9wEZe",
+          "name": "PG Frontend"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta logo após o lead informar o empreendimento que ele tem interesse ( e somente nessa etapa. nunca chame em outro momento ). \nUse para registrar internamente o disparo automático da capa do empreendimento logo após o lead informar o nome do empreendimento de interesse.\nApós isso, siga com o atendimento\n\nA ferramenta irá retornar com as instruções caso dê erro.",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-img-1",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "lead_id",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "message_props",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').item.json }}"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1184,
+        3744
+      ],
+      "id": "d7ee25cc-09f0-48c2-9295-144158ea6bfe",
+      "name": "set_capa_enviada",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {
+          "temperature": 0.1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -1520,
+        1424
+      ],
+      "id": "c6d89f15-8ad9-4bfc-b41b-a5cb37cff25e",
+      "name": "OpenAI Fallback 4.1 mini",
+      "credentials": {
+        "openAiApi": {
+          "id": "0ZJDZk0RntkjAagM",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<importante> \n- current time: {{ $now.format('ffff') }}\n- Se o Lead perguntar algo, chame a ferramenta \"consultar_empreenidmento\"\n</importante>\n\n---\n\n# mensagem do usuário:\n\n{{ $json.text ? $json.text : 'mensagem vazia' }}",
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "=### ROLE\n\nVocê é o agente de IA de triagem e atendimento inicial da Joice Cordeiro, corretora de lançamentos imobiliários em Itatiba.\n\n### PRIMARY GOAL\n\nSua missão: Receber leads de forma calorosa, identificar o empreendimento de interesse, fornecer informações detalhadas sobre os imóveis, enviar materiais audiovisuais, coletar dados essenciais do lead, registrar essas informações no Kommo, e conduzir o lead até o estágio de simulação e negociação – sempre promovendo uma experiência consultiva, acolhedora e eficiente.\n\n### DOMAIN CONTEXT\n\n• São atendidos leads interessados em diferentes empreendimentos imobiliários em lançamento, com possibilidade de inclusão dinâmica de novos empreendimentos.\n\n• O funil contempla as etapas: Saudação/Menu → Empreendimento → Material → Simulação → Negociação.\n\n• Cada ação de informação ou coleta de dados deve ser registrada em sistemas via ferramentas específicas (ex: `preenche_empreendimento`, `preenche_estado_civil`, etc).\n\n• Materiais (fotos, vídeos, PDFs, links) são enviados de acordo com cada empreendimento para convencer o lead a solicitar simulação.\n\n{{$('Set Empreendimento').item.json['Empreendimento escolhido']['financing'] == 'construtora' ? '' \n: \n'• Dados coletados para simulação: estado civil, renda mensal (individual ou conjunta), tipo de renda (formal/informal), declaração de IR, data(s) de nascimento.' }}\n\n\n• O lead pode desistir, pedir falar com humano ou demonstrar hesitação/irritação a qualquer momento.\n\n### AVAILABLE TOOLS\n\n> ⚠️ Cada ferramenta só deve ser chamada **apenas uma vez por informação nova** e nunca repetida para o mesmo dado.\n\n1. **preenche_empreendimento** – Use ao identificar a escolha do empreendimento, informando o número da opção selecionada.\n\n2. **mover_interessado** – Use após registrar o empreendimento e iniciar o envio de materiais.\n\n3. **mover_empreendimento_material** – Use quando o lead aceitar receber o material do empreendimento.\n\n4. **mover_simulacao** – Use ao engajar o lead para fazer simulação personalizada.\n\n5. **preenche_estado_civil** – Use ao receber o estado civil do lead (indique o número da resposta).\n\n6. **preenche_renda_mensal** – Use ao receber o valor da renda (individual ou conjunta).\n\n7. **preenche_tipo_renda** – Use ao receber o tipo de renda (número da escolha).\n\n8. **preenche_imposto_renda** – Use ao receber resposta sobre declaração de IR.\n\n9. **preencher_data_nascimento** – Use ao receber data(s) de nascimento.\n\n10. **mover_negociacao** – Use após finalizar a coleta dos dados da simulação e avisar o lead sobre o próximo contato.\n\n11. **request_human** – Use para transferir o atendimento para a Joice. Quando lead pedir para falar com humano, reclamar, ou demonstrar frustração/negatividade.\n\n12. **enviar_material** – Use para enviar a série de materiais do empreendimento **uma única vez**, assim que o lead responder positivamente à sua primeira pergunta do tipo:  \n   \"Posso te enviar o material do empreendimento?\"  \n   - Considere como resposta afirmativa qualquer mensagem como: \"pode\", \"sim\", \"manda\", \"envia\", \"ok\", \"quero sim\", etc.  \n   - Após uma resposta afirmativa, chame imediatamente `mover_empreendimento_material` e `enviar_material`, **sem repetir a pergunta**. \n\n13. **envia_media_simulacao** - Use para enviar a mídia de simulação logo após o lead informar que quer saber o valor do empreendimento\n\n14. **preenche_motivo** - Use para preencher qual o motivo do lead ('moradia' ou 'investimento')\n\n15. **consultar_empreendimentos** - Use para consultar informações para poder responder dúvidas do lead. Sempre que o lead fizer qualquer pergunta, chame essa ferramenta\n\n### STYLE & TONE\n\n• Seja empático, acolhedor e cordial – converse como um amigo que entende do assunto, mostrando interesse real, naturalidade e transparência.\n\n• Sempre utilize listas numeradas para opções, nunca texto corrido.\n\n• Use emojis para aproximar e humanizar, sem exageros.\n\n### SAFETY & ACCURACY\n\nNunca faça afirmações não suportadas, não compartilhe informações sensíveis nem promessas irreais.\n\nSe não souber algo, explique isso e ofereça buscar/falar com o humano.\n\n### RESPONSE FORMAT\n\n• Estruture os diálogos para avançar de etapa em etapa, confirmando dados recebidos e orientando sobre o próximo passo. Porém siga de forma natural. Caso o lead faça perguntas, responda as dúvidas dele chamando `consultar_empreendimentos`\n\n• A cada nova informação relevante recebida, utilize a ferramenta adequada imediatamente após a resposta do lead.\n\n• Se o lead não responder a uma pergunta obrigatória, reforce gentilmente a solicitação antes de avançar.\n\n• Nunca repita a ferramenta para o mesmo valor já registrado no Kommo.\n\n---\n\n#### Exemplos Resumidos de Fluxo\n(obs. O fluxo abaixo é um exemplo sugerido. Mas você pode adaptar os textos para o cenário e contexto da conversa)\n\n##### **1. Saudação & escolha do empreendimento**\n\n```plaintext\n\nOi! Tudo bem? 👋\n\nSou  a assistente virtual da Joice Cordeiro, corretora de lançamentos em Itatiba.\n\nVou te ajudar com todas as informações do empreendimento.\n\nPrimeiramente, como você gostaria de ser chamado(a)?\n\n```\n\n(Ao receber o nome, siga:)\n- Pergunte se está buscando imóveis para investimento ou moradia\napós a resposta, chame a ferramenta `preenche_motivo` e inclua o motivo escolhido ('investimento' ou 'moradia')\n\n\n(Após preencher o motivo, siga:)\n```plaintext\n\nObrigado! Agora vamos continuar com seu atendimento...\n\nSobre qual empreendimento você gostaria de saber mais?\n\n{{ $('Aggregate').item.json['Nome do Empreendimento'].append('Outros').map((v, i) => `${i + 1} - ${v}`).join('\\n\\n') }}\n\n```\n- lembre-se de não usar listas numeradas\n- Se o lead escolher um empreendimento que não está na lista acima, avise que a Joice entrará em contato e já chame `request_human` imediatamente\n\n(Somente no momento em que o lead escolher qual empreendimento ele quer, acione `preenche_empreendimento` passando o nome exato do empreendimento.)\n- lembre-se de responder todas as duvidas do lead antes de marcar a escolha do empreendimento\n- Lembre-se de chamar essa ferramenta somente nessa etapa.\n\n##### **2. Envio do material inicial do empreendimento**\n- siga o exemplo abaixo. Mas deixe a conversa natural. Se o lead ja manifestou interesse no material, não precisa perguntar novamente.\n\n```plaintext\nFico feliz pelo seu interesse no {Nome do empreendimento}\n\nVou te enviar o material do empreendimento. OK?\n\n```\n\n- Se o lead responder afirmativamente (por exemplo: \"pode\", \"sim\", \"manda\", \"envia\", \"ok\", \"quero sim\"), você deve, na mesma resposta:\n  - Parar de perguntar \"Posso enviar?\" (não repita essa pergunta).\n  - Acionar imediatamente `mover_empreendimento_material` e `enviar_material`.\n  - Nunca escreva algo do tipo: \"imagem enviada\", \"material enviado\", etc\n  - garanta que antes de chamar `enviar_material` você ja tenha chamado `preencher_empreendimento` para que seja definido sobre qual o empreendimento o lead quer receber o material.\n- Caso o lead não queira o material, não insista. Ignore esta etapa e siga o atendimento para os próximos passos.\n\n\n##### **3. Material de apresentação e convite para simulação**\n\napós chamar a ferramenta `enviar_material` e receber o retorno dela, pergunte:\n\n```plaintext\n\nGostaria de Agendar uma visita, telefonar para o corretor ou já prefere fazer uma simulação?\n\n```\n\n3.1 - Agendar visita:\nSe o lead responder que quer agendar uma visita, pergunte a data e hora de preferência.\napós a resposta do lead, chame a ferramenta `agendar_visita` passando a data e hora escolhida.\napós isso, diga que a joice vai entrar em contato para confirmar a disponibilidade de horário. E pergunte se ajuda em algo mais por enquanto. \nCaso o lead diga que nao precisa de mais ajuda, chame `request_human`\n\n3.2 - Telefonar para Corretor:\nSe o lead quiser falar com o corretor, chame `request_human` para transferir o atendimento para a Joice.\n\n3.3 - Simulação:\n\n(Se o lead responder que quer fazera simulação, responda calorosamente e chame a ferramenta `envia_media_simulacao`)\n- lembre-se de chamar `mover_simulacao`\n\n_!IMPORTANTE: A partir desse ponto é expressamente proibido chamar `enviar_material`_\n\n{{$('Set Empreendimento').item.json['Empreendimento escolhido']['financing'] == 'construtora' ? \n$json.prompt_construtora\n:\n$json.prompt_banco\n}}\n\n---\n\n\n### Uso de ferramentas (regra global)\n\n- Antes de chamar qualquer ferramenta, releia a conversa e verifique se essa ferramenta já foi utilizada.\n- Se uma ferramenta já tiver sido chamada com sucesso para aquele dado (por exemplo: `enviar_material`, `preenche_empreendimento` para o mesmo empreendimento), **não repita a chamada**.\n- Em especial:\n  - `enviar_material` só pode ser usada uma vez em toda a conversa (exceto se o lead escolher outro empreendimento).\n\n---\n\n### Notas Gerais\n\n- Se lead desviar do assunto, traga de volta de forma natural e cordial.\n\n- Se lead pedir para parar/ficar irritado/pedir humano, acione `request_human`.\n\n- Nunca repita perguntas ou ferramentas se o lead já respondeu/registrou resposta idêntica.\n\n- Não envie links formatados; envie sempre em texto puro.\n\n- Nunca diga 'Material enviado' e 'Midia Enviada' após enviar o material. \n\n- Se o lead não passar a informação após a segunda tentativa, pare de insistir e siga o atendimento ignorando a pergunta\n\n- Se o lead disser que nao quer mais o atendimento, você nao deve dizer que vai encerrar o atendimento, deve dizer que vai \"passar para a corretora Joice\" e que ela vai entrar em contato. Em seguida chame `request_human`\n\n- Não utilize listas numeradas.\n\n- Separe mensagens longas (acima de 80 caracteres) com duas quebras de linha.\n\n- Sempre siga a ordem das etapas do funil como uma sequência de estados:\n  1) Saudação/Menu  \n  2) Empreendimento (escolha + `preenche_empreendimento` uma única vez)  \n  3) Material (`mover_empreendimento_material` + `enviar_material` uma única vez, após resposta afirmativa)  \n  4) Simulação  \n  5) Negociação  \n\n- Nunca volte para uma etapa anterior para repetir envio de material (`enviar_material`) se essas ferramentas já tiverem sido usadas.\n\n\n## Metadata\n- Nome do Empreendimento: {{$('Set Empreendimento').item.json['Empreendimento escolhido']['name'] || '' }}\n- Informações do Empreendimento: \"\"\"\n{{ $('Set Empreendimento').item.json['Empreendimento escolhido']['description']|| '' }}\n\"\"\"\n- Preço dos imóveis: {{ $('Set Empreendimento').item.json['Empreendimento escolhido']['priceRange'] || '' }}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -1504,
+        1232
+      ],
+      "id": "12eb5bb7-2cfa-4ff2-bffa-fa1bb5a96445",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "content": "## Preenche Nome\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1904,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "6c9a0936-ce1a-4c46-a0ed-c99a24e483d5",
+      "name": "Sticky Note28",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o nome dele.",
+        "method": "POST",
+        "url": "https://joiceadv.up.railway.app/webhook/233276e9-fd98-46c4-a8e4-6be36738a6ec-nome",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', `o nome correto informado pelo lead`, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "contact_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getContact.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1824,
+        1888
+      ],
+      "id": "7ef49ae0-cdf2-4725-a6d7-3e0bd3adb404",
+      "name": "set_name1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Preenche motivo\n",
+        "height": 256,
+        "width": 246
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1632,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "aaaf1294-382e-44be-ac3c-5b983fd821a7",
+      "name": "Sticky Note motivo1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o motivo\npreencha com o nome exato do motivo conforme aparece na mensagem ao lado do numero da opção. Não o número da opção e sim o Nome exato",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-motivo",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "motivo",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', `motivo informado pelo lead`, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1552,
+        1872
+      ],
+      "id": "29de03ca-d6e3-477d-bfd2-375b7804f740",
+      "name": "preenche_motivo2",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Preenche empreendimento\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1360,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "97c2cff8-cf3f-4183-b5bc-560234914bf7",
+      "name": "Sticky Note empreendimento5",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o empreendimento\npreencha com o nome exato do empreendimento conforme aparece na mensagem ao lado do numero da opção. Não o número da opção e sim o Nome exato",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-empreendimento",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "empreendimento",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', `empreendimento informado pelo lead`, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "message_props",
+              "value": "={{ $('Set message props').item.json }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1280,
+        1888
+      ],
+      "id": "71c3f0e2-f1c6-4995-a9de-425818ce4ee9",
+      "name": "preenche_empreendimento1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Mover material\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -816,
+        1792
+      ],
+      "typeVersion": 1,
+      "id": "c21855cd-8cc8-4778-bb44-ae0cd5b4ac2b",
+      "name": "Sticky Note30",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para mover o lead para a etapa de “material”, quando ele afirmar que quer receber um video do empreendimento",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-material",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "lead_id",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -736,
+        1888
+      ],
+      "id": "83d599d3-4cbf-465d-a699-74b4aaf77ba4",
+      "name": "mover_material1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para mover o lead para a etapa de “simulacao”, quando ele afirmar que quer saber sobre os valores das casas",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-simulacao",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "lead_id",
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1552,
+        2496
+      ],
+      "id": "4673f834-127c-4bc7-914a-61751fe611e5",
+      "name": "mover_simulacao1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Mover simulacao\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1632,
+        2400
+      ],
+      "typeVersion": 1,
+      "id": "a65252e0-a559-4203-99ec-e6421be6dba7",
+      "name": "Sticky Note31",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche estado_civil do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1904,
+        2096
+      ],
+      "typeVersion": 1,
+      "id": "1298498f-ecc1-4670-80f5-17f425895cc4",
+      "name": "Sticky Note Origem8",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o estado_civil: \n  1. Solteiro  \n  2. Casado  \n  3. Pretendo Comprar com Outra Pessoa  \n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-estado_civil",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "estado_civil",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', `número da opção informada pelo lead \n  1. Solteiro \n  2. Casado  \n  3. Comprar com outra pessoa  `, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1824,
+        2192
+      ],
+      "id": "aba1f0a9-2d6f-4e7a-91d0-c024fb187a2a",
+      "name": "preenche_estado_civil1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Preenche renda\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1632,
+        2096
+      ],
+      "typeVersion": 1,
+      "id": "2af9fd19-f250-46e6-b049-52ae3dda253c",
+      "name": "Sticky Note renda1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a renda\n\ncaso o valor informado seja muito pequeno e incompatível com uma renda confirme se o valor foi digitado corretamente. \nex: lead informou '15'. Confirme se ele quis dizer R$15.000,00",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-renda",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "renda",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', `renda informada pelo lead`, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1552,
+        2192
+      ],
+      "id": "49796d02-9232-4826-a834-0e159a0c3a8a",
+      "name": "preenche_renda_mensal1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Preenche tipo_renda do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1360,
+        2096
+      ],
+      "typeVersion": 1,
+      "id": "12f0b936-4104-4593-8dea-dc72821269f1",
+      "name": "Sticky Note Origem9",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar o tipo_renda: \n  1. Formal  \n  2. Informal   \n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-tipo_renda",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "tipo_renda",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('preenche_tipo_renda', `número da opção informada pelo lead \n  1. Formal \n  2. Informal`, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1280,
+        2192
+      ],
+      "id": "74cf7fb0-c736-46a0-badf-4d64d565ba3e",
+      "name": "preenche_tipo_renda1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar se declarou imposto: \n  1. Sim  \n  2. Não   \n",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/444476e9-fd98-46c4-a8e4-6be36738a6e4-imposto",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "imposto",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('preenche_imposto', `número da opção informada pelo lead \n  1. Sim \n  2. Não`, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1008,
+        2192
+      ],
+      "id": "c9c9cfcf-6a14-4a69-ab71-ab029e026c15",
+      "name": "preenche_imposto_converted",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Preenche imposto do Lead\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1088,
+        2096
+      ],
+      "typeVersion": 1,
+      "id": "cde7ee03-e57c-4d80-8f2a-35582bec4217",
+      "name": "Sticky Note Origem10",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche nascimento\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -816,
+        2096
+      ],
+      "typeVersion": 1,
+      "id": "67b5a9e7-c762-4a00-a2c0-47bcc26422cf",
+      "name": "Sticky Note nascimento1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a data de nascimento",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-nascimento",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nascimento",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('preenche_nascimento_mensal', `nascimento informado pelo lead`, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -736,
+        2192
+      ],
+      "id": "c21b3b89-4450-4865-beaf-6d8c155bf068",
+      "name": "preenche_nascimento_mensal1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use para mover o lead para a etapa de “negociacao”, quando ele Finalizar as respsotas de simulação",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-negociacao",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1280,
+        2496
+      ],
+      "id": "ddba827c-1470-4397-8f6e-8295dba84227",
+      "name": "mover_negociacao1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Mover negociacao\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1360,
+        2400
+      ],
+      "typeVersion": 1,
+      "id": "8fc2c9c0-0702-486c-9314-034c9080a179",
+      "name": "Sticky Note32",
       "disabled": true
     },
     {
@@ -3593,11 +4602,267 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        448,
+        -1088,
+        2400
+      ],
+      "typeVersion": 1,
+      "id": "f23287cc-f480-4c6e-a7cd-cf11e1bb9c95",
+      "name": "Sticky Note33",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Preenche data_visita\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -816,
+        2400
+      ],
+      "typeVersion": 1,
+      "id": "74a7de55-e728-435e-bd64-6e4506a65bd3",
+      "name": "Sticky Note data_visita1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta assim que o lead informar a data de visita",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-data_visita",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "data_visita",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('preencher_data_visita_lead', `data_visita informada pelo lead no formato 'yyyy-MM-dd HH:mm'`, 'string') }}"
+            },
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -736,
+        2496
+      ],
+      "id": "065fe7ce-5491-488b-8dea-794a8de4ba6b",
+      "name": "preencher_data_visita_lead1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Chame essa ferramenta caso o usuário solicite falar com um humano, ou caso ele faça alguma reclamação ou perceba que o usuário está ficando irritado.\nEsta ferramenta irá transferir o atendimento para a Joice",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-human",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1008,
+        2496
+      ],
+      "id": "0cf01055-4eee-4e4d-86cf-bac8eb93c8c3",
+      "name": "request_human1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1.1,
+      "position": [
+        -1616,
+        1568
+      ],
+      "id": "296b364a-de31-45ed-b765-73415946d786",
+      "name": "Think1"
+    },
+    {
+      "parameters": {
+        "content": "## Envia Material\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1088,
         1792
       ],
       "typeVersion": 1,
-      "id": "9156e3f2-788c-4e92-b926-f5338215d05b",
+      "id": "ac116666-a578-45ec-9c5f-478f53b7f7bf",
+      "name": "Sticky Note empreendimento6",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta após o lead informar que deseja receber o material sobre o empreendimento.\nEssa ferramenta enviará uma série de materiais para o lead.\nAntes de chamar essa ferramenta, garanta que já chamou `prencheer_empreendimento`\n\nA ferramenta irá retornar a instrução do que repsonder em seguida",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/8910e964-8830-4fdf-8cc6-2d9fc977c5bb-media",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "message_props",
+              "value": "={{ $('Set message props').item.json }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1008,
+        1888
+      ],
+      "id": "758d6341-f538-4421-861d-7626ba5ff152",
+      "name": "envia_material1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Envia Media Simulação\n",
+        "height": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1904,
+        2400
+      ],
+      "typeVersion": 1,
+      "id": "15dd1076-1887-4fdc-8157-0160ca7af5e9",
+      "name": "Sticky Note empreendimento7",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "toolDescription": "=Chame essa ferramenta após a etapa 3 quando o lead informar que deseja saber sobre o preço / Valor do empreendimento.\n\nChame essa ferramenta se o lead manifestou interesse na simulação\n\nEssa ferramenta enviará uma imagem e uma mensagem padrão\n\nA ferramenta irá retornar a instrução do que repsonder em seguida",
+        "method": "POST",
+        "url": "=https://joiceadv.up.railway.app/webhook/8910e964-8830-4fdf-8cc6-2d9fc977c5bb-media-simulacao",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "lead_id",
+              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "message_props",
+              "value": "={{ $('Set message props').item.json }}"
+            }
+          ]
+        },
+        "options": {},
+        "optimizeResponse": true
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1824,
+        2496
+      ],
+      "id": "75b11d82-653e-496b-aaf2-6abc6513ce16",
+      "name": "envia_media_simulacao1",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Request Human\n",
+        "height": 260,
+        "width": 236
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1088,
+        3328
+      ],
+      "typeVersion": 1,
+      "id": "498d5385-4745-4354-b24a-6dd54059eba4",
       "name": "Sticky Note21",
       "disabled": true
     },
@@ -3608,27 +4873,12 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1008,
-        1168
+        1648,
+        2704
       ],
       "typeVersion": 1,
-      "id": "70d0c1db-3612-4c39-b9a9-0e0e1ece7e69",
+      "id": "4eeaf008-3077-48bb-a8f3-08642cc3bc69",
       "name": "Sticky Note23",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "content": "## Preenche Urgencia do Lead\n",
-        "height": 260
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        2016,
-        1136
-      ],
-      "typeVersion": 1,
-      "id": "b3e740e1-8599-4f5b-ae2a-71692ea64ac0",
-      "name": "Sticky Note Origem5",
       "disabled": true
     },
     {
@@ -3638,11 +4888,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -112,
-        1168
+        528,
+        2704
       ],
       "typeVersion": 1,
-      "id": "4b62d258-c1d9-442b-888d-a0b63fda328a",
+      "id": "8ec5fd23-8f55-410d-a553-78d7579adc96",
       "name": "Sticky Note empreendimento",
       "disabled": true
     },
@@ -3673,6 +4923,11 @@
               "name": "lead_id",
               "valueProvider": "fieldValue",
               "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
+            },
+            {
+              "name": "message_props",
+              "valueProvider": "fieldValue",
+              "value": "={{ $('Set message props').item.json }}"
             }
           ]
         },
@@ -3690,17 +4945,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        -32,
-        1264
+        608,
+        2800
       ],
-      "id": "4b0b6a21-2c8a-4128-b250-80de7a767dca",
+      "id": "bcdcb48f-29f0-4a0c-bc22-31d3f14f10ee",
       "name": "preenche_empreendimento",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -3734,17 +4990,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        256,
-        1264
+        896,
+        2800
       ],
-      "id": "48aef4d8-48f6-45aa-ac2e-aff466f06d18",
+      "id": "2a0fd501-3527-429d-b4ee-688454e586e7",
       "name": "mover_interessado",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -3754,11 +5011,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        176,
-        1168
+        816,
+        2704
       ],
       "typeVersion": 1,
-      "id": "ef408c44-79b8-47b5-ac15-a57faf94afa0",
+      "id": "af8ca11e-b825-407c-b4e9-83e8824942f4",
       "name": "Sticky Note24",
       "disabled": true
     },
@@ -3794,17 +5051,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        528,
-        1264
+        1168,
+        2800
       ],
-      "id": "143eea79-9d79-4f12-ac34-61b2ba833949",
+      "id": "d0446db3-244d-40ab-b8bd-b6057c61c8ed",
       "name": "mover_material",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -3814,11 +5072,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        448,
-        1168
+        1088,
+        2704
       ],
       "typeVersion": 1,
-      "id": "09be3f64-aabf-4db8-948a-63374ca0f23d",
+      "id": "4606623c-9ea9-4111-91e6-6920daf1d2a1",
       "name": "Sticky Note25",
       "disabled": true
     },
@@ -3854,17 +5112,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        800,
-        1264
+        1440,
+        2800
       ],
-      "id": "19d642df-766f-45f2-8286-4a47aa7d5089",
+      "id": "ba96406b-b7db-44c6-aaa4-d334ee521b65",
       "name": "mover_simulacao",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -3874,11 +5133,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        720,
-        1168
+        1360,
+        2704
       ],
       "typeVersion": 1,
-      "id": "eaed78f3-471d-4d85-918b-6f8cd51dc8cb",
+      "id": "893bcf00-3957-414a-8cb4-cccc0ceed5fa",
       "name": "Sticky Note26",
       "disabled": true
     },
@@ -3889,11 +5148,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -112,
-        1488
+        528,
+        3024
       ],
       "typeVersion": 1,
-      "id": "dd8144ab-205e-4103-b171-da834b969324",
+      "id": "d2247aa6-7d21-4a84-9397-720c37b0c378",
       "name": "Sticky Note Origem",
       "disabled": true
     },
@@ -3904,11 +5163,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        176,
-        1488
+        816,
+        3024
       ],
       "typeVersion": 1,
-      "id": "6f324542-b9b0-4ac9-8725-8820f9d3c477",
+      "id": "198b7052-8895-4acb-ad96-37a4a8a72135",
       "name": "Sticky Note renda",
       "disabled": true
     },
@@ -3919,11 +5178,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        448,
-        1488
+        1088,
+        3024
       ],
       "typeVersion": 1,
-      "id": "630ca7b8-e0c3-475c-999c-5fc8c64efae5",
+      "id": "e9ad7601-f4d5-43cf-a9da-b5c3606d1387",
       "name": "Sticky Note Origem6",
       "disabled": true
     },
@@ -3971,17 +5230,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        528,
-        1584
+        1168,
+        3120
       ],
-      "id": "78c28d9f-5aa6-4a5a-b09f-0c505a67a35d",
+      "id": "aec7e40d-6ad3-463c-9a97-ee6f248a5597",
       "name": "preenche_tipo_renda",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4027,17 +5287,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        256,
-        1584
+        896,
+        3120
       ],
-      "id": "1c1b328b-a69b-46c3-956a-e0742f882c78",
+      "id": "5b76c6f6-1d06-4e4b-b9f3-e56e9bdeb759",
       "name": "preenche_renda_mensal",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4083,17 +5344,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        -32,
-        1584
+        608,
+        3120
       ],
-      "id": "67edc5f7-d4d2-44f7-844f-4626c83c022a",
+      "id": "fbe26afa-5fd7-43d7-b019-c8a635cba25e",
       "name": "preenche_estado_civil",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4139,17 +5401,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        800,
-        1584
+        1440,
+        3120
       ],
-      "id": "bf896998-fad3-44c7-a531-703093997a88",
+      "id": "c0ad3661-622c-44c0-b07d-3db839d4e164",
       "name": "preenche_imposto",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4158,11 +5421,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        720,
-        1488
+        1360,
+        3024
       ],
       "typeVersion": 1,
-      "id": "212d1385-db75-436b-8333-b00bb641ddb5",
+      "id": "a312c6e9-9a5d-4d0b-970b-ce2f33e9d671",
       "name": "Sticky Note Origem7",
       "disabled": true
     },
@@ -4173,11 +5436,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -112,
-        1792
+        528,
+        3328
       ],
       "typeVersion": 1,
-      "id": "29d9d135-cbbc-444a-9d4a-5480729a0946",
+      "id": "0b1c58f4-a4f4-424b-b4b1-f009dced01ff",
       "name": "Sticky Note nascimento",
       "disabled": true
     },
@@ -4225,17 +5488,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        -32,
-        1888
+        608,
+        3424
       ],
-      "id": "8c8f59fb-b9e1-4f17-afc5-6dbe454fb2b2",
+      "id": "fe58f21f-1a3e-4e58-b380-eee229da9d6e",
       "name": "preenche_nascimento_mensal",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4269,17 +5533,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        256,
-        1888
+        896,
+        3424
       ],
-      "id": "15aa89a4-1a1c-4735-b47b-c7d9dba8c4d2",
+      "id": "d2583634-0a70-496e-a833-42ca7cfe42fc",
       "name": "mover_negociacao",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4289,117 +5554,13 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        176,
-        1792
+        816,
+        3328
       ],
       "typeVersion": 1,
-      "id": "3b1d46b6-e956-4958-86c8-1f554b918641",
+      "id": "00a64019-152d-41ae-bcb6-f384b42bf835",
       "name": "Sticky Note27",
       "disabled": true
-    },
-    {
-      "parameters": {
-        "toolDescription": "Chame essa ferramenta caso o usuário solicite falar com um humano, ou caso ele faça alguma reclamação ou perceba que o usuário está ficando irritado.",
-        "method": "POST",
-        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-human",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpBasicAuth",
-        "sendHeaders": true,
-        "parametersHeaders": {
-          "values": [
-            {
-              "name": "accept",
-              "valueProvider": "fieldValue",
-              "value": "application/json"
-            }
-          ]
-        },
-        "sendBody": true,
-        "parametersBody": {
-          "values": [
-            {
-              "name": "lead_id",
-              "valueProvider": "fieldValue",
-              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
-            }
-          ]
-        },
-        "optimizeResponse": true
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
-      "position": [
-        528,
-        1888
-      ],
-      "id": "69a29d1b-58ae-4aa5-a81f-4e9db1247ea3",
-      "name": "Request Human",
-      "credentials": {
-        "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "1bzkWAhQJvXmtKmWjE6aFsPb4XNH9BkySg7EBCmj9GSo",
-          "mode": "list",
-          "cachedResultName": "Teste 1 (respostas)",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bzkWAhQJvXmtKmWjE6aFsPb4XNH9BkySg7EBCmj9GSo/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 2109325036,
-          "mode": "list",
-          "cachedResultName": "Respostas ao formulário 1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bzkWAhQJvXmtKmWjE6aFsPb4XNH9BkySg7EBCmj9GSo/edit#gid=2109325036"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.7,
-      "position": [
-        -4160,
-        1024
-      ],
-      "id": "c460c681-dee8-41ce-912d-9320dc7c3c69",
-      "name": "Get row(s) in sheet",
-      "alwaysOutputData": true,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "mON6xvVmy3RLWJPW",
-          "name": "Google Sheets account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "content": "## Envia Imagem 1\n",
-        "height": 260
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -592,
-        1472
-      ],
-      "typeVersion": 1,
-      "id": "4528c8bf-715c-49fb-9b57-1656bdce649e",
-      "name": "Sticky Note empreendimento1",
-      "disabled": true
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.2,
-      "position": [
-        -640,
-        672
-      ],
-      "id": "bfb3f65b-7d03-4a8b-99c7-65df0d3196ae",
-      "name": "Merge1"
     },
     {
       "parameters": {
@@ -4408,11 +5569,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -896,
-        1472
+        816,
+        3648
       ],
       "typeVersion": 1,
-      "id": "4f8d4847-60cd-4942-9a90-e38e2c96ca97",
+      "id": "e7ad35da-2db5-4b1b-968b-e014e22c5e60",
       "name": "Sticky Note empreendimento2",
       "disabled": true
     },
@@ -4453,17 +5614,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        -816,
-        1568
+        896,
+        3744
       ],
-      "id": "1d4b8a2b-9e8c-403f-a320-8f7eb725e530",
+      "id": "2366b0ab-b64d-429d-955c-d23cf196026b",
       "name": "envia_material",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4472,17 +5634,17 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1184,
-        1472
+        528,
+        3648
       ],
       "typeVersion": 1,
-      "id": "77face66-4c2b-47ce-b277-5a2d2ac80e8a",
+      "id": "88f62ce7-3106-43df-be40-2f08f3adbe1d",
       "name": "Sticky Note empreendimento3",
       "disabled": true
     },
     {
       "parameters": {
-        "toolDescription": "=Chame essa ferramenta após a etapa 3 quando o lead informar que deseja saber sobre o preço / Valor do empreendimento.\n\nChame essa ferramenta se ao enviar a mensagem: \"📞 Podemos falar agora sobre os valores do empreendimento?\", o lead responder que \"sim\" ou qualquer outra mensagem afirmativa\n\nEssa ferramenta enviará uma imagem e uma mensagem padrão\n\nA ferramenta irá retornar a instrução do que repsonder em seguida",
+        "toolDescription": "=Chame essa ferramenta após a etapa 3 quando o lead informar que deseja saber sobre o preço / Valor do empreendimento.\n\nChame essa ferramenta se o lead manifestou interesse na simulação\n\nEssa ferramenta enviará uma imagem e uma mensagem padrão\n\nA ferramenta irá retornar a instrução do que repsonder em seguida",
         "method": "POST",
         "url": "=https://joiceadv.up.railway.app/webhook/8910e964-8830-4fdf-8cc6-2d9fc977c5bb-media-simulacao",
         "authentication": "genericCredentialType",
@@ -4517,23 +5679,24 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        -1104,
-        1568
+        608,
+        3744
       ],
-      "id": "4eadf5b1-edab-489d-905b-372297806245",
+      "id": "e464d528-bb59-455d-be6c-38483dd0776f",
       "name": "envia_media_simulacao",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
         "toolDescription": "=Chame essa ferramenta assim que o lead informar o nome dele.",
         "method": "POST",
-        "url": "=https://joiceadv.up.railway.app/webhook/233276e9-fd98-46c4-a8e4-6be36738a6ec-nome",
+        "url": "https://joiceadv.up.railway.app/webhook/233276e9-fd98-46c4-a8e4-6be36738a6ec-nome",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpBasicAuth",
         "sendHeaders": true,
@@ -4578,176 +5741,32 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        1088,
-        1264
+        1728,
+        2800
       ],
-      "id": "d457b88a-543a-429f-b93c-c8d889ffadb0",
+      "id": "6eeb8652-ee1a-4772-a0c0-259fe3175611",
       "name": "set_name",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "fieldsToAggregate": {
-          "fieldToAggregate": [
-            {
-              "fieldToAggregate": "name",
-              "renameField": true,
-              "outputFieldName": "Nome do Empreendimento"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.aggregate",
-      "typeVersion": 1,
-      "position": [
-        -3936,
-        752
-      ],
-      "id": "f32d7b28-9b99-47dc-95e8-f10adfc15c0f",
-      "name": "Aggregate"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "2b1df782-1a1c-4088-b16e-a8641779a544",
-              "name": "Empreendimento escolhido",
-              "value": "={{\n  $('Get Empreendimentos')\n    .all()\n    .find(\n      item =>\n        item.json.name === (\n          $('When Executed by Another Workflow')\n            .item\n            .json\n            .getLead\n            ?.json\n            ?.custom_fields_values\n            ?.find(i => i.field_id == 1025278)\n            ?.values?.[0]?.value\n            ?? ''\n        )\n    )?.json ?? {}\n}}",
-              "type": "object"
-            }
-          ]
-        },
-        "options": {
-          "ignoreConversionErrors": true
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        -3648,
-        752
-      ],
-      "id": "551ab3ac-f3db-42d2-b83b-bcbc6a263ad6",
-      "name": "Set Empreendimento"
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "schema": {
-          "__rl": true,
-          "mode": "list",
-          "value": "public"
-        },
-        "table": {
-          "__rl": true,
-          "value": "ventures",
-          "mode": "list",
-          "cachedResultName": "ventures"
-        },
-        "returnAll": true,
-        "where": {
-          "values": [
-            {
-              "column": "active",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "outputColumns": [
-            "name",
-            "id",
-            "description",
-            "priceRange",
-            "financing"
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.postgres",
-      "typeVersion": 2.6,
-      "position": [
-        -4160,
-        752
-      ],
-      "id": "7f5b91fb-3e9c-4492-a247-16d0596c9b5c",
-      "name": "Get Empreendimentos",
-      "credentials": {
-        "postgres": {
-          "id": "M5tr6zjLSosI1qkl",
-          "name": "Postgres FrontEnd"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "schema": {
-          "__rl": true,
-          "mode": "list",
-          "value": "public"
-        },
-        "table": {
-          "__rl": true,
-          "value": "ventures",
-          "mode": "list",
-          "cachedResultName": "ventures"
-        },
-        "limit": 1,
-        "where": {
-          "values": [
-            {
-              "column": "name",
-              "value": "={{ \n(\n          $('When Executed by Another Workflow')\n            .item\n            .json\n            .getLead\n            ?.json\n            ?.custom_fields_values\n            ?.find(i => i.field_id == 1025278)\n            ?.values?.[0]?.value\n            ?? ''\n        )\n}}"
-            },
-            {
-              "column": "active",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "outputColumns": [
-            "id",
-            "name",
-            "description",
-            "priceRange"
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.postgres",
-      "typeVersion": 2.6,
-      "position": [
-        -3648,
-        560
-      ],
-      "id": "8f1ccc57-871b-4d89-b617-e996c9c04699",
-      "name": "Select rows from a table",
-      "credentials": {
-        "postgres": {
-          "id": "M5tr6zjLSosI1qkl",
-          "name": "Postgres FrontEnd"
-        }
-      }
+      "disabled": true
     },
     {
       "parameters": {
         "content": "## Preenche motivo\n",
-        "height": 260
+        "height": 256,
+        "width": 246
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1008,
-        1488
+        1648,
+        3024
       ],
       "typeVersion": 1,
-      "id": "40331967-39e2-41be-9b28-d9f027813782",
+      "id": "c9cefcde-4083-4f1e-9ef9-df630bab776d",
       "name": "Sticky Note motivo",
       "disabled": true
     },
@@ -4795,17 +5814,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        1088,
-        1584
+        1728,
+        3120
       ],
-      "id": "bfa9a203-f23b-4699-8806-c361be6e6cff",
+      "id": "7bac69f3-455a-4be8-b24f-10bfc30ccf50",
       "name": "preenche_motivo",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4814,11 +5834,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        720,
-        1792
+        1360,
+        3328
       ],
       "typeVersion": 1,
-      "id": "4f059746-830e-486a-9ad2-96cac204bb41",
+      "id": "ab26fe0a-d097-46b5-9715-210bac99a3b9",
       "name": "Sticky Note data_visita",
       "disabled": true
     },
@@ -4866,130 +5886,24 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        800,
-        1904
+        1440,
+        3440
       ],
-      "id": "dde944ae-d12c-48be-aed7-56ff0580f296",
+      "id": "32ead970-02dc-4bc8-bcc3-0ccd8a7b98f6",
       "name": "preencher_data_visita_lead",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.memoryManager",
-      "typeVersion": 1.1,
-      "position": [
-        -2800,
-        2160
-      ],
-      "id": "d5841c4b-a979-42c9-93e6-d3573b1718ab",
-      "name": "Chat Memory Manager3"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "1bc68f5b-245d-4222-a1ae-e11bd5b0d018",
-              "name": "prompt_construtora",
-              "value": "=##### **4. Finalização e negociação**\nnão pergunte os dados de estado civil, renda, etc. Pule direto para essa etapa e envie a mensagem abaixo:\n```plaintext\n\nEm breve te envio a simulação da Construtora com os valores de entrada, parcelas e condições pra você! 🏡💰\n\nSe surgir qualquer dúvida, pode me chamar aqui! 😊📲\n\n```\n\n(Acione `mover_negociacao`)\n",
-              "type": "string"
-            },
-            {
-              "id": "27c35378-db4b-471d-95a1-1b3308276b95",
-              "name": "prompt_banco",
-              "value": "=##### **4. Coleta de dados para simulação**\n\nPara cada resposta do lead, acione a ferramenta correspondente.\n\n_!IMPORTANTE: A partir desse ponto é expressamente proibido chamar `enviar_img_1`, `enviar_material` e `envia_media_simulacao`_\n\nAbaixo estão os exemplos completos de cada pergunta e a ferramenta que deve ser chamada:\n\n---\n\n**Pergunta 1 – Estado Civil**\n\n```plaintext\nQual seu estado civil? Ou seja, você é casado ou solteiro?  \n \n1 - Solteiro.  \n2 - Casado.  \n3 - Pretendo comprar com outra pessoa.\n```\n**Ferramenta a ser chamada:** `preenche_estado_civil`\n\n---\n\n**Pergunta 2 – Renda Mensal**\n\n```plaintext\n(Se o lead for solteiro ou casado)\nQual valor da sua renda mensal, {Nome}?\n\n(Se o lead pretende comprar com outra pessoa)\nQual valor da renda de vocês dois juntos mensal?\n```\n\n**Ferramenta a ser chamada:** `preenche_renda_mensal`\n\n---\n\n**Pergunta 3 – Tipo de Renda**\n\n```plaintext\n{Nome}, só para eu te orientar melhor com as possibilidades de financiamento:  \nVocê(s) trabalha(m) com renda formal (com registro em carteira ou CNPJ)  \nou renda informal (autônomo, sem registro)?  \n\n1 - Renda Formal  \n2 - Renda Informal\n```\n\n**Ferramenta a ser chamada:** `preenche_tipo_renda`\n\n---\n\n**Pergunta 4 – Declaração de Imposto de Renda**\n\n```plaintext\n{Nome}, você(s) declarou(raram) Imposto de Renda esse ano?  \n```\n\n**Ferramenta a ser chamada:** `preenche_imposto_renda`\n\n---\n\n**Pergunta 5 – Data de Nascimento**\n\n```plaintext\nE por último, qual a sua data de nascimento?  \nSe for comprar com mais alguém, envie também a data de nascimento da outra pessoa.\n```\n\n**Ferramenta a ser chamada:** `preencher_data_nascimento`\n\n\n##### **5. Finalização e negociação**\n\n```plaintext\n\nPerfeito! Em breve te envio a simulação da Caixa com os valores de entrada, parcelas e condições pra você! 🏡💰\n\nSe surgir qualquer dúvida, pode me chamar aqui! 😊📲\n\n```\n\n(Acione `mover_negociacao`)\n",
-              "type": "string"
-            }
-          ]
-        },
-        "includeOtherFields": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        -480,
-        672
-      ],
-      "id": "42d9b83c-e57e-4c18-8986-1f84e8785f01",
-      "name": "Edit Fields"
-    },
-    {
-      "parameters": {
-        "content": "## Consultar Empreendimentos\n\n",
-        "height": 260
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -976,
-        928
-      ],
-      "typeVersion": 1,
-      "id": "1811d4ff-0f57-4806-b304-ccdd94946568",
-      "name": "Sticky Note empreendimento4",
       "disabled": true
     },
     {
       "parameters": {
-        "descriptionType": "manual",
-        "toolDescription": "Chame essa ferramenta para responder quaisquer dúvidas do lead sobre os empreendimentos",
-        "operation": "select",
-        "schema": {
-          "__rl": true,
-          "mode": "list",
-          "value": "public"
-        },
-        "table": {
-          "__rl": true,
-          "value": "ventures",
-          "mode": "list",
-          "cachedResultName": "ventures"
-        },
-        "returnAll": true,
-        "where": {
-          "values": [
-            {
-              "column": "active",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "outputColumns": [
-            "name",
-            "description",
-            "priceRange",
-            "link"
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.postgresTool",
-      "typeVersion": 2.6,
-      "position": [
-        -896,
-        1024
-      ],
-      "id": "3f5c7e12-87e9-4a07-a191-81975e27f947",
-      "name": "consultar_empreendimentos",
-      "credentials": {
-        "postgres": {
-          "id": "M5tr6zjLSosI1qkl",
-          "name": "Postgres FrontEnd"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "toolDescription": "=Chame essa ferramenta logo após o lead informar o empreendimento que ele tem interesse ( e somente nessa etapa. nunca chame em outro momento ). \nEssa ferramenta envia a primeira foto do empreendimento. Após isso, siga com o atendimento\n\nA ferramenta irá retornar com as instruções caso dê erro.",
+        "toolDescription": "Chame essa ferramenta caso o usuário solicite falar com um humano, ou caso ele faça alguma reclamação ou perceba que o usuário está ficando irritado.\nEsta ferramenta irá transferir o atendimento para a Joice",
         "method": "POST",
-        "url": "=https://joiceadv.up.railway.app/webhook/333376e9-fd98-46c4-a8e4-6be36738a6ef-img-1",
+        "url": "=https://joiceadv.up.railway.app/webhook/5b6cd24d-14d5-4074-901f-0f4b11c02415-human",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpBasicAuth",
         "sendHeaders": true,
@@ -5008,12 +5922,7 @@
             {
               "name": "lead_id",
               "valueProvider": "fieldValue",
-              "value": "={{ $('When Executed by Another Workflow').last().json.getLead.json.id }}"
-            },
-            {
-              "name": "message_props",
-              "valueProvider": "fieldValue",
-              "value": "={{ $('Set message props').item.json }}"
+              "value": "={{ $('Set message props').last().json.crm_entity.id }}"
             }
           ]
         },
@@ -5022,17 +5931,18 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        -512,
-        1568
+        1168,
+        3424
       ],
-      "id": "ce657e21-a4f6-4656-97ac-ead4f87c9500",
-      "name": "img_capa",
+      "id": "297a0509-6643-46e4-9026-b1305e522ffb",
+      "name": "request_human",
       "credentials": {
         "httpBasicAuth": {
-          "id": "JkIMD1dDp2CjIaFX",
-          "name": "[Tools] - Basic Auth"
+          "id": "nEBUdVtA8n4lpKwn",
+          "name": "[tool] - basic auth"
         }
-      }
+      },
+      "disabled": true
     }
   ],
   "pinData": {
@@ -5043,12 +5953,12 @@
             "account[subdomain]": "joiceadv",
             "account[id]": "34332899",
             "account[_links][self]": "https://joiceadv.amocrm.com",
-            "message[add][0][id]": "64b398c5-a861-4286-84b4-4607f69f5500",
+            "message[add][0][id]": "5e0ee445-4b47-4f16-90d3-5c1204142963",
             "message[add][0][chat_id]": "7cd90f4d-ac4c-410a-99fc-732d6165aab8",
             "message[add][0][talk_id]": "4137",
             "message[add][0][contact_id]": "22398914",
-            "message[add][0][text]": "simulaçao",
-            "message[add][0][created_at]": "1765097438",
+            "message[add][0][text]": "Emerson",
+            "message[add][0][created_at]": "1765338336",
             "message[add][0][element_type]": "2",
             "message[add][0][entity_type]": "lead",
             "message[add][0][element_id]": "18135878",
@@ -5066,13 +5976,13 @@
               "price": 0,
               "responsible_user_id": 14085107,
               "group_id": 0,
-              "status_id": 92937719,
+              "status_id": 91494987,
               "pipeline_id": 10762739,
               "loss_reason_id": null,
               "created_by": 0,
               "updated_by": 0,
               "created_at": 1765081354,
-              "updated_at": 1765097438,
+              "updated_at": 1765338336,
               "closed_at": null,
               "closest_task_at": 1765162740,
               "is_deleted": false,
@@ -5108,7 +6018,7 @@
                   "field_type": "text",
                   "values": [
                     {
-                      "value": "Investimento"
+                      "value": "moradia"
                     }
                   ]
                 },
@@ -5120,6 +6030,41 @@
                   "values": [
                     {
                       "value": 1765378800
+                    }
+                  ]
+                },
+                {
+                  "field_id": 1061480,
+                  "field_name": "Renda Mensal",
+                  "field_code": null,
+                  "field_type": "text",
+                  "values": [
+                    {
+                      "value": "20"
+                    }
+                  ]
+                },
+                {
+                  "field_id": 1061482,
+                  "field_name": "Tipo de Renda",
+                  "field_code": null,
+                  "field_type": "select",
+                  "values": [
+                    {
+                      "value": "Renda Formal",
+                      "enum_id": 908250,
+                      "enum_code": null
+                    }
+                  ]
+                },
+                {
+                  "field_id": 1061626,
+                  "field_name": "Data de Nascimento - aberto",
+                  "field_code": null,
+                  "field_type": "text",
+                  "values": [
+                    {
+                      "value": "01/02/03"
                     }
                   ]
                 }
@@ -5163,7 +6108,7 @@
               "created_by": 0,
               "updated_by": 0,
               "created_at": 1765081354,
-              "updated_at": 1765096033,
+              "updated_at": 1765335873,
               "closest_task_at": null,
               "is_deleted": false,
               "is_unsorted": false,
@@ -5183,6 +6128,9 @@
               "item": 0
             }
           }
+        },
+        "pairedItem": {
+          "item": 0
         }
       }
     ]
@@ -5192,16 +6140,16 @@
   },
   "shared": [
     {
-      "createdAt": "2025-10-23T03:56:58.518Z",
-      "updatedAt": "2025-10-23T03:56:58.518Z",
+      "updatedAt": "2025-12-09T05:16:18.327Z",
+      "createdAt": "2025-12-09T05:16:18.327Z",
       "role": "workflow:owner",
-      "workflowId": "KwU5NkKFL7T8MF2U",
-      "projectId": "CdOjQfB3kNlqg1ah"
+      "workflowId": "miO3HCG3ZDhU7HzY",
+      "projectId": "7Zo0ITtGQshcizrf"
     }
   ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-09T04:26:35.026Z",
-  "versionId": "0e3c0ffb-3f32-4aad-ab81-1211d3cea5b5"
+  "updatedAt": "2025-12-10T05:19:40.449Z",
+  "versionId": "f086298b-dc53-4fc7-8a89-41a8ae0d7a9a"
 }
