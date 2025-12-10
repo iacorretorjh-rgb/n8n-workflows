@@ -1,9 +1,9 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-10T05:57:09.294Z",
-    "createdAt": "2025-12-10T05:57:09.294Z",
-    "versionId": "b2e281ed-152d-40b9-9883-dac490d1ae3d",
+    "updatedAt": "2025-12-10T14:54:48.755Z",
+    "createdAt": "2025-12-10T14:54:48.755Z",
+    "versionId": "f5254772-9956-4164-8c03-9069a97f9e36",
     "workflowId": "ofTBnhZ1mr0YmAhn",
     "nodes": [
       {
@@ -57,7 +57,8 @@
           "rule": {
             "interval": [
               {
-                "field": "hours"
+                "field": "minutes",
+                "minutesInterval": 15
               }
             ]
           }
@@ -368,8 +369,8 @@
         "type": "n8n-nodes-base.filter",
         "typeVersion": 2.3,
         "position": [
-          912,
-          1056
+          432,
+          1328
         ],
         "id": "23ef228f-c3b4-44b7-a332-8b3ad3d1d8e5",
         "name": "Filter1"
@@ -509,6 +510,52 @@
         ],
         "id": "8e860c22-cd4a-4590-a8ad-28b1e9502d41",
         "name": "Execute a SQL query1",
+        "credentials": {
+          "postgres": {
+            "id": "3n2XFyKBHlGjd2GN",
+            "name": "Postgres account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "executeQuery",
+          "query": "VACUUM FULL public.execution_data;\n-- VACUUM FULL public.workflow_history;\n-- VACUUM FULL public.workflow_entity;\n-- VACUUM FULL public.execution_entity;\n-- VACUUM FULL public.n8n_chat_histories;",
+          "options": {
+            "queryBatching": "single"
+          }
+        },
+        "type": "n8n-nodes-base.postgres",
+        "typeVersion": 2.6,
+        "position": [
+          992,
+          288
+        ],
+        "id": "63a16af2-b11a-4f04-9cd8-330264915cdf",
+        "name": "Execute a SQL query2",
+        "credentials": {
+          "postgres": {
+            "id": "3n2XFyKBHlGjd2GN",
+            "name": "Postgres account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "executeQuery",
+          "query": "-- ALTER SYSTEM SET wal_keep_size = '256MB';\n-- SELECT pg_reload_conf();",
+          "options": {
+            "queryBatching": "single"
+          }
+        },
+        "type": "n8n-nodes-base.postgres",
+        "typeVersion": 2.6,
+        "position": [
+          160,
+          1328
+        ],
+        "id": "3a714e50-f73c-4240-a81f-a8cb086b1433",
+        "name": "Execute a SQL query3",
         "credentials": {
           "postgres": {
             "id": "3n2XFyKBHlGjd2GN",
@@ -685,13 +732,24 @@
             }
           ]
         ]
+      },
+      "Delete an execution1": {
+        "main": [
+          [
+            {
+              "node": "Execute a SQL query2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
       }
     },
     "authors": "IA JH",
     "name": null,
     "description": null
   },
-  "activeVersionId": "b2e281ed-152d-40b9-9883-dac490d1ae3d",
+  "activeVersionId": "f5254772-9956-4164-8c03-9069a97f9e36",
   "connections": {
     "Get many executions": {
       "main": [
@@ -860,6 +918,17 @@
           }
         ]
       ]
+    },
+    "Delete an execution1": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-12-09T06:16:28.867Z",
@@ -921,7 +990,8 @@
         "rule": {
           "interval": [
             {
-              "field": "hours"
+              "field": "minutes",
+              "minutesInterval": 15
             }
           ]
         }
@@ -1232,8 +1302,8 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3,
       "position": [
-        912,
-        1056
+        432,
+        1328
       ],
       "id": "23ef228f-c3b4-44b7-a332-8b3ad3d1d8e5",
       "name": "Filter1"
@@ -1379,6 +1449,52 @@
           "name": "Postgres account"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "VACUUM FULL public.execution_data;\n-- VACUUM FULL public.workflow_history;\n-- VACUUM FULL public.workflow_entity;\n-- VACUUM FULL public.execution_entity;\n-- VACUUM FULL public.n8n_chat_histories;",
+        "options": {
+          "queryBatching": "single"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        992,
+        288
+      ],
+      "id": "63a16af2-b11a-4f04-9cd8-330264915cdf",
+      "name": "Execute a SQL query2",
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- ALTER SYSTEM SET wal_keep_size = '256MB';\n-- SELECT pg_reload_conf();",
+        "options": {
+          "queryBatching": "single"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        160,
+        1328
+      ],
+      "id": "3a714e50-f73c-4240-a81f-a8cb086b1433",
+      "name": "Execute a SQL query3",
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -1401,6 +1517,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-12-10T05:57:09.292Z",
-  "versionId": "b2e281ed-152d-40b9-9883-dac490d1ae3d"
+  "updatedAt": "2025-12-10T14:54:48.753Z",
+  "versionId": "f5254772-9956-4164-8c03-9069a97f9e36"
 }
