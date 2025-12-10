@@ -1,0 +1,1172 @@
+{
+  "active": true,
+  "activeVersion": {
+    "updatedAt": "2025-12-10T01:03:10.820Z",
+    "createdAt": "2025-12-10T01:03:10.820Z",
+    "versionId": "fbc4e60e-5504-4810-8c6e-c34b28ab3e68",
+    "workflowId": "ofTBnhZ1mr0YmAhn",
+    "nodes": [
+      {
+        "parameters": {
+          "resource": "execution",
+          "filters": {
+            "workflowId": {
+              "__rl": true,
+              "value": "0VWBUpj6613YbfWp",
+              "mode": "list",
+              "cachedResultName": "[Tool] - Enviar Midia (#0VWBUpj6613YbfWp)"
+            },
+            "status": "success"
+          },
+          "options": {
+            "activeWorkflows": false
+          },
+          "requestOptions": {}
+        },
+        "type": "n8n-nodes-base.n8n",
+        "typeVersion": 1,
+        "position": [
+          96,
+          0
+        ],
+        "id": "5ac0b26e-1532-4adf-955c-42a23cce993f",
+        "name": "Get many executions",
+        "credentials": {
+          "n8nApi": {
+            "id": "Iqu7xatzemgP06kC",
+            "name": "n8n account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "maxItems": "={{ $('Get many executions').all().length - 5 }}",
+          "keep": "lastItems"
+        },
+        "type": "n8n-nodes-base.limit",
+        "typeVersion": 1,
+        "position": [
+          320,
+          0
+        ],
+        "id": "4bd2077a-3632-403a-91c7-832b16e012c0",
+        "name": "Limit"
+      },
+      {
+        "parameters": {
+          "rule": {
+            "interval": [
+              {
+                "field": "hours"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "typeVersion": 1.3,
+        "position": [
+          -128,
+          192
+        ],
+        "id": "c21bf204-c7f3-4fc2-946d-17af76747abb",
+        "name": "Schedule Trigger"
+      },
+      {
+        "parameters": {
+          "resource": "execution",
+          "filters": {
+            "workflowId": {
+              "__rl": true,
+              "value": "ZuWMFIAYMvYgIiKg",
+              "mode": "list",
+              "cachedResultName": "[Tools] - Preencher card e Mover Lead (#ZuWMFIAYMvYgIiKg)"
+            },
+            "status": "success"
+          },
+          "options": {
+            "activeWorkflows": false
+          },
+          "requestOptions": {}
+        },
+        "type": "n8n-nodes-base.n8n",
+        "typeVersion": 1,
+        "position": [
+          96,
+          192
+        ],
+        "id": "527620a2-d934-4dda-8f22-cff7b4abbe57",
+        "name": "Get many executions1",
+        "credentials": {
+          "n8nApi": {
+            "id": "Iqu7xatzemgP06kC",
+            "name": "n8n account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "maxItems": "={{ $('Get many executions1').all().length - 5 }}",
+          "keep": "lastItems"
+        },
+        "type": "n8n-nodes-base.limit",
+        "typeVersion": 1,
+        "position": [
+          320,
+          192
+        ],
+        "id": "f8013e71-5b89-44c1-9d28-0a7045476d30",
+        "name": "Limit1"
+      },
+      {
+        "parameters": {
+          "resource": "execution",
+          "operation": "delete",
+          "executionId": "={{ $json.id }}",
+          "requestOptions": {}
+        },
+        "type": "n8n-nodes-base.n8n",
+        "typeVersion": 1,
+        "position": [
+          768,
+          192
+        ],
+        "id": "948a6a1e-9ab1-4242-8e78-830d476146fd",
+        "name": "Delete an execution1",
+        "credentials": {
+          "n8nApi": {
+            "id": "Iqu7xatzemgP06kC",
+            "name": "n8n account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "execution",
+          "filters": {
+            "workflowId": {
+              "__rl": true,
+              "value": "ofTBnhZ1mr0YmAhn",
+              "mode": "list",
+              "cachedResultName": "Limpar Execuções (#ofTBnhZ1mr0YmAhn)"
+            },
+            "status": "success"
+          },
+          "options": {
+            "activeWorkflows": false
+          },
+          "requestOptions": {}
+        },
+        "type": "n8n-nodes-base.n8n",
+        "typeVersion": 1,
+        "position": [
+          96,
+          384
+        ],
+        "id": "6100140e-1096-4238-85d3-b743600ef22b",
+        "name": "Get many executions2",
+        "credentials": {
+          "n8nApi": {
+            "id": "Iqu7xatzemgP06kC",
+            "name": "n8n account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "maxItems": "={{ $('Get many executions2').all().length - 5 }}",
+          "keep": "lastItems"
+        },
+        "type": "n8n-nodes-base.limit",
+        "typeVersion": 1,
+        "position": [
+          320,
+          384
+        ],
+        "id": "a49bf9fc-e901-41b2-b0dd-b66606ae1c82",
+        "name": "Limit2"
+      },
+      {
+        "parameters": {
+          "operation": "select",
+          "schema": {
+            "__rl": true,
+            "mode": "list",
+            "value": "public"
+          },
+          "table": {
+            "__rl": true,
+            "value": "execution_data",
+            "mode": "list",
+            "cachedResultName": "execution_data"
+          },
+          "returnAll": true,
+          "where": {
+            "values": [
+              {
+                "column": "executionId",
+                "value": "={{ $json.id }}"
+              }
+            ]
+          },
+          "options": {
+            "outputColumns": [
+              "executionId",
+              "workflowData"
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.postgres",
+        "typeVersion": 2.6,
+        "position": [
+          608,
+          688
+        ],
+        "id": "668ea540-8754-455f-acd6-3047253d6362",
+        "name": "Select rows from a table",
+        "credentials": {
+          "postgres": {
+            "id": "3n2XFyKBHlGjd2GN",
+            "name": "Postgres account"
+          }
+        }
+      },
+      {
+        "parameters": {},
+        "type": "n8n-nodes-base.manualTrigger",
+        "typeVersion": 1,
+        "position": [
+          -64,
+          688
+        ],
+        "id": "26c76bfa-123e-4110-afc5-120c8cb12dd0",
+        "name": "When clicking ‘Execute workflow’"
+      },
+      {
+        "parameters": {
+          "operation": "select",
+          "schema": {
+            "__rl": true,
+            "mode": "list",
+            "value": "public"
+          },
+          "table": {
+            "__rl": true,
+            "value": "execution_data",
+            "mode": "list",
+            "cachedResultName": "execution_data"
+          },
+          "limit": 1,
+          "where": {
+            "values": [
+              {
+                "column": "executionId",
+                "value": "={{ $json.executionId }}"
+              }
+            ]
+          },
+          "options": {
+            "outputColumns": [
+              "workflowData",
+              "executionId",
+              "data"
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.postgres",
+        "typeVersion": 2.6,
+        "position": [
+          944,
+          688
+        ],
+        "id": "05c43a6e-fc7a-43f4-bb53-691e50513c4b",
+        "name": "Select rows from a table1",
+        "credentials": {
+          "postgres": {
+            "id": "3n2XFyKBHlGjd2GN",
+            "name": "Postgres account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict",
+              "version": 3
+            },
+            "conditions": [
+              {
+                "id": "f7517b9b-ae69-4fae-aecc-c5d8ca2651f7",
+                "leftValue": "={{ $json.workflowId }}",
+                "rightValue": "0VWBUpj6613YbfWp",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals"
+                }
+              },
+              {
+                "id": "2ddc3778-3d9f-42eb-9253-1ebfa9305f5b",
+                "leftValue": "={{ $json.workflowId }}",
+                "rightValue": "ZuWMFIAYMvYgIiKg",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals",
+                  "name": "filter.operator.equals"
+                }
+              },
+              {
+                "id": "3d667a77-3627-4fb2-9b70-7af3e2fcdd54",
+                "leftValue": "={{ $json.workflowId }}",
+                "rightValue": "ofTBnhZ1mr0YmAhn",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals",
+                  "name": "filter.operator.equals"
+                }
+              }
+            ],
+            "combinator": "or"
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.filter",
+        "typeVersion": 2.3,
+        "position": [
+          384,
+          688
+        ],
+        "id": "132bd857-f3bd-4268-aed0-f2d93df1f3d7",
+        "name": "Filter"
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict",
+              "version": 3
+            },
+            "conditions": [
+              {
+                "id": "4630f3e2-6fd5-41e0-8967-41f3932274d6",
+                "leftValue": "={{ $json.workflowData.isArchived }}",
+                "rightValue": "",
+                "operator": {
+                  "type": "boolean",
+                  "operation": "true",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.filter",
+        "typeVersion": 2.3,
+        "position": [
+          912,
+          1056
+        ],
+        "id": "23ef228f-c3b4-44b7-a332-8b3ad3d1d8e5",
+        "name": "Filter1"
+      },
+      {
+        "parameters": {
+          "numberInputs": 3
+        },
+        "type": "n8n-nodes-base.merge",
+        "typeVersion": 3.2,
+        "position": [
+          544,
+          176
+        ],
+        "id": "206adaef-704a-4cad-8326-8c077a99f4e1",
+        "name": "Merge"
+      },
+      {
+        "parameters": {
+          "operation": "select",
+          "schema": {
+            "__rl": true,
+            "mode": "list",
+            "value": "public"
+          },
+          "table": {
+            "__rl": true,
+            "value": "execution_entity",
+            "mode": "list",
+            "cachedResultName": "execution_entity"
+          },
+          "returnAll": true,
+          "sort": {
+            "values": [
+              {
+                "column": "id"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.postgres",
+        "typeVersion": 2.6,
+        "position": [
+          160,
+          688
+        ],
+        "id": "6062ca60-af64-4707-ad44-9d80d376c2a9",
+        "name": "Select rows from a table2",
+        "credentials": {
+          "postgres": {
+            "id": "3n2XFyKBHlGjd2GN",
+            "name": "Postgres account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Get many executions": {
+        "main": [
+          [
+            {
+              "node": "Limit",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Limit": {
+        "main": [
+          [
+            {
+              "node": "Merge",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Schedule Trigger": {
+        "main": [
+          [
+            {
+              "node": "Get many executions",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "Get many executions1",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "Get many executions2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Get many executions1": {
+        "main": [
+          [
+            {
+              "node": "Limit1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Limit1": {
+        "main": [
+          [
+            {
+              "node": "Merge",
+              "type": "main",
+              "index": 1
+            }
+          ]
+        ]
+      },
+      "Get many executions2": {
+        "main": [
+          [
+            {
+              "node": "Limit2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Limit2": {
+        "main": [
+          [
+            {
+              "node": "Merge",
+              "type": "main",
+              "index": 2
+            }
+          ]
+        ]
+      },
+      "When clicking ‘Execute workflow’": {
+        "main": [
+          [
+            {
+              "node": "Select rows from a table2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Select rows from a table": {
+        "main": [
+          []
+        ]
+      },
+      "Filter": {
+        "main": [
+          [
+            {
+              "node": "Select rows from a table",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Filter1": {
+        "main": [
+          []
+        ]
+      },
+      "Merge": {
+        "main": [
+          [
+            {
+              "node": "Delete an execution1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Select rows from a table2": {
+        "main": [
+          [
+            {
+              "node": "Filter",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "IA JH",
+    "name": null,
+    "description": null
+  },
+  "activeVersionId": "fbc4e60e-5504-4810-8c6e-c34b28ab3e68",
+  "connections": {
+    "Get many executions": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get many executions",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get many executions1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get many executions2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many executions1": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Get many executions2": {
+      "main": [
+        [
+          {
+            "node": "Limit2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table": {
+      "main": [
+        []
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Select rows from a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter1": {
+      "main": [
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Delete an execution1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select rows from a table2": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-09T06:16:28.867Z",
+  "id": "ofTBnhZ1mr0YmAhn",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Limpar Execuções",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "execution",
+        "filters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "0VWBUpj6613YbfWp",
+            "mode": "list",
+            "cachedResultName": "[Tool] - Enviar Midia (#0VWBUpj6613YbfWp)"
+          },
+          "status": "success"
+        },
+        "options": {
+          "activeWorkflows": false
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        96,
+        0
+      ],
+      "id": "5ac0b26e-1532-4adf-955c-42a23cce993f",
+      "name": "Get many executions",
+      "credentials": {
+        "n8nApi": {
+          "id": "Iqu7xatzemgP06kC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $('Get many executions').all().length - 5 }}",
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        320,
+        0
+      ],
+      "id": "4bd2077a-3632-403a-91c7-832b16e012c0",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -128,
+        192
+      ],
+      "id": "c21bf204-c7f3-4fc2-946d-17af76747abb",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "filters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "ZuWMFIAYMvYgIiKg",
+            "mode": "list",
+            "cachedResultName": "[Tools] - Preencher card e Mover Lead (#ZuWMFIAYMvYgIiKg)"
+          },
+          "status": "success"
+        },
+        "options": {
+          "activeWorkflows": false
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        96,
+        192
+      ],
+      "id": "527620a2-d934-4dda-8f22-cff7b4abbe57",
+      "name": "Get many executions1",
+      "credentials": {
+        "n8nApi": {
+          "id": "Iqu7xatzemgP06kC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $('Get many executions1').all().length - 5 }}",
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        320,
+        192
+      ],
+      "id": "f8013e71-5b89-44c1-9d28-0a7045476d30",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "operation": "delete",
+        "executionId": "={{ $json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        768,
+        192
+      ],
+      "id": "948a6a1e-9ab1-4242-8e78-830d476146fd",
+      "name": "Delete an execution1",
+      "credentials": {
+        "n8nApi": {
+          "id": "Iqu7xatzemgP06kC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "filters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "ofTBnhZ1mr0YmAhn",
+            "mode": "list",
+            "cachedResultName": "Limpar Execuções (#ofTBnhZ1mr0YmAhn)"
+          },
+          "status": "success"
+        },
+        "options": {
+          "activeWorkflows": false
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        96,
+        384
+      ],
+      "id": "6100140e-1096-4238-85d3-b743600ef22b",
+      "name": "Get many executions2",
+      "credentials": {
+        "n8nApi": {
+          "id": "Iqu7xatzemgP06kC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $('Get many executions2').all().length - 5 }}",
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        320,
+        384
+      ],
+      "id": "a49bf9fc-e901-41b2-b0dd-b66606ae1c82",
+      "name": "Limit2"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "execution_data",
+          "mode": "list",
+          "cachedResultName": "execution_data"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "executionId",
+              "value": "={{ $json.id }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "executionId",
+            "workflowData"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        608,
+        688
+      ],
+      "id": "668ea540-8754-455f-acd6-3047253d6362",
+      "name": "Select rows from a table",
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        688
+      ],
+      "id": "26c76bfa-123e-4110-afc5-120c8cb12dd0",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "execution_data",
+          "mode": "list",
+          "cachedResultName": "execution_data"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "executionId",
+              "value": "={{ $json.executionId }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "workflowData",
+            "executionId",
+            "data"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        944,
+        688
+      ],
+      "id": "05c43a6e-fc7a-43f4-bb53-691e50513c4b",
+      "name": "Select rows from a table1",
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "f7517b9b-ae69-4fae-aecc-c5d8ca2651f7",
+              "leftValue": "={{ $json.workflowId }}",
+              "rightValue": "0VWBUpj6613YbfWp",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "2ddc3778-3d9f-42eb-9253-1ebfa9305f5b",
+              "leftValue": "={{ $json.workflowId }}",
+              "rightValue": "ZuWMFIAYMvYgIiKg",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "3d667a77-3627-4fb2-9b70-7af3e2fcdd54",
+              "leftValue": "={{ $json.workflowId }}",
+              "rightValue": "ofTBnhZ1mr0YmAhn",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        384,
+        688
+      ],
+      "id": "132bd857-f3bd-4268-aed0-f2d93df1f3d7",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "4630f3e2-6fd5-41e0-8967-41f3932274d6",
+              "leftValue": "={{ $json.workflowData.isArchived }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        912,
+        1056
+      ],
+      "id": "23ef228f-c3b4-44b7-a332-8b3ad3d1d8e5",
+      "name": "Filter1"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        544,
+        176
+      ],
+      "id": "206adaef-704a-4cad-8326-8c077a99f4e1",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "execution_entity",
+          "mode": "list",
+          "cachedResultName": "execution_entity"
+        },
+        "returnAll": true,
+        "sort": {
+          "values": [
+            {
+              "column": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        160,
+        688
+      ],
+      "id": "6062ca60-af64-4707-ad44-9d80d376c2a9",
+      "name": "Select rows from a table2",
+      "credentials": {
+        "postgres": {
+          "id": "3n2XFyKBHlGjd2GN",
+          "name": "Postgres account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-09T06:16:28.867Z",
+      "createdAt": "2025-12-09T06:16:28.867Z",
+      "role": "workflow:owner",
+      "workflowId": "ofTBnhZ1mr0YmAhn",
+      "projectId": "7Zo0ITtGQshcizrf"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-10T05:21:12.380Z",
+  "versionId": "fbc4e60e-5504-4810-8c6e-c34b28ab3e68"
+}
