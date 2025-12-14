@@ -1,9 +1,9 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-10T05:28:51.773Z",
-    "createdAt": "2025-12-10T05:28:51.773Z",
-    "versionId": "a701b348-03ff-4bff-9f09-d59d90548263",
+    "updatedAt": "2025-12-14T01:53:37.445Z",
+    "createdAt": "2025-12-14T01:53:37.445Z",
+    "versionId": "1d185f67-ec27-4158-9f3a-c66eba7ee50d",
     "workflowId": "ZuWMFIAYMvYgIiKg",
     "nodes": [
       {
@@ -5826,6 +5826,7 @@
         ],
         "id": "bd987d7e-c5d3-4184-9869-469e3192d0b6",
         "name": "Select rows from a table",
+        "alwaysOutputData": true,
         "credentials": {
           "postgres": {
             "id": "MRz8SFgYuZS9wEZe",
@@ -6661,6 +6662,7 @@
         ],
         "id": "84987363-c8e5-4abe-a87e-f7934136a102",
         "name": "Get Empreendimento 2",
+        "alwaysOutputData": true,
         "credentials": {
           "postgres": {
             "id": "MRz8SFgYuZS9wEZe",
@@ -7118,6 +7120,7 @@
         ],
         "id": "613558ad-3e4a-4d5e-8c89-cd63936616d6",
         "name": "Get Empreendimento 3",
+        "alwaysOutputData": true,
         "credentials": {
           "postgres": {
             "id": "MRz8SFgYuZS9wEZe",
@@ -9327,7 +9330,7 @@
     "name": null,
     "description": null
   },
-  "activeVersionId": "a701b348-03ff-4bff-9f09-d59d90548263",
+  "activeVersionId": "1d185f67-ec27-4158-9f3a-c66eba7ee50d",
   "connections": {
     "Edit Fields1": {
       "main": [
@@ -16767,6 +16770,7 @@
       ],
       "id": "bd987d7e-c5d3-4184-9869-469e3192d0b6",
       "name": "Select rows from a table",
+      "alwaysOutputData": true,
       "credentials": {
         "postgres": {
           "id": "MRz8SFgYuZS9wEZe",
@@ -17602,6 +17606,7 @@
       ],
       "id": "84987363-c8e5-4abe-a87e-f7934136a102",
       "name": "Get Empreendimento 2",
+      "alwaysOutputData": true,
       "credentials": {
         "postgres": {
           "id": "MRz8SFgYuZS9wEZe",
@@ -18059,6 +18064,7 @@
       ],
       "id": "613558ad-3e4a-4d5e-8c89-cd63936616d6",
       "name": "Get Empreendimento 3",
+      "alwaysOutputData": true,
       "credentials": {
         "postgres": {
           "id": "MRz8SFgYuZS9wEZe",
@@ -18936,6 +18942,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 15,
-  "updatedAt": "2025-12-10T05:28:51.769Z",
-  "versionId": "a701b348-03ff-4bff-9f09-d59d90548263"
+  "updatedAt": "2025-12-14T01:53:37.441Z",
+  "versionId": "1d185f67-ec27-4158-9f3a-c66eba7ee50d"
 }
